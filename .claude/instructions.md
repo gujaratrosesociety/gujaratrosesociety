@@ -17,3 +17,12 @@ Short summary of changes
 
 Optional longer description if needed.
 ```
+
+## Website Requirements
+
+### Mobile Responsiveness
+- All website pages and features MUST be mobile-friendly
+- Ensure responsive design works across different screen sizes
+- Test that layouts adapt properly for mobile, tablet, and desktop views
+- Use responsive themes and CSS frameworks
+- Include proper viewport meta tags and mobile optimization settings
