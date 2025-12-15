@@ -15,8 +15,12 @@ plugins:
   - jekyll-sitemap
 
 # SEO and mobile optimization
-lang: en
 author: Gujarat Rose Society
+
+# Language settings
+default_lang: gu
+languages: ["gu", "en"]
+lang: gu
 
 # Responsive settings (Cayman theme is mobile-responsive by default)
 # The theme includes viewport meta tags and responsive CSS

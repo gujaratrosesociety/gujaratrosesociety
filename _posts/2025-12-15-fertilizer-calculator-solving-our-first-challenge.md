@@ -3,6 +3,7 @@ layout: post
 title: "Our First Challenge: Understanding Fertilizer Combinations"
 date: 2025-12-15
 categories: tools fertilization
+lang: en
 ---
 
 When we first came together as a group of rose enthusiasts in Gujarat, we quickly realized that one of the most fundamental challenges we faced was understanding what different fertilizer combinations actually contribute in terms of nutrient values.

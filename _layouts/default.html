@@ -1,5 +1,7 @@
+{% assign lang = page.lang | default: site.default_lang %}
+{% assign t = site.data.translations[lang] %}
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: 'en-US' }}">
+<html lang="{{ lang }}">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +10,40 @@
 {% seo %}
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <style>
+      .language-switcher {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+      }
+
+      .language-switcher a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        padding: 0.4rem 0.8rem;
+        margin: 0 0.2rem;
+        border-radius: 0.3rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.2s;
+        display: inline-block;
+      }
+
+      .language-switcher a:hover,
+      .language-switcher a.active {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+      }
+
+      @media screen and (max-width: 42em) {
+        .language-switcher {
+          position: static;
+          text-align: center;
+          padding: 0.5rem 0;
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+      }
+
       .site-nav {
         text-align: center;
         padding: 1.5rem 0 1rem 0;
@@ -99,20 +135,34 @@
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
-      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+      <div class="language-switcher">
+        {% if lang == 'gu' %}
+          <a href="{{ site.baseurl }}/" class="active">ગુ</a>
+          <a href="{{ site.baseurl }}/en/">EN</a>
+        {% else %}
+          <a href="{{ site.baseurl }}/">ગુ</a>
+          <a href="{{ site.baseurl }}/en/" class="active">EN</a>
+        {% endif %}
+      </div>
+      <h1 class="project-name">{{ t.site_title }}</h1>
+      <h2 class="project-tagline">{{ t.tagline }}</h2>
     </header>
 
     <main id="content" class="main-content" role="main">
       <nav class="site-nav">
-        <a href="{{ site.baseurl }}/" {% if page.url == "/" or page.url == "/index.html" %}class="active"{% endif %}>Articles</a>
-        <a href="{{ site.baseurl }}/about" {% if page.url == "/about/" or page.url == "/about.html" %}class="active"{% endif %}>About</a>
+        {% if lang == 'gu' %}
+          <a href="{{ site.baseurl }}/" {% if page.url == "/" or page.url == "/index.html" %}class="active"{% endif %}>{{ t.nav_articles }}</a>
+          <a href="{{ site.baseurl }}/about" {% if page.url == "/about/" or page.url == "/about.html" %}class="active"{% endif %}>{{ t.nav_about }}</a>
+        {% else %}
+          <a href="{{ site.baseurl }}/en/" {% if page.url == "/en/" or page.url == "/en/index.html" %}class="active"{% endif %}>{{ t.nav_articles }}</a>
+          <a href="{{ site.baseurl }}/en/about" {% if page.url == "/en/about/" or page.url == "/en/about.html" %}class="active"{% endif %}>{{ t.nav_about }}</a>
+        {% endif %}
       </nav>
 
       {{ content }}
 
       <footer class="site-footer">
-        <span class="site-footer-credits">Gujarat Rose Society &copy; 2025</span>
+        <span class="site-footer-credits">{{ t.copyright }} &copy; 2025</span>
       </footer>
     </main>
   </body>

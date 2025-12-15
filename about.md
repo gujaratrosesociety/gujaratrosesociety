@@ -1,29 +1,30 @@
 ---
 layout: default
-title: About
+title: અમારા વિશે
+lang: gu
 ---
 
-# About Gujarat Rose Society
+# ગુજરાત રોઝ સોસાયટી વિશે
 
-The Gujarat Rose Society is a dedicated community of rose enthusiasts, gardeners, and horticulturists who share a passion for cultivating beautiful roses in Gujarat's unique climate.
+ગુજરાત રોઝ સોસાયટી ગુલાબ પ્રેમીઓ, માળીઓ અને બાગાયત નિષ્ણાતોનો એક સમર્પિત સમુદાય છે જે ગુજરાતની અનન્ય આબોહવામાં સુંદર ગુલાબ ઉગાડવાનો શોખ ધરાવે છે.
 
-## Our Mission
+## અમારું મિશન
 
-We are committed to:
-- Promoting the art and science of rose cultivation in Gujarat
-- Sharing knowledge and best practices among members
-- Developing innovative solutions for rose care tailored to local conditions
-- Building a supportive community of rose lovers
+અમે પ્રતિબદ્ધ છીએ:
+- ગુજરાતમાં ગુલાબની ખેતીની કળા અને વિજ્ઞાનને પ્રોત્સાહન આપવા
+- સભ્યો વચ્ચે જ્ઞાન અને શ્રેષ્ઠ પ્રથાઓ શેર કરવા
+- સ્થાનિક પરિસ્થિતિઓ અનુસાર ગુલાબની સંભાળ માટે નવીન ઉકેલો વિકસાવવા
+- ગુલાબ પ્રેમીઓનો સહાયક સમુદાય બનાવવા
 
-## What We Do
+## અમે શું કરીએ છીએ
 
-Our society brings together rose growers of all experience levels to:
-- Exchange cultivation techniques and tips
-- Solve common challenges faced in Gujarat's climate
-- Develop tools and resources for better rose care
-- Organize events, workshops, and garden visits
-- Celebrate the beauty and diversity of roses
+અમારી સોસાયટી તમામ અનુભવ સ્તરના ગુલાબ ઉગાડનારાઓને એકત્ર લાવે છે:
+- ખેતીની તકનીકો અને ટિપ્સનું આદાન-પ્રદાન
+- ગુજરાતની આબોહવામાં સામાન્ય પડકારો હલ કરવા
+- ગુલાબની બહેતર સંભાળ માટે સાધનો અને સંસાધનો વિકસાવવા
+- કાર્યક્રમો, વર્કશોપ અને બગીચાની મુલાકાતોનું આયોજન
+- ગુલાબની સુંદરતા અને વિવિધતાની ઉજવણી
 
-## Join Our Journey
+## અમારી સાથે જોડાઓ
 
-Whether you're a seasoned rose grower or just starting your rose garden, the Gujarat Rose Society welcomes you. Together, we're making rose cultivation more accessible and successful for everyone in Gujarat.
+પછી ભલે તમે અનુભવી ગુલાબ ઉગાડનાર હો અથવા તમારો ગુલાબ બગીચો શરૂ કરી રહ્યા હો, ગુજરાત રોઝ સોસાયટી તમારું સ્વાગત કરે છે. સાથે મળીને, અમે ગુજરાતમાં દરેક માટે ગુલાબની ખેતીને વધુ સુલભ અને સફળ બનાવી રહ્યા છીએ.

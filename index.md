@@ -1,32 +1,35 @@
 ---
 layout: default
-title: Gujarat Rose Society
+title: ગુજરાત રોઝ સોસાયટી
+lang: gu
 ---
 
-# Gujarat Rose Society
+# ગુજરાત રોઝ સોસાયટી
 
-A community of rose enthusiasts sharing knowledge, tools, and insights for rose cultivation in Gujarat.
+ગુજરાતમાં ગુલાબની ખેતી માટે જ્ઞાન, સાધનો અને આંતરદૃષ્ટિ શેર કરતો ગુલાબ પ્રેમીઓનો સમુદાય.
 
 ---
 
-## Articles & Insights
+## લેખો અને આંતરદૃષ્ટિ
 
 <div class="posts">
   {% for post in site.posts %}
+    {% if post.lang == 'gu' %}
     <article class="post">
       <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
       <div class="date">{{ post.date | date: "%B %d, %Y" }}</div>
       <div class="entry">
         {{ post.excerpt }}
       </div>
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More →</a>
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">વધુ વાંચો →</a>
     </article>
     <hr>
+    {% endif %}
   {% endfor %}
 </div>
 
 ---
 
-## About Us
+## અમારા વિશે
 
-The Gujarat Rose Society is a dedicated community of rose enthusiasts, gardeners, and horticulturists who share a passion for cultivating beautiful roses in Gujarat's unique climate. We develop innovative tools, share best practices, and support each other in growing beautiful roses.
+ગુજરાત રોઝ સોસાયટી ગુલાબ પ્રેમીઓ, માળીઓ અને બાગાયત નિષ્ણાતોનો એક સમર્પિત સમુદાય છે જે ગુજરાતની અનન્ય આબોહવામાં સુંદર ગુલાબ ઉગાડવાનો શોખ ધરાવે છે. અમે નવીન સાધનો વિકસાવીએ છીએ, શ્રેષ્ઠ પ્રથાઓ શેર કરીએ છીએ, અને સુંદર ગુલાબ ઉગાડવામાં એકબીજાને ટેકો આપીએ છીએ.
