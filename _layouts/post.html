@@ -1,0 +1,159 @@
+---
+layout: default
+---
+
+<article class="post-content">
+  <header class="post-header">
+    <h1>{{ page.title }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+      {% if page.categories.size > 0 %}
+        <span class="post-categories">
+          {% for category in page.categories %}
+            <span class="category">{{ category }}</span>
+          {% endfor %}
+        </span>
+      {% endif %}
+    </p>
+  </header>
+
+  <div class="post-body">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer">
+    <hr>
+    <p><a href="{{ site.baseurl }}/">← Back to Articles</a></p>
+  </footer>
+</article>
+
+<style>
+.post-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #eff0f1;
+}
+
+.post-header h1 {
+  margin-bottom: 0.5rem;
+  color: #155799;
+}
+
+.post-meta {
+  color: #606c71;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+.post-categories {
+  margin-left: 1rem;
+}
+
+.category {
+  background-color: #eff0f1;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  margin-left: 0.3rem;
+}
+
+.post-body {
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.post-body h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #155799;
+}
+
+.post-body h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #155799;
+}
+
+.post-body h4 {
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+  color: #155799;
+}
+
+.post-body ul, .post-body ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.post-body li {
+  margin: 0.5rem 0;
+}
+
+.post-body a {
+  color: #1e6bb8;
+  font-weight: 600;
+}
+
+.post-body a:hover {
+  text-decoration: underline;
+}
+
+.post-body blockquote {
+  border-left: 4px solid #1e6bb8;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: #606c71;
+  font-style: italic;
+}
+
+.post-body code {
+  background-color: #f3f6fa;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.post-body pre {
+  background-color: #f3f6fa;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.post-body pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.post-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+}
+
+.post-footer a {
+  color: #1e6bb8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.post-footer a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 42em) {
+  .post-body {
+    font-size: 1rem;
+  }
+
+  .post-categories {
+    display: block;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+</style>
