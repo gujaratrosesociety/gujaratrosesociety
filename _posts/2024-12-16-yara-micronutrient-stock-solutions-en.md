@@ -35,14 +35,16 @@ We've completed all the calculations and developed three different stock solutio
 
 **Usage:** Add 10 ml of this stock solution to 10 liters of water to achieve the exact Yara micronutrient ratio.
 
-### 2. Base Micronutrient Stock Solution
+### 2. Stock Solution Using Raw Ingredients
 
-**To add directly to 100 liters of final solution:**
+**To make 1 liter of stock solution:**
 - 0.65 g Base micronutrient product
 - 2.12 g Fe-EDDHA (6% Fe)
 - 0.21 g Mn-EDTA (10% Mn)
 - 0.094 g Boron (20% B)
 - 0.0080 g Ammonium Molybdate (52% Mo)
+
+**Usage:** Add 10 ml of this stock solution to 10 liters of water.
 
 ### 3. Rexolin CXK Stock Solution
 
