@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Yara Micronutrient Program: Simplified Stock Solution Method"
-date: 2025-12-16
+date: 2024-12-16
 categories: nutrition micronutrients
 lang: en
 ---
