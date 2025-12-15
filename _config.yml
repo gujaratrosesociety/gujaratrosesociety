@@ -1,0 +1,10 @@
+title: Gujarat Rose Society
+description: Official website of the Gujarat Rose Society
+theme: jekyll-theme-cayman
+
+# Site settings
+url: "https://gujaratrosesociety.github.io"
+baseurl: "/gujaratrosesociety"
+
+# Theme customization
+markdown: kramdown
