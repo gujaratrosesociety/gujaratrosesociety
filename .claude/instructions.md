@@ -26,3 +26,11 @@ Optional longer description if needed.
 - Test that layouts adapt properly for mobile, tablet, and desktop views
 - Use responsive themes and CSS frameworks
 - Include proper viewport meta tags and mobile optimization settings
+
+### Localization Support
+- Design with future multi-language support in mind
+- Use Jekyll's internationalization (i18n) capabilities where possible
+- Keep content structure flexible for translation
+- Consider using language-specific front matter or data files
+- Plan navigation and URLs to accommodate multiple languages
+- Use Unicode (UTF-8) encoding for all content files
