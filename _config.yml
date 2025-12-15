@@ -1,5 +1,5 @@
 title: Gujarat Rose Society
-description: Official website of the Gujarat Rose Society
+description: Official website of the Gujarat Rose Society - A community of rose enthusiasts in Gujarat
 theme: jekyll-theme-cayman
 
 # Site settings
@@ -8,3 +8,15 @@ baseurl: "/gujaratrosesociety"
 
 # Theme customization
 markdown: kramdown
+
+# Mobile-friendly settings
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# SEO and mobile optimization
+lang: en
+author: Gujarat Rose Society
+
+# Responsive settings (Cayman theme is mobile-responsive by default)
+# The theme includes viewport meta tags and responsive CSS
