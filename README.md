@@ -9,3 +9,4 @@ This repository hosts the official website for the Gujarat Rose Society, deploye
 ## Viewing the Website
 
 The website is accessible at: https://gujaratrosesociety.github.io/gujaratrosesociety/
+
