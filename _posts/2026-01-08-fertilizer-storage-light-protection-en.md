@@ -2,7 +2,7 @@
 layout: post
 title: "Storing Chelated Fertilizers (EDTA/EDDHA): Why Light-Proof Containers Are Essential"
 date: 2026-01-08
-post_author: Umang
+post_author: umang
 categories: fertilizer storage care maintenance
 lang: en
 ---

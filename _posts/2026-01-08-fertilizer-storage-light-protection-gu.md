@@ -2,7 +2,7 @@
 layout: post
 title: "Chelated ખાતરો સંગ્રહ (EDTA/EDDHA): પ્રકાશ-રોધક પાત્રો શા માટે આવશ્યક છે"
 date: 2026-01-08
-post_author: Umang
+post_author: umang
 categories: fertilizer storage care maintenance
 lang: gu
 ---
