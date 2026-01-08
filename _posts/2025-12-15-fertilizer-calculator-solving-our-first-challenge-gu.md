@@ -2,6 +2,7 @@
 layout: post
 title: "અમારો પ્રથમ પડકાર: ખાતર સંયોજનોને સમજવું"
 date: 2025-12-15
+author: umang
 categories: સાધનો ખાતર
 lang: gu
 ---

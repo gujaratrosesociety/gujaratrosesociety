@@ -2,6 +2,7 @@
 layout: post
 title: "ઋતુ પ્રમાણે નાઈટ્રોજન રેશિયો: ગુલાબ માટે નાઈટ્રેટ અને એમોનિયમનું શ્રેષ્ઠ પ્રમાણ"
 date: 2026-01-08
+author: umang
 categories: nutrition fertilizers nitrogen seasonal-care
 lang: gu
 ---

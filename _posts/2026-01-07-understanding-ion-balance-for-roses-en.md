@@ -2,6 +2,7 @@
 layout: post
 title: "Understanding Ion Balance for Roses: The Hidden Key to pH Stability and Nutrient Uptake"
 date: 2026-01-07
+author: umang
 categories: nutrition fertilizers pH ion-balance
 lang: en
 ---

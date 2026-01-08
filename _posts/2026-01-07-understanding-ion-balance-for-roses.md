@@ -2,6 +2,7 @@
 layout: post
 title: "ગુલાબ માટે આયન બેલેન્સ સમજવું: pH સ્થિરતા અને પોષક શોષણની છુપી ચાવી"
 date: 2026-01-07
+author: umang
 categories: પોષણ ખાતરો pH આયન-બેલેન્સ
 lang: gu
 ---

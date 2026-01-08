@@ -2,6 +2,7 @@
 layout: post
 title: "Mulder's Chart: Understanding Nutrient Interactions in Rose Cultivation"
 date: 2026-01-07
+author: umang
 categories: nutrition fertilizers nutrient-interactions mulders-chart
 lang: en
 ---
