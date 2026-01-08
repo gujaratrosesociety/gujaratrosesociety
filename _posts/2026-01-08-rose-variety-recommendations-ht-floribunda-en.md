@@ -23,70 +23,46 @@ Choosing the right rose varieties for Gujarat's unique climate—hot summers, mi
 - Good repeat flowering
 - Strong growth habit
 
-## Hybrid Tea (HT) Roses: 10 Top Recommendations
+## Hybrid Tea (HT) Roses: Top Recommendations
 
 Hybrid Teas are the classic exhibition roses with large, elegant blooms on long stems. Perfect for cutting and showing.
 
-### 1. [Variety Name 1]
-**Placeholder for actual variety details**
+### 1. Avalanche
 
-### 2. [Variety Name 2]
-**Placeholder for actual variety details**
+### 2. Solarie
 
-### 3. [Variety Name 3]
-**Placeholder for actual variety details**
+### 3. Bahurupi
 
-### 4. [Variety Name 4]
-**Placeholder for actual variety details**
+### 4. Galaxy Glow
 
-### 5. [Variety Name 5]
-**Placeholder for actual variety details**
+### 5. Monica Bellucci
 
-### 6. [Variety Name 6]
-**Placeholder for actual variety details**
+### 6. Ingrid Bergman
 
-### 7. [Variety Name 7]
-**Placeholder for actual variety details**
+### 7. Jumelia
 
-### 8. [Variety Name 8]
-**Placeholder for actual variety details**
+### 8. Hot Shot
 
-### 9. [Variety Name 9]
-**Placeholder for actual variety details**
+### 9. Beauty from Within
 
-### 10. [Variety Name 10]
-**Placeholder for actual variety details**
+### 10. Pope John Paul II
 
-## Floribunda Roses: 10 Top Recommendations
+### 11. Paradise
+
+### 12. Calcutta 300
+
+### 13. Naranga
+
+## Floribunda Roses: Top Recommendations
 
 Floribundas produce clusters of blooms with excellent repeat flowering. They're more compact and disease-resistant than HTs, making them ideal for garden displays.
 
-### 1. [Variety Name 1]
-**Placeholder for actual variety details**
+### 1. Zorina
 
-### 2. [Variety Name 2]
-**Placeholder for actual variety details**
+### 2. Abra Ka Dabra
 
-### 3. [Variety Name 3]
-**Placeholder for actual variety details**
+### 3. Singing in the Rain
 
-### 4. [Variety Name 4]
-**Placeholder for actual variety details**
+### 4. Aritra
 
-### 5. [Variety Name 5]
-**Placeholder for actual variety details**
-
-### 6. [Variety Name 6]
-**Placeholder for actual variety details**
-
-### 7. [Variety Name 7]
-**Placeholder for actual variety details**
-
-### 8. [Variety Name 8]
-**Placeholder for actual variety details**
-
-### 9. [Variety Name 9]
-**Placeholder for actual variety details**
-
-### 10. [Variety Name 10]
-**Placeholder for actual variety details**
+### 5. Toi Toi Toi
