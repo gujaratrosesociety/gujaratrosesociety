@@ -2,7 +2,7 @@
 layout: post
 title: "ખાતરનો યોગ્ય સંગ્રહ: તમારે ખાતરના પેકેટ ફરીથી સીલ કરવા શા માટે જરૂરી છે"
 date: 2026-01-08
-post_author: Umang
+post_author: umang
 categories: fertilizer storage care maintenance
 lang: gu
 ---
