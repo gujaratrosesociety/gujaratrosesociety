@@ -33,9 +33,9 @@ layout: default
           <p class="author-label">{{ t.written_by }}</p>
           <h3 class="author-name">
             {% if lang == 'gu' %}
-              <a href="{{ site.baseurl }}/authors/{{ page.author }}/">{{ author_data.name[lang] }}</a>
+              <a href="{{ site.baseurl }}/authors/{{ page.post_author }}/">{{ author_data.name[lang] }}</a>
             {% else %}
-              <a href="{{ site.baseurl }}/en/authors/{{ page.author }}/">{{ author_data.name[lang] }}</a>
+              <a href="{{ site.baseurl }}/en/authors/{{ page.post_author }}/">{{ author_data.name[lang] }}</a>
             {% endif %}
           </h3>
           <p class="author-description">{{ author_data.bio[lang] }}</p>
