@@ -64,6 +64,20 @@ Choosing the right growing medium is crucial for rose cultivation. Here's a quic
 
 Both cocopeat and cinder are significantly lighter than soil, making them easier to handle. However, this lightness can cause pots to tip over in strong winds, especially with plastic pots and large plants. For cocopeat-based mixes, prefer heavier cement or clay pots for better stability.
 
+## Salt Management
+
+**Soil / Cocopeat:**
+These media can store and hold salts over time. With heavy fertilizer use, salts build up gradually. You may need to flush (sometimes with slightly acidic water) to remove stored salts.
+
+**Cinder:**
+Doesn't hold salts much because water drains almost daily and there's more air space between particles, so salts don't accumulate quickly.
+
+**Best Practices:**
+- Always maintain good drainage (especially in soil/cocopeat)
+- Flush with plain water regularly (every 2–4 weeks) to prevent salt buildup
+- Avoid over-fertilizing; use lower doses with more frequent feeding
+- **Warning signs:** White crust on soil surface, leaf tip burn, or slow growth means flush immediately and reduce EC
+
 ## Recommendation
 
 - **Exhibition growers:** Cinder (if budget allows)
