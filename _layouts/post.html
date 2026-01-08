@@ -10,16 +10,6 @@ layout: default
     <h1>{{ page.title }}</h1>
     <p class="post-meta">
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
-      {% if page.author %}
-        <span class="post-author">
-          • {{ t.written_by }}
-          {% if lang == 'gu' %}
-            <a href="{{ site.baseurl }}/authors/{{ page.author }}/">{{ page.author }}</a>
-          {% else %}
-            <a href="{{ site.baseurl }}/en/authors/{{ page.author }}/">{{ page.author }}</a>
-          {% endif %}
-        </span>
-      {% endif %}
       {% if page.categories.size > 0 %}
         <span class="post-categories">
           {% for category in page.categories %}
@@ -33,6 +23,26 @@ layout: default
   <div class="post-body">
     {{ content }}
   </div>
+
+  {% if page.author %}
+    {% assign author_data = site.data.authors[page.author] %}
+    <div class="author-bio">
+      <div class="author-bio-content">
+        <img src="{{ site.baseurl }}{{ author_data.photo }}" alt="{{ author_data.name[lang] }}" class="author-photo">
+        <div class="author-info">
+          <p class="author-label">{{ t.written_by }}</p>
+          <h3 class="author-name">
+            {% if lang == 'gu' %}
+              <a href="{{ site.baseurl }}/authors/{{ page.author }}/">{{ author_data.name[lang] }}</a>
+            {% else %}
+              <a href="{{ site.baseurl }}/en/authors/{{ page.author }}/">{{ author_data.name[lang] }}</a>
+            {% endif %}
+          </h3>
+          <p class="author-description">{{ author_data.bio[lang] }}</p>
+        </div>
+      </div>
+    </div>
+  {% endif %}
 
   <footer class="post-footer">
     <hr>
@@ -65,20 +75,6 @@ layout: default
   color: #606c71;
   font-size: 0.95rem;
   margin-top: 0.5rem;
-}
-
-.post-author {
-  margin-left: 0.5rem;
-}
-
-.post-author a {
-  color: #1e6bb8;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.post-author a:hover {
-  text-decoration: underline;
 }
 
 .post-categories {
@@ -161,8 +157,68 @@ layout: default
   padding: 0;
 }
 
-.post-footer {
+.author-bio {
   margin-top: 3rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #155799;
+}
+
+.author-bio-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.author-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.author-info {
+  flex: 1;
+}
+
+.author-label {
+  font-size: 0.85rem;
+  color: #606c71;
+  margin: 0 0 0.3rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.author-name {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  color: #155799;
+}
+
+.author-name a {
+  color: #155799;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.author-name a:hover {
+  color: #1e6bb8;
+  text-decoration: underline;
+}
+
+.author-description {
+  margin: 0;
+  color: #606c71;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.post-footer {
+  margin-top: 2rem;
   padding-top: 2rem;
 }
 
@@ -185,6 +241,16 @@ layout: default
     display: block;
     margin-left: 0;
     margin-top: 0.5rem;
+  }
+
+  .author-bio-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .author-photo {
+    width: 100px;
+    height: 100px;
   }
 }
 </style>
