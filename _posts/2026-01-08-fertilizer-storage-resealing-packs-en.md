@@ -11,7 +11,7 @@ One of the most overlooked aspects of rose care is proper fertilizer storage. Ma
 
 > **Disclaimer:** The information provided here is based on general experiences and practices. Every garden has unique conditions (climate, water quality, variety selection, etc.). Use your judgment and adapt these recommendations to your specific situation. Don't follow blindly—observe your plants and adjust accordingly.
 
-![Fertilizer pack sealed with a clip](/assets/images/fertilizer-clip.jpg)
+![Fertilizer pack sealed with a clip]({{ site.baseurl }}/assets/images/fertilizer-clip.jpg)
 
 ## The Moisture Problem
 
