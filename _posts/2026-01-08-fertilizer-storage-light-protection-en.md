@@ -137,12 +137,6 @@ The best approach is simple:
 4. **Check** before use for any sediment or color change
 5. **Discard** if degradation is visible
 
-## The Bottom Line
-
-Light is the enemy of chelated nutrients. Just as you wouldn't leave your roses in complete darkness (they need light to grow), you shouldn't leave your chelated fertilizers in the light (they degrade when exposed).
-
-**A simple storage change can mean the difference between feeding your roses effective nutrients or pouring expensive rust-water on them.**
-
 ## Note
 
 Remember: Proper storage extends the life and effectiveness of your fertilizers. Light-proof containers are a small investment that protects your larger investment in quality nutrients and ensures your roses get what you're paying for.
