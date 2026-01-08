@@ -2,7 +2,7 @@
 layout: post
 title: "Proper Fertilizer Storage: Why You Must Reseal Your Fertilizer Packs"
 date: 2026-01-08
-post_author: jay
+post_author: Umang
 categories: fertilizer storage care maintenance
 lang: en
 ---
