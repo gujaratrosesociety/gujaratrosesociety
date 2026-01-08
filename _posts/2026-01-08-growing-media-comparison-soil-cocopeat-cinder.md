@@ -46,6 +46,20 @@ Choosing the right growing medium is crucial for rose cultivation. Here's a quic
 - Higher cost
 - Increased fertilizer requirements
 
+## Preparation Tips
+
+### Soil
+- **Sandy soil:** Add about 30% cow-dung compost
+- **Clayey soil:** Mix in sand + cow-dung compost to loosen it
+
+### Cocopeat
+- Wash cocopeat with low-TDS water at least 3 times
+- Water TDS should be around 100–200
+
+### Cinder
+- Wash cinder 2–3 times
+- Add MM (microbes/microbial mix) for beneficial bacteria
+
 ## Weight Considerations
 
 Both cocopeat and cinder are significantly lighter than soil, making them easier to handle. However, this lightness can cause pots to tip over in strong winds, especially with plastic pots and large plants. For cocopeat-based mixes, prefer heavier cement or clay pots for better stability.
