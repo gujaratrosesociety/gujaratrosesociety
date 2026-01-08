@@ -53,12 +53,12 @@ Usually referred to as "conventional" or "synthetic" products, these are man-mad
 
 ## 2. Quick Comparison Table
 
-| Category | Primary Source | Example | Common Use |
-|----------|---------------|---------|------------|
-| **Bio** | Bacteria, Fungi, Minerals | *Bacillus thuringiensis* (Bt) | Insecticide |
-| **Botanical** | Plants | Pyrethrins, Neem Oil | Insecticide/Acaricide |
-| **Organic** | Natural (Regulatory list) | Sulfur, Copper | Fungicide/Acaricide |
-| **Chemical** | Synthetic/Man-made | Bifenthrin, Malathion | Broad-spectrum |
+| Category | Primary Source | Example |
+|----------|---------------|---------|
+| **Bio** | Bacteria, Fungi, Minerals | *Bacillus thuringiensis* (Bt) |
+| **Botanical** | Plants | Pyrethrins, Neem Oil |
+| **Organic** | Natural (Regulatory list) | Sulfur, Copper |
+| **Chemical** | Synthetic/Man-made | Bifenthrin, Malathion |
 
 ---
 
