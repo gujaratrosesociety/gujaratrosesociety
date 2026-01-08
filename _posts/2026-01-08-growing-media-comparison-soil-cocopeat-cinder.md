@@ -9,6 +9,8 @@ lang: en
 
 Choosing the right growing medium is crucial for rose cultivation. Here's a quick comparison of three popular options.
 
+> **Disclaimer:** The information provided here is based on general experiences and practices. Every garden has unique conditions (climate, water quality, variety selection, etc.). Use your judgment and adapt these recommendations to your specific situation. Don't follow blindly—observe your plants and adjust accordingly.
+
 ## Soil
 
 **Pros:**
@@ -34,6 +36,8 @@ Choosing the right growing medium is crucial for rose cultivation. Here's a quic
 
 ## Cinder
 
+**Note:** Use 2 to 8 mm cinder size for optimal results.
+
 **Pros:**
 - Competition-level medium for exhibition roses
 - Strong root and shoot growth (especially top layer)
@@ -51,6 +55,7 @@ Choosing the right growing medium is crucial for rose cultivation. Here's a quic
 ### Soil
 - **Sandy soil:** Add about 30% cow-dung compost
 - **Clayey soil:** Mix in sand + cow-dung compost to loosen it
+- **Alternative mix:** Some growers prefer using soil + worm compost + perlite for improved drainage and nutrition
 
 ### Cocopeat
 - Wash cocopeat with low-TDS water at least 3 times
