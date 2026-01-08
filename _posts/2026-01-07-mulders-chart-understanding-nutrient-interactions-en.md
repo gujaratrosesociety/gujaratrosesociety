@@ -7,7 +7,7 @@ categories: nutrition fertilizers nutrient-interactions mulders-chart
 lang: en
 ---
 
-![Mulder's Chart showing nutrient interactions](/assets/images/mulders-chart.jpg)
+![Mulder's Chart showing nutrient interactions]({{ site.baseurl }}/assets/images/mulders-chart.jpg)
 
 Mulder's Chart is a visual roadmap that illustrates how different soil nutrients interact with one another, either by aiding (synergism) or hindering (antagonism) their uptake. In rose cultivation, it is a critical tool for maintaining the precise nutritional balance required for vigorous blooms and disease resistance.
 
