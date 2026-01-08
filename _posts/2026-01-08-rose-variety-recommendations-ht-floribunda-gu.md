@@ -2,7 +2,7 @@
 layout: post
 title: "ગુલાબની જાતોની ભલામણો: ગુજરાતના હવામાન માટે શ્રેષ્ઠ HT અને ફ્લોરીબન્ડા"
 date: 2026-01-08
-author: jay
+post_author: jay
 categories: varieties recommendations hybrid-tea floribunda
 lang: gu
 ---

@@ -18,7 +18,7 @@ permalink: /authors/jay/
 
 ## જય દ્વારા લેખો
 
-{% assign author_posts = site.posts | where: "author", "jay" | where: "lang", "gu" %}
+{% assign author_posts = site.posts | where: "post_author", "jay" | where: "lang", "gu" %}
 {% for post in author_posts %}
 - [{{ post.title }}]({{ post.url | relative_url }}) - {{ post.date | date: "%B %d, %Y" }}
 {% endfor %}

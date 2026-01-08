@@ -24,8 +24,8 @@ layout: default
     {{ content }}
   </div>
 
-  {% if page.author %}
-    {% assign author_data = site.data.authors[page.author] %}
+  {% if page.post_author %}
+    {% assign author_data = site.data.authors[page.post_author] %}
     <div class="author-bio">
       <div class="author-bio-content">
         <img src="{{ site.baseurl }}{{ author_data.photo }}" alt="{{ author_data.name[lang] }}" class="author-photo">

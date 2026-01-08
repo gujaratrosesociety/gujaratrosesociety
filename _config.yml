@@ -15,7 +15,19 @@ plugins:
   - jekyll-sitemap
 
 # SEO and mobile optimization
+# Note: Using post_author instead of author to avoid conflicts with jekyll-seo-tag
 author: Gujarat Rose Society
+
+# Jekyll SEO Tag settings
+twitter:
+  username: gujaratrosesociety
+  card: summary
+
+# Social profiles
+social:
+  name: Gujarat Rose Society
+  links:
+    - https://github.com/gujaratrosesociety
 
 # Language settings
 default_lang: gu

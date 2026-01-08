@@ -2,7 +2,7 @@
 layout: post
 title: "Rose Variety Recommendations: Top HT and Floribunda for Gujarat Weather"
 date: 2026-01-08
-author: jay
+post_author: jay
 categories: varieties recommendations hybrid-tea floribunda
 lang: en
 ---

@@ -18,7 +18,7 @@ permalink: /en/authors/jay/
 
 ## Articles by Jay
 
-{% assign author_posts = site.posts | where: "author", "jay" | where: "lang", "en" %}
+{% assign author_posts = site.posts | where: "post_author", "jay" | where: "lang", "en" %}
 {% for post in author_posts %}
 - [{{ post.title }}]({{ post.url | relative_url }}) - {{ post.date | date: "%B %d, %Y" }}
 {% endfor %}

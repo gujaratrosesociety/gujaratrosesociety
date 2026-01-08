@@ -17,7 +17,7 @@ permalink: /en/authors/umang/
 
 ## Articles by Umang
 
-{% assign author_posts = site.posts | where: "author", "umang" | where: "lang", "en" %}
+{% assign author_posts = site.posts | where: "post_author", "umang" | where: "lang", "en" %}
 {% for post in author_posts %}
 - [{{ post.title }}]({{ post.url | relative_url }}) - {{ post.date | date: "%B %d, %Y" }}
 {% endfor %}

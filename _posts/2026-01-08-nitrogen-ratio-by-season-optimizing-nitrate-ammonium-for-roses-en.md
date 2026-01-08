@@ -2,7 +2,7 @@
 layout: post
 title: "Nitrogen Ratio by Season: Optimizing Nitrate to Ammonium for Roses"
 date: 2026-01-08
-author: umang
+post_author: umang
 categories: nutrition fertilizers nitrogen seasonal-care
 lang: en
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: "Our First Challenge: Understanding Fertilizer Combinations"
 date: 2025-12-15
-author: umang
+post_author: umang
 categories: tools fertilization
 lang: en
 ---
