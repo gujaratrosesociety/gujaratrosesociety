@@ -11,7 +11,7 @@ Most fertilizer mixes—especially with tap or well water—tend to be alkaline 
 
 **To lower pH (pH Down):**
 
-- **Organic Acids:** Citric acid is a gentle choice for minor adjustments.
+- **Organic Acids:** Citric acid or vinegar are gentle choices for minor adjustments.
 - **Commercial pH Down:** Utkarsh, Katyayani, and Radongrow all make pH Down in liquid form. Radongrow also offers a powder format.
 - **Phosphoric Acid:** Most cost-effective, but adds phosphorus (P) to your mix. Account for this in your fertilizer calculations.
 
