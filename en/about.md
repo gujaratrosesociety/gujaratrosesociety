@@ -29,3 +29,5 @@ Our society brings together rose growers of all experience levels to:
 ## Join Our Journey
 
 Whether you're a seasoned rose grower or just starting your rose garden, the Gujarat Rose Society welcomes you. Together, we're making rose cultivation more accessible and successful for everyone in Gujarat.
+
+[Join our WhatsApp group](https://chat.whatsapp.com/GBOnTuOHmn80wFHQqAqTED)
