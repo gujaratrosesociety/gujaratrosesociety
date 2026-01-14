@@ -20,3 +20,5 @@ This balanced combination gives you the growth benefits of GA while the Cytokini
 - Root application
 
 **Dosage:** 0.4 to 0.6 ml per liter of water
+
+**Note:** Utkarsh also makes a product called "Bhim" (without "Plus") which is different from Bhim Plus. Make sure you get the correct product.
