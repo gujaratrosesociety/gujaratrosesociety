@@ -7,10 +7,15 @@ categories: tips fertilizer micronutrients
 lang: en
 ---
 
-Here are some popular micronutrient products for roses:
+You need to buy any one of these micronutrient products for your roses:
 
-**1. Utkarsh Double Combi** - Contains molybdenum, which many other products lack.
+**EDTA Chelated Micronutrients**
+- Utkarsh Double Combi
+- PR Agro Rexolin CXK
 
-**2. Rexolin CXK** (by PR Agro) - A widely used option. Note: Avoid Rexolin CXK II.
+Many other companies make similar EDTA chelated micronutrient mixes.
 
-**3. Amino Chelated Micronutrients** - For example, Utkarsh Ampro Combi. Many companies make amino chelated micronutrients.
+**Amino Chelated Micronutrients**
+- Utkarsh Ampro Combi
+
+Many companies make amino chelated micronutrient mixes as well.
