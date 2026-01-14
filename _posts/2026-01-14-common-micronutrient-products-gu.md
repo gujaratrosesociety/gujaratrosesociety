@@ -19,3 +19,5 @@ lang: gu
 - Utkarsh Ampro Combi
 
 ઘણી કંપનીઓ એમિનો કિલેટેડ માઇક્રોન્યુટ્રિએન્ટ મિક્સ પણ બનાવે છે.
+
+સ્પ્રે કરતા પહેલા [તમારા ફોલિયર સોલ્યુશનનું pH એડજસ્ટ કરવાનું]({{ site.baseurl }}/ખાતર/ફોલિયર/ph/ટીપ્સ/2026/01/14/why-ph-balance-matters-for-foliar-sprays-gu.html) યાદ રાખો.
