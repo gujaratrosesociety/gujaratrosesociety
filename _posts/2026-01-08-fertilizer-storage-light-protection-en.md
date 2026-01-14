@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Storing Chelated Fertilizers (EDTA/EDDHA): Why Light-Proof Containers Are Essential"
+title: "Storing Chelated Fertilizers (EDTA/EDDHA/Amino): Why Light-Proof Containers Are Essential"
 date: 2026-01-08
 post_author: umang
 categories: fertilizer storage care maintenance
@@ -28,8 +28,9 @@ This isn't just about iron. Light exposure damages many chelated micronutrients 
 - **Fe-EDTA** (Iron EDTA)
 - **Fe-DTPA** (Iron DTPA)
 - **Fe-EDDHA** (Iron EDDHA)
+- **Amino Acid Chelates** (Iron, Zinc, Calcium, etc. bound to amino acids like glycine)
 
-Think of chelates as a "protective claw" that holds onto metal nutrients and keeps them soluble in water.
+Think of chelates as a "protective claw" that holds onto metal nutrients and keeps them soluble in water. This applies equally to synthetic chelates (EDTA, DTPA, EDDHA) and natural amino acid chelates.
 
 ### Double Trouble: Hygroscopic AND Light Sensitive
 
@@ -49,8 +50,9 @@ This means chelated fertilizers need containers that are **both airtight AND lig
 When chelated nutrients are exposed to UV and blue light radiation:
 
 **1. Photodegradation**
-- Light energy breaks the chemical bonds between the chelating agent (like EDTA) and the metal ion (like Iron)
+- Light energy breaks the chemical bonds between the chelating agent (like EDTA or amino acids) and the metal ion (like Iron)
 - The protective "claw" is destroyed
+- For amino acid chelates, the amino acid itself can also degrade under light exposure
 
 **2. Precipitation**
 - Once the chelate bond is broken, the metal is no longer held in soluble form
@@ -117,8 +119,9 @@ Since chelated fertilizers are both hygroscopic and light-sensitive, your contai
 
 **High Priority (Very Light Sensitive):**
 - Iron chelates (Fe-EDTA, Fe-DTPA, Fe-EDDHA)
+- Amino acid chelated micronutrients (Glycine chelates, etc.)
 - Chelated micronutrient mixes
-- Any solution containing EDTA, DTPA, or EDDHA
+- Any solution containing EDTA, DTPA, EDDHA, or amino acid chelates
 
 **Moderate Priority:**
 - Complete micronutrient blends
