@@ -15,3 +15,12 @@ umang:
     en: "Rose enthusiast."
     gu: "ગુલાબ પ્રેમી."
   photo: "/assets/images/authors/umang.jpg"
+
+krunal:
+  name:
+    en: "Krunal"
+    gu: "કૃણાલ"
+  bio:
+    en: "Rose enthusiast."
+    gu: "ગુલાબ પ્રેમી."
+  photo: "/assets/images/authors/krunal.jpg"
