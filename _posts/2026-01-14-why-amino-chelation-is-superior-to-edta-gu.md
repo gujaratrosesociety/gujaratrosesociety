@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "એમિનો કિલેશન EDTA કરતાં શા માટે શ્રેષ્ઠ છે"
-date: 2026-01-15
+date: 2026-01-14
 post_author: jay
 categories: fertilizer micronutrients chelation
 lang: gu

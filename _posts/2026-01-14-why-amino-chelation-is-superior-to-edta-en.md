@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Why Amino Chelation is Superior to EDTA"
-date: 2026-01-15
+date: 2026-01-14
 post_author: jay
 categories: fertilizer micronutrients chelation
 lang: en
