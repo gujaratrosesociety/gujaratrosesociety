@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Leaf Burn After EDTA Foliar Spray?"
+title: "Leaf Burn After Foliar Spray?"
 date: 2026-01-14
 post_author: umang
-categories: fertilizers foliar micronutrients tips
+categories: fertilizers foliar micronutrients pesticides tips
 lang: en
 ---
 
-Seeing leaf burn after foliar spraying EDTA micronutrients? Two common causes:
+Seeing leaf burn after foliar spraying micronutrients or pesticides? Two common causes:
 
 1. **High TDS water** - If your water is 1500+ TDS, the dissolved salts can damage leaves. Switch to RO water for foliar applications.
 
