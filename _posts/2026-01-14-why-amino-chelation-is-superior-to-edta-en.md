@@ -21,4 +21,3 @@ Amino acid chelates offer several advantages over EDTA chelates for delivering m
 | Proven Efficiency | Maximum nutrient uptake with limited environmental losses | Lower nutrient uptake with higher environmental losses |
 | Biodegradability | Easily biodegradable | Resistant to biodegradation |
 | Safety | Entirely safe for plants, animals, humans, & the environment | May become phytotoxic at higher concentrations, potentially contributing to heavy metal bioavailability |
-| Costing | Lower dosages result in lower fertilizer costs | Higher dosages lead to increased fertilizer costs |
