@@ -5,6 +5,7 @@ date: 2026-01-14
 post_author: umang
 categories: fertilizers foliar pH tips
 lang: en
+section: foliar-spray
 ---
 
 You invest time and money into quality foliar fertilizers and pest controls, but if you aren't checking the pH of your spray water, you might be wasting that investment.

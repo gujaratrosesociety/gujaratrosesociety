@@ -5,6 +5,7 @@ date: 2026-01-14
 post_author: umang
 categories: tips water tds
 lang: en
+section: tools-tips
 ---
 
 Many TDS meters have x10 or x100 indicators that are easy to miss.

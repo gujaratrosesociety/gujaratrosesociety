@@ -5,6 +5,7 @@ date: 2024-12-16
 post_author: umang
 categories: nutrition micronutrients
 lang: en
+section: nutrition
 ---
 
 The scientific document published by Yara on nutrient solutions for greenhouse crops provides valuable guidance for rose cultivation. This reference material has proven extremely useful for rose growers seeking professional-grade feeding programs.

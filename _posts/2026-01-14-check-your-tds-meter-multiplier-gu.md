@@ -5,6 +5,7 @@ date: 2026-01-14
 post_author: umang
 categories: ટીપ્સ પાણી tds
 lang: gu
+section: tools-tips
 ---
 
 ઘણા TDS મીટરમાં x10 અથવા x100 ઇન્ડિકેટર હોય છે જે જોવાનું ચૂકી જવાય છે.

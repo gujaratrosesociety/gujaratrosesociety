@@ -5,6 +5,7 @@ date: 2026-01-08
 post_author: umang
 categories: pest-management disease-control spraying knowledge
 lang: en
+section: pest-disease
 ---
 
 When choosing an insecticide, fungicide, or acaricide, understanding how it moves (or doesn't move) through the plant is just as important as knowing what pest or disease it targets. The way a product redistributes inside or around your roses determines which pests you can reach, how thoroughly you need to spray, and whether a root drench or foliar spray is the right approach.

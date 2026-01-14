@@ -5,6 +5,7 @@ date: 2026-01-08
 post_author: umang
 categories: pest-management pesticides organic biocontrol fungicides bactericides
 lang: gu
+section: pest-disease
 ---
 
 બાગાયત અને જંતુ વ્યવસ્થાપનની દુનિયામાં, આ શબ્દો વારંવાર ઓવરલેપ થાય છે, જે મૂંઝવણભર્યું હોઈ શકે છે. આને સ્પષ્ટ કરવા માટે, ઉત્પાદનના સ્રોત અને તેની નિયમનકારી સ્થિતિ વચ્ચે તફાવત કરવો મદદરૂપ છે.

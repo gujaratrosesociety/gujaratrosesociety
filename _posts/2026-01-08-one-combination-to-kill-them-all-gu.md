@@ -5,6 +5,7 @@ date: 2026-01-08
 post_author: umang
 categories: pest-management disease-control organic biocontrol spraying
 lang: gu
+section: pest-disease
 ---
 
 આ સંયોજન મોટાભાગની ફૂગની સમસ્યાઓ, થ્રિપ્સ, એફિડ્સ અને અન્ય જંતુઓનું ધ્યાન રાખે છે. આ કોઈ ચમત્કાર નથી, પરંતુ જ્યારે યોગ્ય રીતે ઉપયોગ કરવામાં આવે છે, ત્યારે તે તમારા ગુલાબની સંભાળના શસ્ત્રાગારમાં એક શક્તિશાળી સાધન છે.

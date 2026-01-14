@@ -5,6 +5,7 @@ date: 2026-01-11
 post_author: umang
 categories: tips feeding fertilizers efficiency
 lang: en
+section: tools-tips
 ---
 
 Hi everyone, I wanted to share a change I've made to my feeding routine that has made a huge difference.

@@ -5,6 +5,7 @@ date: 2026-01-08
 post_author: umang
 categories: fertilizer storage care maintenance
 lang: en
+section: nutrition
 ---
 
 One of the most overlooked aspects of rose care is proper fertilizer storage. Many gardeners lose effectiveness of their fertilizers simply because they don't reseal the packs properly after each use.

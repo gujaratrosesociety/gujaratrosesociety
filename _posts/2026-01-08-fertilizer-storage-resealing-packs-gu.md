@@ -5,6 +5,7 @@ date: 2026-01-08
 post_author: umang
 categories: fertilizer storage care maintenance
 lang: gu
+section: nutrition
 ---
 
 ગુલાબની સંભાળનું સૌથી અવગણવામાં આવેલ પાસું યોગ્ય ખાતરનો સંગ્રહ છે. ઘણા માળીઓ તેમના ખાતરની અસરકારકતા ગુમાવે છે માત્ર એટલા માટે કે તેઓ દરેક ઉપયોગ પછી પેકેટને યોગ્ય રીતે ફરીથી સીલ કરતા નથી.

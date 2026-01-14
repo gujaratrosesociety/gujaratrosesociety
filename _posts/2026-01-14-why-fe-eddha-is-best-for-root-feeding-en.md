@@ -5,6 +5,7 @@ date: 2026-01-14
 post_author: umang
 categories: fertilizers iron micronutrients
 lang: en
+section: nutrition
 ---
 
 For rose growers wanting to keep their plants vibrant and green, the choice of iron chelate matters—especially for root feeding.

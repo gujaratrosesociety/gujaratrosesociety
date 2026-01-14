@@ -5,6 +5,7 @@ date: 2026-01-14
 post_author: umang
 categories: tips summer fertilizer foliar
 lang: en
+section: seasonal-care
 ---
 
 In summer heat, silicon fertilizer can help protect your rose leaves from stress. Silicon provides mechanical strength to plant cells, helping them fight heat, reduce moisture loss, and resist pathogens and insects.

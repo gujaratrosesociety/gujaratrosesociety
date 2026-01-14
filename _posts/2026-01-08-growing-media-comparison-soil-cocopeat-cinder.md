@@ -5,6 +5,7 @@ date: 2026-01-08
 post_author: jay
 categories: growing-media soil cocopeat cinder potting
 lang: en
+section: getting-started
 ---
 
 Choosing the right growing medium is crucial for rose cultivation. Here's a quick comparison of three popular options.

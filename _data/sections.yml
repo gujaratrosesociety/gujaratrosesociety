@@ -1,0 +1,56 @@
+# Guide sections for organizing articles
+# Each section has an id, order, and translations
+
+- id: getting-started
+  order: 1
+  en:
+    title: "Getting Started"
+    description: "Basics for new rose growers"
+  gu:
+    title: "શરૂઆત"
+    description: "નવા ગુલાબ ઉગાડનારાઓ માટે મૂળભૂત માહિતી"
+
+- id: nutrition
+  order: 2
+  en:
+    title: "Nutrition & Fertilizers"
+    description: "Understanding plant nutrition and fertilizer management"
+  gu:
+    title: "પોષણ અને ખાતર"
+    description: "છોડના પોષણ અને ખાતર વ્યવસ્થાપનની સમજ"
+
+- id: foliar-spray
+  order: 3
+  en:
+    title: "Foliar Sprays"
+    description: "Best practices for foliar application"
+  gu:
+    title: "પર્ણ છંટકાવ"
+    description: "પર્ણ છંટકાવ માટેની શ્રેષ્ઠ પદ્ધતિઓ"
+
+- id: pest-disease
+  order: 4
+  en:
+    title: "Pest & Disease Management"
+    description: "Identifying and controlling pests and diseases"
+  gu:
+    title: "જીવાત અને રોગ વ્યવસ્થાપન"
+    description: "જીવાત અને રોગોની ઓળખ અને નિયંત્રણ"
+
+- id: seasonal-care
+  order: 5
+  en:
+    title: "Seasonal Care"
+    description: "Protecting roses through Gujarat's seasons"
+  gu:
+    title: "મોસમી સંભાળ"
+    description: "ગુજરાતની ઋતુઓમાં ગુલાબનું રક્ષણ"
+
+- id: tools-tips
+  order: 6
+  en:
+    title: "Tools & Tips"
+    description: "Practical advice and equipment recommendations"
+  gu:
+    title: "સાધનો અને ટિપ્સ"
+    description: "વ્યવહારુ સલાહ અને સાધનોની ભલામણો"

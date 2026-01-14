@@ -5,6 +5,7 @@ date: 2026-01-14
 post_author: jay
 categories: tips growing sunlight
 lang: en
+section: getting-started
 ---
 
 Different rose types have different sunlight needs:

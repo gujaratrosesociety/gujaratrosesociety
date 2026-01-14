@@ -5,6 +5,7 @@ date: 2026-01-08
 post_author: jay
 categories: growing-media soil cocopeat cinder potting
 lang: gu
+section: getting-started
 ---
 
 ગુલાબની ખેતી માટે યોગ્ય ઉગાડવાનું માધ્યમ પસંદ કરવું મહત્વપૂર્ણ છે. અહીં ત્રણ લોકપ્રિય વિકલ્પોની ઝડપી તુલના છે.

@@ -5,6 +5,7 @@ date: 2026-01-08
 post_author: umang
 categories: nutrition fertilizers nitrogen seasonal-care
 lang: en
+section: nutrition
 ---
 
 If your roses grow vigorously in summer but struggle in winter with the same fertilizer, the culprit is likely **the ratio of nitrate to ammonium nitrogen**.

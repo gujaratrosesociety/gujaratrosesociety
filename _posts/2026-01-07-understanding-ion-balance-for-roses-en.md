@@ -5,6 +5,7 @@ date: 2026-01-07
 post_author: umang
 categories: nutrition fertilizers pH ion-balance
 lang: en
+section: nutrition
 ---
 
 If you've ever wondered why your roses show calcium or magnesium deficiency despite perfect PPM readings, or why your pH keeps drifting even though you adjust it daily, the answer might lie in something most growers overlook: **ion balance**.

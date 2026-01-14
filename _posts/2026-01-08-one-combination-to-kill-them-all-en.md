@@ -5,6 +5,7 @@ date: 2026-01-08
 post_author: umang
 categories: pest-management disease-control organic biocontrol spraying
 lang: en
+section: pest-disease
 ---
 
 This combination takes care of most fungal problems, thrips, aphids, and other insects. It's not a silver bullet, but when used correctly, it's a powerful tool in your rose care arsenal.

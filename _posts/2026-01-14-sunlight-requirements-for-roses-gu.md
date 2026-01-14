@@ -5,6 +5,7 @@ date: 2026-01-14
 post_author: jay
 categories: ટીપ્સ ઉગાડવું સૂર્યપ્રકાશ
 lang: gu
+section: getting-started
 ---
 
 વિવિધ ગુલાબના પ્રકારોને અલગ અલગ સૂર્યપ્રકાશની જરૂર છે:

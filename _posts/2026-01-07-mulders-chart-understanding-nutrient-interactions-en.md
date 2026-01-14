@@ -5,6 +5,7 @@ date: 2026-01-07
 post_author: umang
 categories: nutrition fertilizers nutrient-interactions mulders-chart
 lang: en
+section: nutrition
 ---
 
 ![Mulder's Chart showing nutrient interactions]({{ site.baseurl }}/assets/images/mulders-chart.jpg)

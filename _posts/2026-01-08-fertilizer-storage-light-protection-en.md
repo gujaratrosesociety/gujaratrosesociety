@@ -5,6 +5,7 @@ date: 2026-01-08
 post_author: umang
 categories: fertilizer storage care maintenance
 lang: en
+section: nutrition
 ---
 
 Many rose growers invest in quality fertilizers but unknowingly reduce their effectiveness by storing them in clear containers or exposing them to light. Scientific research shows that light exposure can destroy the very nutrients your roses need most.

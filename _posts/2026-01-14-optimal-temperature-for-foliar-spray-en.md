@@ -5,6 +5,7 @@ date: 2026-01-14
 post_author: krunal
 categories: fertilizers foliar pesticides tips
 lang: en
+section: foliar-spray
 ---
 
 Foliar sprays—whether nutrients, pesticides, fungicides, bactericides, or acaricides—are temperature dependent. For optimal absorption, spray when temperatures are between 21-28°C (70-82°F).

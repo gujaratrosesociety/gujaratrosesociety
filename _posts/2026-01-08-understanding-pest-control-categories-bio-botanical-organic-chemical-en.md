@@ -5,6 +5,7 @@ date: 2026-01-08
 post_author: umang
 categories: pest-management pesticides organic biocontrol fungicides bactericides
 lang: en
+section: pest-disease
 ---
 
 In the world of horticulture and pest management, these terms often overlap, which can be confusing. To clear this up, it is helpful to distinguish between the source of the product and its regulatory status.

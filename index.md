@@ -10,23 +10,22 @@ lang: gu
 
 ---
 
-## લેખો અને આંતરદૃષ્ટિ
+## ગુલાબ ઉગાડવાની માર્ગદર્શિકા
 
-<div class="posts">
-  {% for post in site.posts %}
-    {% if post.lang == 'gu' %}
-    <article class="post">
-      <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-      <div class="date">{{ post.date | date: "%B %d, %Y" }}</div>
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">વધુ વાંચો →</a>
-    </article>
-    <hr>
-    {% endif %}
-  {% endfor %}
+{% for section in site.data.sections %}
+{% assign section_posts = site.posts | where: "lang", "gu" | where: "section", section.id %}
+{% if section_posts.size > 0 %}
+<div class="guide-section">
+  <h3 class="section-title">{{ section.gu.title }}</h3>
+  <p class="section-description">{{ section.gu.description }}</p>
+  <ul class="section-posts">
+    {% for post in section_posts %}
+    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
 </div>
+{% endif %}
+{% endfor %}
 
 ---
 

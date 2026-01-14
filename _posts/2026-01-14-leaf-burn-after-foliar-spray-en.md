@@ -5,6 +5,7 @@ date: 2026-01-14
 post_author: umang
 categories: fertilizers foliar micronutrients pesticides tips
 lang: en
+section: foliar-spray
 ---
 
 Seeing leaf burn after foliar spraying micronutrients or pesticides? Two common causes:

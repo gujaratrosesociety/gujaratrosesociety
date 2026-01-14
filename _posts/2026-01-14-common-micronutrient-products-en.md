@@ -5,6 +5,7 @@ date: 2026-01-14
 post_author: jay
 categories: tips fertilizer micronutrients
 lang: en
+section: nutrition
 ---
 
 You need to buy any one of these micronutrient products for your roses:

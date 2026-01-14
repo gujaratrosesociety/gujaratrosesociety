@@ -5,6 +5,7 @@ date: 2026-01-08
 post_author: jay
 categories: varieties recommendations hybrid-tea floribunda
 lang: en
+section: getting-started
 ---
 
 Choosing the right rose varieties for Gujarat's unique climate—hot summers, mild winters, and high humidity—is crucial for success. Not all roses thrive in our conditions, but these proven performers will give you beautiful blooms year-round.

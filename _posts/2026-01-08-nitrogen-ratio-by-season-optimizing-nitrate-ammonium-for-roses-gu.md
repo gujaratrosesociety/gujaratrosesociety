@@ -5,6 +5,7 @@ date: 2026-01-08
 post_author: umang
 categories: nutrition fertilizers nitrogen seasonal-care
 lang: gu
+section: nutrition
 ---
 
 જો તમારા ગુલાબ ઉનાળામાં ખૂબ સારી રીતે વધે છે પરંતુ શિયાળામાં એ જ ખાતર વડે સંઘર્ષ કરે છે, તો કદાચ **નાઈટ્રેટ અને એમોનિયમ નાઈટ્રોજનના પ્રમાણ** તેનું કારણ છે.

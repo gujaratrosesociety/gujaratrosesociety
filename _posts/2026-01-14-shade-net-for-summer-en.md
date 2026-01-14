@@ -5,6 +5,7 @@ date: 2026-01-14
 post_author: jay
 categories: tips summer protection
 lang: en
+section: seasonal-care
 ---
 
 When summer heat increases in Gujarat, a shade net helps protect your roses. Keep these points in mind:

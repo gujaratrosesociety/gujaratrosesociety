@@ -5,6 +5,7 @@ date: 2026-01-07
 post_author: umang
 categories: પોષણ ખાતરો પોષક-પરસ્પર-ક્રિયા મલ્ડર્સ-ચાર્ટ
 lang: gu
+section: nutrition
 ---
 
 ![મલ્ડર્સ ચાર્ટ પોષક તત્ત્વોની પરસ્પર ક્રિયા દર્શાવે છે]({{ site.baseurl }}/assets/images/mulders-chart.jpg)

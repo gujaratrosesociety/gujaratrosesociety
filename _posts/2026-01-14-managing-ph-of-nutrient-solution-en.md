@@ -5,6 +5,7 @@ date: 2026-01-14
 post_author: umang
 categories: fertilizers pH tips
 lang: en
+section: nutrition
 ---
 
 Most fertilizer mixes—especially with tap or well water—tend to be alkaline or not acidic enough for optimal rose health.
