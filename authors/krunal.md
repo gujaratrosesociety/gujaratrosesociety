@@ -9,7 +9,7 @@ permalink: /authors/krunal/
   <img src="{{ site.baseurl }}/assets/images/authors/krunal.jpg" alt="કૃણાલ" style="width: 120px; height: 120px; border-radius: 50%; margin-right: 2rem; object-fit: cover;">
   <div>
     <h1 style="margin: 0 0 0.5rem 0;">કૃણાલ</h1>
-    <p style="font-size: 1.1rem; color: #606c71; margin: 0;">ગુલાબ પ્રેમી અને ગુજરાત રોઝ સોસાયટીના સભ્ય.</p>
+    <p style="font-size: 1.1rem; color: #606c71; margin: 0;">ગુલાબ પ્રેમી.</p>
   </div>
 </div>
 
