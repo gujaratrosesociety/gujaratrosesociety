@@ -28,8 +28,17 @@
     title: "પર્ણ છંટકાવ"
     description: "પર્ણ છંટકાવ માટેની શ્રેષ્ઠ પદ્ધતિઓ"
 
-- id: pest-disease
+- id: biostimulants
   order: 4
+  en:
+    title: "Biostimulants"
+    description: "Growth promoters and plant hormones"
+  gu:
+    title: "બાયોસ્ટીમ્યુલન્ટ્સ"
+    description: "ગ્રોથ પ્રમોટર્સ અને છોડના હોર્મોન્સ"
+
+- id: pest-disease
+  order: 5
   en:
     title: "Pest & Disease Management"
     description: "Identifying and controlling pests and diseases"
@@ -38,7 +47,7 @@
     description: "જીવાત અને રોગોની ઓળખ અને નિયંત્રણ"
 
 - id: seasonal-care
-  order: 5
+  order: 6
   en:
     title: "Seasonal Care"
     description: "Protecting roses through Gujarat's seasons"
@@ -47,7 +56,7 @@
     description: "ગુજરાતની ઋતુઓમાં ગુલાબનું રક્ષણ"
 
 - id: tools-tips
-  order: 6
+  order: 7
   en:
     title: "Tools & Tips"
     description: "Practical advice and equipment recommendations"
