@@ -16,7 +16,7 @@ However, it isn't a "spray and forget" product. Two rules if you use it:
 
 **Don't follow the prescribed rate:** The dosage on the bottle is often too high for roses. The prescribed rate of 5 ml per liter for drenching and 3 ml per liter for foliar spray is causing burning. Start with a much lower concentration and find what works for your specific varieties.
 
-**Note:** We do not prescribe a specific frequency and dose yet as we are still evaluating this product.
+**Note:** We do not prescribe a specific frequency and dose yet.
 
 **Important:** Do not use Phyton together with products that promote apical dominance, such as Utkarsh Bhim Plus. As mentioned on the label, do not mix Phyton with any other fertilizers.
 
