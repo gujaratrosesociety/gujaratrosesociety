@@ -19,7 +19,7 @@ Unlike growth promoters that are used every 15 days to a month, seaweed-based bi
 - Fulvic acid and humic acid
 - Alginic acids
 - Natural mannitol
-- Plant hormones (auxin and cytokinin)
+- Plant hormones
 
 This combination of naturally occurring compounds supports healthy growth, flowering, and fruiting.
 
