@@ -16,9 +16,11 @@ section: biostimulants
 This balanced combination gives you the growth benefits of GA while the Cytokinin counteracts its negative effects.
 
 **Application Methods:**
-- Foliar spray
+- Foliar spray (apply in the evening)
 - Root application
 
 **Dosage:** 0.4 to 0.6 ml per liter of water
+
+**Frequency:** Every 15 days to a month
 
 **Note:** Utkarsh also makes a product called "Bhim" (without "Plus") which is different from Bhim Plus. Make sure you get the correct product.
