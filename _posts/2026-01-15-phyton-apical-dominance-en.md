@@ -18,6 +18,6 @@ However, it isn't a "spray and forget" product. Two rules if you use it:
 
 **Note:** We do not prescribe a specific frequency and dose yet as we are still evaluating this product.
 
-**Important:** Do not use Phyton together with products that promote apical dominance, such as Utkarsh Bhim Plus.
+**Important:** Do not use Phyton together with products that promote apical dominance, such as Utkarsh Bhim Plus. As mentioned on the label, do not mix Phyton with any other fertilizers.
 
 Branching is great, but only if the plant is ready for it.
