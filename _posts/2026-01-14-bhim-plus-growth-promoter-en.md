@@ -23,4 +23,6 @@ This balanced combination gives you the growth benefits of GA while the Cytokini
 
 **Frequency:** Every 15 days to a month
 
+**Warning:** Use Bhim Plus only when your plants are completely free of disease. If used when disease is present, it can cause adverse effects.
+
 **Note:** Utkarsh also makes a product called "Bhim" (without "Plus") which is different from Bhim Plus. Make sure you get the correct product.
