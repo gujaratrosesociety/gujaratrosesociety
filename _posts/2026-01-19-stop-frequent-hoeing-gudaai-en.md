@@ -18,7 +18,7 @@ The white feeder roots are the primary roots responsible for absorbing water and
 
 ### Aquarium Pump Method
 
-Use Sanjoy Mukherjee's technique: connect an aquarium air pump to tubing that reaches the root zone. This keeps the soil or cinder aerobic without any physical disturbance to the roots.
+Use Sanjoy Mukherjee's technique: run an aquarium air pump in the water or water + fertilizer solution for 20 minutes before applying. This increases the oxygen level in the water, which in turn increases oxygen at the roots and keeps the media aerobic.
 
 ### Beneficial Microbes
 
