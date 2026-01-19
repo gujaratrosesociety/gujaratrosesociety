@@ -29,6 +29,15 @@ Regularly add good microbes to your growing media. These beneficial organisms:
 - Break down organic matter
 - Help roots absorb nutrients more efficiently
 
+### Mulching to Prevent Weeds
+
+If you find yourself hoeing frequently to control weeds or grass, use mulching instead:
+
+- **Wood mulch:** Apply a layer of wood chips or bark around your roses
+- **Mulch fabric:** Use UV-resistant landscape fabric that allows air, light, and water to pass through but blocks sunlight from reaching the soil surface, preventing weed and grass growth
+
+Both methods suppress weeds without disturbing the roots.
+
 ## Applies to All Growing Conditions
 
 This advice applies to roses in both pots and ground soil. Whether you're growing in soil, cocopeat, or cinder, protect your white feeder roots to ensure better growth and more abundant flowering.
