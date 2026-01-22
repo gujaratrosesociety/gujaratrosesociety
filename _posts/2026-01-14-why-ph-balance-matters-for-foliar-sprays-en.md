@@ -14,6 +14,8 @@ Water's acidity or alkalinity directly impacts how well plants absorb nutrients 
 
 According to the University of Massachusetts Amherst Center for Agriculture, "The pH of the spray solution can affect the solubility of the materials and the rate of uptake by the leaves. Most foliar nutrients are best absorbed at a slightly acidic pH (5.0-6.5)."
 
+A good example is Fe-EDTA (iron chelate), commonly used to treat iron deficiency in roses. Fe-EDTA becomes unstable above pH 6.0, losing its ability to keep iron available to plants. In alkaline water, the iron precipitates out as insoluble iron hydroxide, making the fertilizer useless.
+
 Michigan State University Extension warns that many pesticides breakdown "very rapidly when the spray water pH is greater than 7.0," significantly reducing their effectiveness.
 
 To ensure your sprays work, bring tap water (which is often alkaline) down to around pH 6.0.
