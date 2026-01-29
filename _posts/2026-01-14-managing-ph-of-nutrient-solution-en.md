@@ -15,6 +15,7 @@ Most fertilizer mixes—especially with tap or well water—tend to be alkaline 
 - **Organic Acids:** Citric acid or vinegar are gentle choices for minor adjustments.
 - **Commercial pH Down:** Utkarsh, Katyayani, and Radongrow all make pH Down in liquid form. Radongrow also offers a powder format.
 - **Phosphoric Acid:** Most cost-effective, but adds phosphorus (P) to your mix. Account for this in your fertilizer calculations.
+- **Acidic Fertilizers:** ICL PeKacid 0:60:20 has a pH of 2.2 at 1% concentration. It doubles as a P-K source while lowering pH. For example, 0.18 g/L provides enough acidity to buffer pH around 5.9 even after adding bio-stimulants. Account for its P and K contribution (60% P₂O₅, 20% K₂O) in your fertilizer calculations.
 
 **To raise pH (pH Up):**
 
