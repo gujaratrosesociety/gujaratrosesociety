@@ -140,6 +140,14 @@
 .pkx input[type=number]{width:5.5rem;padding:.35rem .5rem;border:1px solid var(--pk-line);border-radius:4px;
  font:inherit;font-size:.9rem;color:var(--pk-ink);background:var(--pk-surf);}
 .pkx-panels{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.2rem;}
+/* Grid/flex items default to min-width:auto and refuse to shrink below their
+   content, which pushes wide tables past the card edge. */
+.pkx-panels,.pkx-card,.pkx-controls,.pkx-field{min-width:0;}
+/* Defensive: the host page styles .post-body tables. Those rules must not
+   reach in here, or every cell gains borders and padding and clips. */
+.pkx .pkx-card table{display:table;width:100%;font-size:.85rem;}
+.pkx .pkx-card table th,.pkx .pkx-card table td{border:0;white-space:normal;}
+.pkx .pkx-card table td:last-child,.pkx .pkx-card table th:last-child{white-space:nowrap;}
 .pkx-card{background:var(--pk-sunk);border-radius:6px;padding:.9rem;}
 .pkx-card h4{margin:0 0 .6rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--pk-blue);}
 .pkx-card table{width:100%;border-collapse:collapse;font-size:.85rem;margin:0;display:table;}

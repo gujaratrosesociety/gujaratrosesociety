@@ -157,8 +157,10 @@ layout: default
   padding: 0;
 }
 
-/* Tables: scroll sideways inside their own box so the page never does */
-.post-body table {
+/* Tables: scroll sideways inside their own box so the page never does.
+   Direct children only — nested tables belong to embedded widgets, which
+   style their own cells and get clipped if these rules leak into them. */
+.post-body > table {
   display: block;
   width: 100%;
   overflow-x: auto;
@@ -169,21 +171,21 @@ layout: default
   font-variant-numeric: tabular-nums;
 }
 
-.post-body table th,
-.post-body table td {
+.post-body > table th,
+.post-body > table td {
   border: 1px solid #dbe2e6;
   padding: 0.45rem 0.7rem;
   text-align: left;
   white-space: nowrap;
 }
 
-.post-body table thead th {
+.post-body > table thead th {
   background-color: #f3f6fa;
   color: #155799;
   font-weight: 600;
 }
 
-.post-body table tbody tr:nth-child(even) {
+.post-body > table tbody tr:nth-child(even) {
   background-color: #fafbfc;
 }
 
@@ -267,12 +269,12 @@ layout: default
     font-size: 1rem;
   }
 
-  .post-body table {
+  .post-body > table {
     font-size: 0.85rem;
   }
 
-  .post-body table th,
-  .post-body table td {
+  .post-body > table th,
+  .post-body > table td {
     padding: 0.35rem 0.5rem;
   }
 
