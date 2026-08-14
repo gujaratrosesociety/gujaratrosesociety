@@ -157,6 +157,36 @@ layout: default
   padding: 0;
 }
 
+/* Tables: scroll sideways inside their own box so the page never does */
+.post-body table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.post-body table th,
+.post-body table td {
+  border: 1px solid #dbe2e6;
+  padding: 0.45rem 0.7rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.post-body table thead th {
+  background-color: #f3f6fa;
+  color: #155799;
+  font-weight: 600;
+}
+
+.post-body table tbody tr:nth-child(even) {
+  background-color: #fafbfc;
+}
+
 .author-bio {
   margin-top: 3rem;
   margin-bottom: 2rem;
@@ -235,6 +265,15 @@ layout: default
 @media screen and (max-width: 42em) {
   .post-body {
     font-size: 1rem;
+  }
+
+  .post-body table {
+    font-size: 0.85rem;
+  }
+
+  .post-body table th,
+  .post-body table td {
+    padding: 0.35rem 0.5rem;
   }
 
   .post-categories {
