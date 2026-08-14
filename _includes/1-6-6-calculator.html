@@ -1,0 +1,347 @@
+{% assign wlang = page.lang | default: site.default_lang %}
+<div class="pkx" id="s6">
+  <div class="pkx-head">
+    <h3 class="pkx-title">{% if wlang == 'gu' %}1:6:6 રેસીપી કેલ્ક્યુલેટર{% else %}1:6:6 Recipe Calculator{% endif %}</h3>
+    <p class="pkx-sub">{% if wlang == 'gu' %}સ્લાઇડર ગોઠવો — સંપૂર્ણ રેસીપી નીચે તરત જ ગણાઈ જશે. દરેક સેટિંગમાં એમોનિયમ : નાઈટ્રેટ ગુણોત્તર 1 : 1 જ રહે છે.{% else %}Set the sliders — the complete recipe calculates itself below. The ammonium : nitrate ratio stays at 1 : 1 in every setting.{% endif %}</p>
+  </div>
+
+  <div class="pkx-controls">
+    <p class="pkx-grouphead pkx-gh-feed">{% if wlang == 'gu' %}છોડને શું મળે છે{% else %}What the plant gets{% endif %}</p>
+    <label class="pkx-field">
+      <span class="pkx-lab">{% if wlang == 'gu' %}Pekacid 0-60-20 માત્રા{% else %}Pekacid 0-60-20 dose{% endif %} <b id="s6-xv">0.000</b> g/L</span>
+      <input type="range" id="s6-x" min="0" max="640" step="5" value="0">
+      <span class="pkx-srcnote" id="s6-xnote"></span>
+    </label>
+    <label class="pkx-field">
+      <span class="pkx-lab">{% if wlang == 'gu' %}તૈયાર 13:40:13{% else %}Ready-made 13:40:13{% endif %} <b id="s6-wv">0.000</b> g/L</span>
+      <input type="range" id="s6-w" min="0" max="360" step="5" value="0">
+      <span class="pkx-srcnote" id="s6-wnote"></span>
+    </label>
+  </div>
+
+  <div class="pkx-controls pkx-controls-b">
+    <p class="pkx-grouphead pkx-gh-buy">{% if wlang == 'gu' %}તમે શું ખરીદો છો{% else %}Which products you buy{% endif %}</p>
+    <label class="pkx-field pkx-src" id="s6-srcfield">
+      <span class="pkx-lab">{% if wlang == 'gu' %}બાકીનું એમોનિયમ — <b id="s6-tan">100</b>% એમોનિયમ નાઈટ્રેટ, <b id="s6-talt">0</b>% <span id="s6-altname">MAP</span>{% else %}Remaining ammonium — <b id="s6-tan">100</b>% ammonium nitrate, <b id="s6-talt">0</b>% <span id="s6-altname">MAP</span>{% endif %}</span>
+      <input type="range" id="s6-t" min="0" max="100" step="5" value="0">
+      <span class="pkx-srcnote" id="s6-srcnote"></span>
+    </label>
+
+    <div class="pkx-field">
+      <span class="pkx-lab">{% if wlang == 'gu' %}એમોનિયમ નાઈટ્રેટ વગર વાપરવાનું ખાતર{% else %}Product to use instead of ammonium nitrate{% endif %}</span>
+      <span class="pkx-seg" id="s6-seg">
+        <button type="button" class="pkx-segbtn pkx-on" data-alt="map">{% if wlang == 'gu' %}MAP 12-61-0{% else %}MAP 12-61-0{% endif %}</button>
+        <button type="button" class="pkx-segbtn" data-alt="amsul">{% if wlang == 'gu' %}એમોનિયમ સલ્ફેટ{% else %}Ammonium sulphate{% endif %}</button>
+      </span>
+    </div>
+
+    <label class="pkx-field pkx-vol">
+      <span class="pkx-lab">{% if wlang == 'gu' %}બેચનું કદ{% else %}Batch size{% endif %}</span>
+      <span class="pkx-volrow"><input type="number" id="s6-v" min="1" max="1000" step="1" value="50"> <span>{% if wlang == 'gu' %}લિટર{% else %}litres{% endif %}</span></span>
+    </label>
+  </div>
+
+  <div class="pkx-panels">
+    <div class="pkx-card">
+      <h4>{% if wlang == 'gu' %}રેસીપી — <span id="s6-vol1">50</span> લિટર માટે ગ્રામ{% else %}Recipe — grams per <span id="s6-vol1">50</span> litres{% endif %}</h4>
+      <table class="pkx-recipe"><tbody id="s6-rec"></tbody></table>
+      <p class="pkx-calclink">
+        <a id="s6-calc" href="#" target="_blank" rel="noopener noreferrer">{% if wlang == 'gu' %}ખાતર કેલ્ક્યુલેટરમાં ખોલો ↗{% else %}Open this in the fertilizer calculator ↗{% endif %}</a>
+        <span class="pkx-calcnote">{% if wlang == 'gu' %}નવી ટૅબમાં ખૂલે છે. અહીંના બધા ખાતર કેલ્ક્યુલેટરની પોતાની યાદીમાંથી જ છે, એટલે માત્રા જેમની તેમ જાય છે.{% else %}Opens in a new tab. Every product here comes from that calculator's own list, so the quantities pass through unchanged.{% endif %}</span>
+      </p>
+    </div>
+
+    <div class="pkx-card">
+      <h4>{% if wlang == 'gu' %}તૈયાર દ્રાવણ{% else %}Delivered solution{% endif %}</h4>
+      <table class="pkx-deliv"><thead><tr>
+        <th>{% if wlang == 'gu' %}પોષક{% else %}Nutrient{% endif %}</th>
+        <th>{% if wlang == 'gu' %}સંદર્ભ{% else %}Reference{% endif %}</th>
+        <th>{% if wlang == 'gu' %}મળે છે{% else %}Delivered{% endif %}</th>
+      </tr></thead><tbody id="s6-del"></tbody></table>
+      <div class="pkx-bal">
+        <div class="pkx-balrow"><span>N : P : K</span><b id="s6-npk"></b></div>
+        <div class="pkx-balrow"><span>N : P₂O₅ : K₂O</span><b id="s6-oxide"></b></div>
+        <div class="pkx-balrow"><span>NO₃ : NH₄</span><b id="s6-nratio"></b></div>
+        <div class="pkx-balrow"><span>{% if wlang == 'gu' %}કેશન + H⁺{% else %}Cations + H⁺{% endif %}</span><b id="s6-cat"></b></div>
+        <div class="pkx-balrow"><span>{% if wlang == 'gu' %}એનાયન{% else %}Anions{% endif %}</span><b id="s6-an"></b></div>
+        <div class="pkx-balok" id="s6-balok"></div>
+        <div class="pkx-balok" id="s6-tgt"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pkx-warn-box" id="s6-warn"></div>
+</div>
+
+<style>
+.pkx{--pk-ink:#1a2226;--pk-mut:#5d6b72;--pk-line:#dbe2e6;--pk-surf:#fff;--pk-sunk:#f3f6fa;
+ --pk-blue:#155799;--pk-blue2:#1e6bb8;--pk-rose:#a8203c;
+ --pk-ok:#1f6f4a;--pk-okbg:#e7f2ec;--pk-warn:#8a6100;--pk-warnbg:#fbf1dc;--pk-bad:#a8203c;--pk-badbg:#fae7ea;
+ background:var(--pk-surf);border:1px solid var(--pk-line);border-radius:8px;padding:1.1rem;margin:2rem 0;
+ color:var(--pk-ink);font-size:.95rem;line-height:1.5;font-variant-numeric:tabular-nums;}
+.pkx *{box-sizing:border-box;}
+.pkx-head{margin-bottom:.9rem;}
+.pkx-title{margin:0 0 .25rem;font-size:1.15rem;color:var(--pk-blue);letter-spacing:-.01em;}
+.pkx-sub{margin:0;color:var(--pk-mut);font-size:.88rem;}
+.pkx-controls{display:grid;grid-template-columns:1fr 1fr;gap:.9rem 1.2rem;margin:0;
+ background:var(--pk-sunk);border-radius:6px;padding:.9rem 1rem;}
+.pkx-grouphead{grid-column:1/-1;margin:0;font-size:.7rem;font-weight:700;text-transform:uppercase;
+ letter-spacing:.07em;display:flex;align-items:center;gap:.45rem;}
+.pkx-grouphead::before{content:"";width:8px;height:8px;border-radius:2px;flex:0 0 auto;}
+.pkx-gh-feed{color:var(--pk-blue);}
+.pkx-gh-feed::before{background:var(--pk-blue);}
+.pkx-gh-buy{color:var(--pk-mut);}
+.pkx-gh-buy::before{background:var(--pk-mut);}
+.pkx-controls-b{margin-top:.6rem;background:none;border:1px dashed var(--pk-line);}
+.pkx-field{display:block;}
+.pkx-src{grid-column:1/-1;}
+.pkx-lab{display:block;font-size:.8rem;color:var(--pk-mut);margin-bottom:.35rem;}
+.pkx-lab b{color:var(--pk-blue);font-size:.95rem;}
+.pkx input[type=range]{width:100%;accent-color:var(--pk-blue2);margin:0;}
+.pkx-srcnote{display:block;font-size:.74rem;color:var(--pk-mut);margin-top:.35rem;line-height:1.4;}
+.pkx-src.pkx-locked input[type=range]{opacity:.45;}
+.pkx-seg{display:inline-flex;gap:.3rem;flex-wrap:wrap;}
+.pkx-segbtn{font:inherit;font-size:.8rem;padding:.35rem .7rem;border:1px solid var(--pk-line);
+ background:var(--pk-surf);color:var(--pk-mut);border-radius:4px;cursor:pointer;}
+.pkx-segbtn:hover{border-color:var(--pk-blue2);color:var(--pk-blue2);}
+.pkx-segbtn:focus-visible{outline:2px solid var(--pk-blue2);outline-offset:2px;}
+.pkx-segbtn.pkx-on{background:var(--pk-blue);border-color:var(--pk-blue);color:#fff;font-weight:700;}
+.pkx-vol{grid-column:1/-1;}
+.pkx-volrow{display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--pk-mut);}
+.pkx input[type=number]{width:5.5rem;padding:.35rem .5rem;border:1px solid var(--pk-line);border-radius:4px;
+ font:inherit;font-size:.9rem;color:var(--pk-ink);background:var(--pk-surf);}
+.pkx-panels{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.2rem;}
+.pkx-panels,.pkx-card,.pkx-controls,.pkx-field{min-width:0;}
+.pkx-card{background:var(--pk-sunk);border-radius:6px;padding:.9rem;}
+.pkx-card h4{margin:0 0 .6rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--pk-blue);}
+.pkx-card table{width:100%;border-collapse:collapse;font-size:.85rem;margin:0;display:table;}
+.pkx .pkx-card table th,.pkx .pkx-card table td{border:0;white-space:normal;}
+.pkx .pkx-card table td:last-child,.pkx .pkx-card table th:last-child{white-space:nowrap;}
+.pkx-card th{text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;color:var(--pk-mut);
+ padding:0 0 .3rem;border-bottom:1px solid var(--pk-line);font-weight:700;background:none;}
+.pkx-card td{padding:.28rem 0;border-bottom:1px solid rgba(219,226,230,.7);vertical-align:baseline;}
+.pkx-card tr:last-child td{border-bottom:0;}
+.pkx-card td:last-child,.pkx-card th:last-child{text-align:right;}
+.pkx-deliv td:nth-child(2){text-align:right;color:var(--pk-mut);}
+.pkx-recipe .pkx-zero td{color:#9aa7ae;}
+.pkx-recipe b{font-weight:700;}
+.pkx-tag{display:inline-block;font-size:.64rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
+ padding:.1rem .35rem;border-radius:3px;margin-left:.35rem;vertical-align:.05em;}
+.pkx-tag.p{background:#e4edf6;color:var(--pk-blue);}
+.pkx-tag.n{background:#f7e6ea;color:var(--pk-rose);}
+.pkx-tag.k{background:#e8ebed;color:var(--pk-mut);}
+.pkx-st{font-weight:700;}
+.pkx-st.ok{color:var(--pk-ok);}
+.pkx-st.warn{color:var(--pk-warn);}
+.pkx-st.bad{color:var(--pk-bad);}
+.pkx-bal{margin-top:.8rem;padding-top:.6rem;border-top:1px solid var(--pk-line);font-size:.82rem;}
+.pkx-balrow{display:flex;justify-content:space-between;gap:.6rem;color:var(--pk-mut);}
+.pkx-balrow b{color:var(--pk-ink);white-space:nowrap;}
+.pkx-balok{margin-top:.35rem;font-size:.76rem;font-weight:700;color:var(--pk-ok);}
+.pkx-balok.pkx-balbad{color:var(--pk-bad);}
+.pkx-calclink{margin:.8rem 0 0;font-size:.82rem;}
+.pkx-calclink a{color:var(--pk-blue2);font-weight:700;text-decoration:none;}
+.pkx-calclink a:hover{text-decoration:underline;}
+.pkx-calclink a:focus-visible{outline:2px solid var(--pk-blue2);outline-offset:2px;border-radius:3px;}
+.pkx-calcnote{display:block;font-size:.72rem;color:var(--pk-mut);margin-top:.3rem;line-height:1.4;}
+.pkx-warn-box{margin-top:1rem;display:grid;gap:.5rem;}
+.pkx-msg{padding:.6rem .75rem;border-radius:5px;font-size:.83rem;line-height:1.45;border-left:3px solid;}
+.pkx-msg.warn{background:var(--pk-warnbg);border-color:var(--pk-warn);color:#5c4100;}
+.pkx-msg.bad{background:var(--pk-badbg);border-color:var(--pk-bad);color:#77162b;}
+@media screen and (max-width:42em){
+  .pkx{padding:.85rem;font-size:.9rem;}
+  .pkx-panels{grid-template-columns:1fr;}
+  .pkx-controls{grid-template-columns:1fr;}
+}
+</style>
+
+<script>
+(function(){
+  var GU = {% if wlang == 'gu' %}true{% else %}false{% endif %};
+  var L = GU ? {
+    mkp:"મોનો પોટેશિયમ ફોસ્ફેટ (MKP) 0-52-34", sop:"પોટેશિયમ સલ્ફેટ (SOP) 0-0-50",
+    an:"એમોનિયમ નાઈટ્રેટ 34-0-0", amsul:"એમોનિયમ સલ્ફેટ 21-0-0", map:"મોનો એમોનિયમ ફોસ્ફેટ (MAP) 12-61-0",
+    kno3:"પોટેશિયમ નાઈટ્રેટ 13-0-46", pek:"ICL Pekacid 0-60-20", wsf:"તૈયાર WSF 13:40:13",
+    bal:"સંતુલિત", balFail:"બેલેન્સ થતું નથી", imb:"અસંતુલન",
+    ratioOk:"એમોનિયમ : નાઈટ્રેટ બરાબર 1 : 1", ratioBad:"એમોનિયમ : નાઈટ્રેટ ખસી ગયું",
+    srcFree:"આનાથી નાઈટ્રોજન બદલાતો નથી — એમોનિયમ અને નાઈટ્રેટ બંને લક્ષ્યાંક પર જ રહે છે. આ માત્ર નક્કી કરે છે કે એમોનિયમ કયા ખાતરમાંથી આવે. ભારતમાં એમોનિયમ નાઈટ્રેટ નિયંત્રિત છે, તેથી MAP કે એમોનિયમ સલ્ફેટ વધુ સહેલાઈથી મળે છે.",
+    srcLocked:"13:40:13 જ બધું એમોનિયમ આપી દે છે, એટલે અહીં પસંદગી બાકી રહેતી નથી.",
+    xnote:"Pekacid ફોસ્ફરસ, પોટેશિયમ અને એસિડ — ત્રણેય આપે છે. વધારશો તેમ MKP ઘટે છે અને સલ્ફર વધે છે.",
+    xnoteCap:"મહત્તમ %V% g/L — તેનાથી વધુ ફોસ્ફરસ લક્ષ્યાંક વટાવી જાય.",
+    wnote:"13:40:13 નાઈટ્રોજન, ફોસ્ફરસ અને પોટેશિયમ સાથે લાવે છે.",
+    wnoteCap:"મહત્તમ %V% g/L — તેમાં એમોનિયમ કુલ Nના 66% છે, જ્યારે આ મિશ્રણને 50% જોઈએ છે.",
+    wS:"સલ્ફર %V% ppm છે, સંદર્ભના 46 ppm સામે. Pekacid નું પોટેશિયમ MKP કરતાં ઓછું હોવાથી તેની ભરપાઈ પોટેશિયમ સલ્ફેટથી થાય છે.",
+    wAcid:"Pekacid %V% meq/L મુક્ત એસિડ છોડે છે. આટલો એસિડ pH ખૂબ નીચે લઈ જશે — પાણીની આલ્કલિનિટી તપાસ્યા વગર આટલી માત્રા ન વાપરો.",
+    wAS:"એમોનિયમ સલ્ફેટ કેલ્શિયમવાળા ખાતર સાથે સૂકું ભેગું ન કરો.",
+    wNoP:"આ મિશ્રણમાં કેલ્શિયમ, મેગ્નેશિયમ કે સૂક્ષ્મ પોષક તત્વો નથી — તે ફૂલ માટેનું PK ફીડ છે, સંપૂર્ણ ખોરાક નહીં."
+  } : {
+    mkp:"Mono potassium phosphate (MKP) 0-52-34", sop:"Potassium sulphate (SOP) 0-0-50",
+    an:"Ammonium nitrate 34-0-0", amsul:"Ammonium sulphate 21-0-0", map:"Mono ammonium phosphate (MAP) 12-61-0",
+    kno3:"Potassium nitrate 13-0-46", pek:"ICL Pekacid 0-60-20", wsf:"Ready-made WSF 13:40:13",
+    bal:"Balanced", balFail:"NOT balanced", imb:"imbalance",
+    ratioOk:"Ammonium : nitrate exactly 1 : 1", ratioBad:"Ammonium : nitrate has drifted",
+    srcFree:"This does not change the nitrogen — ammonium and nitrate both stay on target. It only decides which product carries the ammonium. Ammonium nitrate is regulated in India, so MAP and ammonium sulphate are usually easier to buy.",
+    srcLocked:"The 13:40:13 already supplies all the ammonium, so there is nothing left to choose here.",
+    xnote:"Pekacid supplies phosphorus, potassium and acid at once. As it rises, MKP falls and sulphur climbs.",
+    xnoteCap:"Capped at %V% g/L — beyond that phosphorus overshoots its target.",
+    wnote:"13:40:13 brings nitrogen, phosphorus and potassium together.",
+    wnoteCap:"Capped at %V% g/L — its ammonium is 66% of its N, where this blend needs 50%.",
+    wS:"Sulphur is %V% ppm against the reference 46 ppm. Pekacid carries less potassium than the MKP it replaces, so potassium sulphate makes up the difference.",
+    wAcid:"Pekacid is releasing %V% meq/L of free acid. That is a heavy acid load and will pull pH down hard — do not run this dose without knowing your water's alkalinity.",
+    wAS:"Do not dry-blend ammonium sulphate with any calcium-bearing fertiliser.",
+    wNoP:"This blend carries no calcium, magnesium or micronutrients — it is a bloom PK feed, not a complete diet."
+  };
+
+  var MW={N:14.007,P:30.974,K:39.098,S:32.06};
+  // Label analyses, taken from the fertilizer-calculator's own product table so
+  // the quantities transfer to it unchanged.
+  var PR={
+    mkp  :{P:22.693,K:28.223},          sop  :{K:41.505,S:17.0},
+    an   :{NH4:17.0,NO3:17.0},          amsul:{NH4:21.0,S:24.0},
+    map  :{NH4:12.0,P:26.622},          kno3 :{NO3:13.7,K:38.434},
+    pek  :{P:26.184,K:16.602},          wsf  :{NH4:8.6,NO3:4.4,P:17.456,K:10.791}
+  };
+  function mm(p,k){ var pc=PR[p][k]||0, el=(k==="NH4"||k==="NO3")?"N":k; return pc*10/MW[el]; }
+
+  // Reference blend: MKP 36.90 + ammonium nitrate 9.10 + SOP 13.60 per 50 L
+  var REF={P:167.48,K:321.19,NH4N:30.94,NO3N:30.94,S:46.24};
+  var T={P:REF.P/MW.P, K:REF.K/MW.K, NH4:REF.NH4N/MW.N, NO3:REF.NO3N/MW.N};
+  var HAC=mm("pek","P")-mm("pek","K");     // free acid, meq per gram of Pekacid
+  var WCAP=T.NH4/mm("wsf","NH4");          // 13:40:13 limited by the 1:1 N ratio
+  var XCAP=T.P/mm("pek","P");              // Pekacid limited by phosphorus
+
+  var curX=0, curW=0, curT=0, curAlt="map";
+
+  function build(x,w,t,alt){
+    var acid=HAC*x;
+    var nh4w=mm("wsf","NH4")*w, no3w=mm("wsf","NO3")*w;
+    var left=Math.max(T.NH4-nh4w,0);
+    var galt=left*t/mm(alt,"NH4");
+    var gan =left*(1-t)/mm("an","NH4");
+    var gkno3=Math.max(T.NO3-no3w-mm("an","NO3")*gan,0)/mm("kno3","NO3");
+    var Pfrom=mm("wsf","P")*w+mm("pek","P")*x+(alt==="map"?mm("map","P")*galt:0);
+    var gmkp=(T.P-Pfrom)/mm("mkp","P");
+    if(gmkp<-1e-9) return null;
+    gmkp=Math.max(gmkp,0);
+    var Kfrom=mm("wsf","K")*w+mm("pek","K")*x+mm("mkp","K")*gmkp+mm("kno3","K")*gkno3;
+    var gsop=(T.K-Kfrom)/mm("sop","K");            // potassium sulphate closes K
+    if(gsop<-1e-9) return null;
+    gsop=Math.max(gsop,0);
+    return {g:{wsf:w,pek:x,mkp:gmkp,map:alt==="map"?galt:0,amsul:alt==="amsul"?galt:0,
+               an:gan,kno3:gkno3,sop:gsop}, acid:acid};
+  }
+
+  // Independent read-back: rebuild the solution from the gram amounts alone.
+  function verify(g){
+    var ion={NH4:0,NO3:0,P:0,K:0,S:0,H:0}, p, k;
+    for(p in g){ for(k in PR[p]){ ion[k]=(ion[k]||0)+mm(p,k)*g[p]; } }
+    ion.H=HAC*g.pek;
+    var cat=ion.NH4+ion.K+ion.H, an=ion.NO3+2*ion.S+ion.P;
+    return {ion:ion, cat:cat, an:an, imb:Math.abs(cat-an)/Math.max(cat,an)*100};
+  }
+
+  var CALC="https://umangbhatt.in/fertilizer-calculator/";
+  var CODE={mkp:"4",sop:"f",an:"b",amsul:"8",map:"3",kno3:"2",pek:"Y",wsf:"V"};
+  function link(g,vol){
+    var parts=[],p,gr;
+    for(p in g){ gr=g[p]*vol; if(gr>=0.005) parts.push(CODE[p]+":"+gr.toFixed(2)); }
+    return CALC+"?m=p&s=wr&v="+vol+"&f="+encodeURIComponent(parts.join(","));
+  }
+
+  var elX=document.getElementById("s6-x"), elW=document.getElementById("s6-w"),
+      elT=document.getElementById("s6-t"), elV=document.getElementById("s6-v");
+
+  // The three phosphorus carriers compete for one budget, so each cap moves.
+  function caps(){
+    var altP = (curAlt==="map") ? mm("map","P")*(Math.max(T.NH4-mm("wsf","NH4")*curW,0)*curT/mm("map","NH4")) : 0;
+    var xcap = Math.max((T.P-mm("wsf","P")*curW-altP)/mm("pek","P"),0);
+    var wcap = Math.min(WCAP, Math.max((T.P-mm("pek","P")*curX-altP)/mm("wsf","P"),0));
+    return {x:Math.min(xcap,XCAP), w:wcap};
+  }
+
+  function row(name,g,tag,vol){
+    var v=g*vol;
+    return "<tr"+(v<0.005?' class="pkx-zero"':'')+"><td>"+name+
+      '<span class="pkx-tag '+tag+'">'+tag.toUpperCase()+"</span></td><td>"+
+      (v<0.005?"—":"<b>"+v.toFixed(2)+"</b> g")+"</td></tr>";
+  }
+  function drow(n,r,d,c){ return "<tr><td>"+n+"</td><td>"+r+'</td><td class="pkx-st '+c+'">'+d+"</td></tr>"; }
+
+  function render(){
+    var vol=Math.max(+elV.value||50,0.1);
+    var c=caps();
+    if(curX>c.x+1e-9){ curX=c.x; elX.value=Math.round(curX*1000); }
+    if(curW>c.w+1e-9){ curW=c.w; elW.value=Math.round(curW*1000); }
+    var r=build(curX,curW,curT,curAlt);
+    if(!r){ return; }
+    var v=verify(r.g), io=v.ion;
+
+    document.getElementById("s6-xv").textContent=curX.toFixed(3);
+    document.getElementById("s6-wv").textContent=curW.toFixed(3);
+    document.getElementById("s6-vol1").textContent=(+elV.value||50);
+    document.getElementById("s6-xnote").textContent=L.xnote+" "+L.xnoteCap.replace("%V%",c.x.toFixed(3));
+    document.getElementById("s6-wnote").textContent=L.wnote+" "+L.wnoteCap.replace("%V%",c.w.toFixed(3));
+    document.getElementById("s6-altname").textContent=(curAlt==="map")?"MAP":(GU?"એમોનિયમ સલ્ફેટ":"ammonium sulphate");
+    document.getElementById("s6-talt").textContent=Math.round(curT*100);
+    document.getElementById("s6-tan").textContent=100-Math.round(curT*100);
+
+    var free=(T.NH4-mm("wsf","NH4")*curW)>1e-6;
+    elT.disabled=!free;
+    document.getElementById("s6-srcfield").classList.toggle("pkx-locked",!free);
+    document.getElementById("s6-srcnote").textContent=free?L.srcFree:L.srcLocked;
+
+    document.getElementById("s6-rec").innerHTML=
+      row(L.wsf,r.g.wsf,"n",vol)+row(L.mkp,r.g.mkp,"p",vol)+row(L.pek,r.g.pek,"p",vol)+
+      row(L.map,r.g.map,"n",vol)+row(L.an,r.g.an,"n",vol)+row(L.amsul,r.g.amsul,"n",vol)+
+      row(L.kno3,r.g.kno3,"n",vol)+row(L.sop,r.g.sop,"k",vol);
+    document.getElementById("s6-calc").href=link(r.g,vol);
+
+    var s=io.S*MW.S, N=(io.NH4+io.NO3)*MW.N, P=io.P*MW.P, K=io.K*MW.K;
+    function dev(a,b){ var d=Math.abs(a-b)/b*100; return d<1?"ok":(d<3?"warn":"bad"); }
+    document.getElementById("s6-del").innerHTML=
+      drow("N",REF.NH4N+REF.NO3N+" ppm",N.toFixed(1)+" ppm",dev(N,REF.NH4N+REF.NO3N))+
+      drow("NH₄-N",REF.NH4N+" ppm",(io.NH4*MW.N).toFixed(1)+" ppm",dev(io.NH4*MW.N,REF.NH4N))+
+      drow("NO₃-N",REF.NO3N+" ppm",(io.NO3*MW.N).toFixed(1)+" ppm",dev(io.NO3*MW.N,REF.NO3N))+
+      drow("P",REF.P+" ppm",P.toFixed(1)+" ppm",dev(P,REF.P))+
+      drow("K",REF.K+" ppm",K.toFixed(1)+" ppm",dev(K,REF.K))+
+      drow("S",REF.S+" ppm",s.toFixed(1)+" ppm",s<60?"ok":(s<80?"warn":"bad"));
+
+    document.getElementById("s6-npk").textContent="1 : "+(P/N).toFixed(2)+" : "+(K/N).toFixed(2);
+    document.getElementById("s6-oxide").textContent="1 : "+(P*2.2914/N).toFixed(1)+" : "+(K*1.2046/N).toFixed(1);
+    var ratio=io.NO3/io.NH4;
+    document.getElementById("s6-nratio").textContent="1 : "+ratio.toFixed(2);
+    document.getElementById("s6-cat").textContent=v.cat.toFixed(3)+" meq/L";
+    document.getElementById("s6-an").textContent=v.an.toFixed(3)+" meq/L";
+
+    var ok=v.imb<3, bl=document.getElementById("s6-balok");
+    bl.textContent=(ok?"✓ ":"✗ ")+(ok?L.bal:L.balFail)+" ("+L.imb+" "+v.imb.toFixed(2)+"%)";
+    bl.className="pkx-balok"+(ok?"":" pkx-balbad");
+    var rok=Math.abs(ratio-1)<0.02, tg=document.getElementById("s6-tgt");
+    tg.textContent=(rok?"✓ ":"✗ ")+(rok?L.ratioOk:L.ratioBad);
+    tg.className="pkx-balok"+(rok?"":" pkx-balbad");
+
+    var w=[];
+    if(s>60) w.push([s>80?"bad":"warn",L.wS.replace("%V%",s.toFixed(0))]);
+    if(r.acid>1.0) w.push([r.acid>2.0?"bad":"warn",L.wAcid.replace("%V%",r.acid.toFixed(2))]);
+    if(r.g.amsul>0.001) w.push(["warn",L.wAS]);
+    w.push(["warn",L.wNoP]);
+    document.getElementById("s6-warn").innerHTML=w.map(function(m){
+      return '<div class="pkx-msg '+m[0]+'">'+m[1]+"</div>"; }).join("");
+  }
+
+  elX.addEventListener("input",function(){ curX=+this.value/1000; render(); });
+  elW.addEventListener("input",function(){ curW=+this.value/1000; render(); });
+  elT.addEventListener("input",function(){ curT=+this.value/100; render(); });
+  elV.addEventListener("input",render);
+  var seg=document.getElementById("s6-seg");
+  seg.addEventListener("click",function(e){
+    var b=e.target.closest ? e.target.closest(".pkx-segbtn") : null;
+    if(!b) return;
+    curAlt=b.dataset.alt;
+    var bs=seg.getElementsByTagName("button");
+    for(var i=0;i<bs.length;i++) bs[i].classList.toggle("pkx-on",bs[i]===b);
+    render();
+  });
+  render();
+})();
+</script>
