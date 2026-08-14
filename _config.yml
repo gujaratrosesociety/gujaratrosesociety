@@ -9,6 +9,11 @@ baseurl: "/gujaratrosesociety"
 # Theme customization
 markdown: kramdown
 
+# Interpret and display post dates in IST. Without this Jekyll assumes UTC, so a
+# post dated today written during the evening IST is "in the future" at build
+# time and gets silently dropped (future: false is the Jekyll default).
+timezone: Asia/Kolkata
+
 # Mobile-friendly settings
 plugins:
   - jekyll-seo-tag
