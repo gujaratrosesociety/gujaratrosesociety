@@ -83,7 +83,7 @@
     </div>
   </details>
 
-  <p class="pkx-foot">{% if wlang == 'gu' %}6% એમોનિયમ અને તેથી ઉપર, કેલ્શિયમ નાઈટ્રેટ (7.35 ગ્રામ/10 લિ) અને કિઝેરાઈટ (2.21 ગ્રામ/10 લિ) દરેક ખાનામાં એકસરખા રહે છે — તે Ca અને Mg લક્ષ્યાંકથી નક્કી થાય છે. 6% થી નીચે તે બદલાવા લાગે છે, કારણ કે સામાન્ય કેલ્શિયમ નાઈટ્રેટમાં પોતાનું એમોનિયમ હોય છે. સૂક્ષ્મ પોષક તત્વો કદી બદલાતા નથી.{% else %}At 6% ammonium and above, calcium nitrate (7.35 g/10 L) and kieserite (2.21 g/10 L) are identical in every cell — fixed by the Ca and Mg targets. Below 6% they start to move, because ordinary calcium nitrate carries ammonium of its own. Micronutrients never change.{% endif %}</p>
+  <p class="pkx-foot">{% if wlang == 'gu' %}6% એમોનિયમ અને તેથી ઉપર, કેલ્શિયમ નાઈટ્રેટ (7.35 ગ્રામ/10 લિ) અને મેગ્નેશિયમ સલ્ફેટ (3.94 ગ્રામ/10 લિ) દરેક ખાનામાં એકસરખા રહે છે — તે Ca અને Mg લક્ષ્યાંકથી નક્કી થાય છે. 6% થી નીચે તે બદલાવા લાગે છે, કારણ કે સામાન્ય કેલ્શિયમ નાઈટ્રેટમાં પોતાનું એમોનિયમ હોય છે. સૂક્ષ્મ પોષક તત્વો કદી બદલાતા નથી.{% else %}At 6% ammonium and above, calcium nitrate (7.35 g/10 L) and magnesium sulphate (3.94 g/10 L) are identical in every cell — fixed by the Ca and Mg targets. Below 6% they start to move, because ordinary calcium nitrate carries ammonium of its own. Micronutrients never change.{% endif %}</p>
 </div>
 
 <style>
@@ -208,12 +208,12 @@
   var GU = {% if wlang == 'gu' %}true{% else %}false{% endif %};
   var L = GU ? {
     ca:"કેલ્શિયમ નાઈટ્રેટ 15.5-0-0 (Calcinit પ્રકાર)", caTet:"કેલ્શિયમ નાઈટ્રેટ ટેટ્રાહાઈડ્રેટ (એમોનિયમ વગરનું)", mgn:"મેગ્નેશિયમ નાઈટ્રેટ Mg(NO₃)₂·6H₂O", kno3:"પોટેશિયમ નાઈટ્રેટ 13-0-46", an:"એમોનિયમ નાઈટ્રેટ 34-0-0",
-    as:"એમોનિયમ સલ્ફેટ 21-0-0", kie:"કિઝેરાઈટ MgSO₄·H₂O", pek:"ICL Pekacid 0-60-20",
+    as:"એમોનિયમ સલ્ફેટ 21-0-0", kie:"મેગ્નેશિયમ સલ્ફેટ (એપ્સમ સોલ્ટ) MgSO₄·7H₂O", pek:"ICL Pekacid 0-60-20",
     mkp:"મોનો પોટેશિયમ ફોસ્ફેટ 0-52-34", k2so4:"પોટેશિયમ સલ્ફેટ 0-0-50",
     axis:"વાદળી ટૅગ = માત્ર Pekacid સ્તરથી બદલાય છે. ગુલાબી ટૅગ = માત્ર NH₄ ટકાવારીથી બદલાય છે. ગ્રે = કદી બદલાતું નથી. બે અક્ષો સ્વતંત્ર છે — તેથી આખું ગ્રીડ બે સાદી યાદીઓનો સરવાળો છે.",
     bal:"સંતુલિત", balFail:"બેલેન્સ થતું નથી", gap:"તફાવત",
     tgtOk:"Ca, K, Mg, P બધા લક્ષ્યાંક પર", tgtBad:"%K% લક્ષ્યાંકથી દૂર",
-    calcnote:"નવી ટૅબમાં ખૂલે છે. લિંક એ જ દ્રાવણ બતાવે તે માટે બે ફેરફાર થાય છે: કિઝેરાઈટને સરખા Mg (અને સરખા S) વાળા એપ્સમ સોલ્ટ તરીકે મોકલાય છે, અને પોટેશિયમ સલ્ફેટ 50% K₂O ગ્રેડ પ્રમાણે ગોઠવાય છે. લિંકમાં સૂક્ષ્મ પોષક તત્વો સામેલ નથી.", nfloat:"કુલ N લક્ષ્યાંકથી ઉપર",
+    calcnote:"નવી ટૅબમાં ખૂલે છે. લિંક એ જ દ્રાવણ બતાવે તે માટે એક ફેરફાર થાય છે: પોટેશિયમ સલ્ફેટ 50% K₂O ગ્રેડ પ્રમાણે ગોઠવાય છે. લિંકમાં સૂક્ષ્મ પોષક તત્વો સામેલ નથી.", nfloat:"કુલ N લક્ષ્યાંકથી ઉપર",
     wN:"40% એમોનિયમ 160 ppm કુલ N પર શક્ય નથી. કેલ્શિયમ નાઈટ્રેટ એકલું 7.48 mmol/L નાઈટ્રેટ લાવે છે — તેનાથી ઓછું જઈ શકાતું નથી. અહીં કુલ N વધીને %N% ppm થાય છે.",
     wNH:"NH₄ %V% mmol/L છે. પ્રકાશિત મર્યાદા 1.5 mmol/L (કુલ Nના 5-15%) છે. આ ટૂંકા ગાળાનું pH સુધારણ છે, નિયમિત ખોરાક નહીં.",
     wS:"સલ્ફર %V% ppm છે, લક્ષ્યાંક 51 ppm સામે. દરેક વધારાના એમોનિયમને સલ્ફેટથી બેલેન્સ કરવું પડે છે — આ ટાળી શકાતું નથી.",
@@ -226,12 +226,12 @@
     wP:"આ મહત્તમ Pekacid માત્રા છે. વધુ ઉમેરવાથી ફોસ્ફરસ લક્ષ્યાંક વટાવી જશે અને તેને પાછું કાઢી શકાતું નથી."
   } : {
     ca:"Calcium nitrate 15.5-0-0 (Calcinit type)", caTet:"Calcium nitrate tetrahydrate (ammonium-free)", mgn:"Magnesium nitrate Mg(NO₃)₂·6H₂O", kno3:"Potassium nitrate 13-0-46", an:"Ammonium nitrate 34-0-0",
-    as:"Ammonium sulphate 21-0-0", kie:"Kieserite MgSO₄·H₂O", pek:"ICL Pekacid 0-60-20",
+    as:"Ammonium sulphate 21-0-0", kie:"Magnesium sulphate (Epsom salt) MgSO₄·7H₂O", pek:"ICL Pekacid 0-60-20",
     mkp:"Mono potassium phosphate 0-52-34", k2so4:"Potassium sulphate 0-0-50",
     axis:"Blue tag = moves with the Pekacid dose only. Pink tag = moves with the NH₄ percentage only. Grey = never moves. The two axes are independent, which is why the whole grid is just two simple lists added together.",
     bal:"Balanced", balFail:"NOT balanced", gap:"gap",
     tgtOk:"Ca, K, Mg, P all on target", tgtBad:"%K% is off target",
-    calcnote:"Opens in a new tab. Two swaps are made so the link reproduces the same solution: kieserite is sent as Epsom salt at equal Mg (and equal S), and potassium sulphate is adjusted to a 50% K₂O grade. Micronutrients are not included in the link.", nfloat:"total N above target",
+    calcnote:"Opens in a new tab. One swap is made so the link reproduces the same solution: potassium sulphate is adjusted to a 50% K₂O grade. Micronutrients are not included in the link.", nfloat:"total N above target",
     wN:"40% ammonium is not possible at 160 ppm total N. Calcium nitrate alone forces 7.48 mmol/L of nitrate into the tank and you cannot go below it. Total N is pushed to %N% ppm here.",
     wNH:"NH₄ is %V% mmol/L. The published limit is 1.5 mmol/L (5–15% of total N). Treat this as a short-term pH correction, not a steady feed.",
     wS:"Sulphur is %V% ppm against a 51 ppm target. Every extra ammonium ion has to be balanced by a sulphate ion — this is unavoidable, not a mistake.",
@@ -247,7 +247,8 @@
   // Stoichiometry
   var T={NH4:0.70,K:4.50,Ca:3.40,Mg:1.60,NO3:10.75,S:1.60,P:1.25};
   var Pmm=8.4536, Kmm=4.2463, Hac=Pmm-Kmm;          // per gram of Pekacid 0-60-20
-  var CNu=216.1, CNTu=236.15, MGNu=256.41, KNO3u=101.10, KIESu=138.36, K2SO4u=174.26, MKPu=136.086, ANu=80.043, ASu=132.14;
+  var CNu=216.1, CNTu=236.15, MGNu=256.41, KNO3u=101.10, EPSu=246.47, K2SO4u=174.26, MKPu=136.086, ANu=80.043, ASu=132.14;
+  // EPSu: Magnesium sulphate heptahydrate (Epsom salt) MgSO4.7H2O — Utkarsh Agro Chem's stocked Mg source.
   var NO3cn=2.2*T.Ca, NH4cn=0.2*T.Ca, NTOT=T.NH4+T.NO3, XMAX=T.P/Pmm;
 
   // t = 0 takes ammonium from ammonium nitrate first, t = 1 from ammonium sulphate first.
@@ -265,7 +266,7 @@
 
     var SO4=(NH4+T.K+2*T.Ca+2*T.Mg+acid-NO3-T.P)/2;
 
-    // Kieserite fixes S at 1.6 via Mg. When the balance calls for less sulphate
+    // Magnesium sulphate fixes S at 1.6 via Mg. When the balance calls for less sulphate
     // than that, move the surplus magnesium to magnesium nitrate (the source
     // book's own step: "replace magnesium sulphate with magnesium nitrate if
     // less sulphate is required").
@@ -278,7 +279,7 @@
     var a=Math.max(adj-2*c,0), b=Math.max(pool-a,0), d=Math.max(SO4-kie-c,0);
     var cat=NH4+T.K+2*T.Ca+2*T.Mg+acid, an=NO3+2*SO4+T.P;
     return {mg:{ca:caCal*CNu, caTet:caTet*CNTu, kno3:b*KNO3u, an:a*ANu, as:c*ASu,
-                kie:kie*KIESu, mgn:mgn*MGNu, pek:x*1000, mkp:Pmkp*MKPu, k2so4:d*K2SO4u},
+                kie:kie*EPSu, mgn:mgn*MGNu, pek:x*1000, mkp:Pmkp*MKPu, k2so4:d*K2SO4u},
             NH4:NH4, NO3:NO3, S:SO4, Nt:NH4+NO3, nfloat:nfloat, acid:acid,
             cat:cat, an:an, EC:(NH4+T.K+2*T.Ca+2*T.Mg)*1.6/15.12,
             free:(cmax-cmin)>1e-6, sulShare:adj>1e-6?(2*c/adj*100):0,
@@ -304,7 +305,7 @@
     mkp  :["4",1],        // Mono Potassium Phosphate
     as   :["8",1],        // Ammonium Sulfate
     an   :["b",1],        // Ammonium Nitrate solid 34%
-    kie  :["c",17.6/9.86],// no kieserite there — Epsom salt at equal Mg (and equal S)
+    kie  :["c",1],         // Magnesium Sulfate Heptahydrate — same salt, no conversion needed
     k2so4:["f",44.87/41.505], // their SOP is 50% K2O; ours is pure K2SO4
     caTet:["w",1],        // Calcium Nitrate - Tetrahydrate
     mgn  :["e",1],        // Magnesium Nitrate - Hexahydrate
@@ -329,7 +330,7 @@
     caTet:[236.15, {Ca:1, NO3:2}],              // Ca(NO3)2.4H2O — no ammonium
     mgn  :[256.41, {Mg:1, NO3:2}],              // Mg(NO3)2.6H2O
     kno3 :[101.10, {K:1, NO3:1}],
-    kie  :[138.36, {Mg:1, S:1}],
+    kie  :[246.47, {Mg:1, S:1}],   // Magnesium sulphate heptahydrate (Epsom salt)
     mkp  :[136.086,{K:1, P:1}],
     k2so4:[174.26, {K:2, S:1}],
     an   :[80.043, {NH4:1, NO3:1}],
