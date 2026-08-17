@@ -9,7 +9,7 @@ permalink: /authors/ramesh/
   <img src="{{ site.baseurl }}/assets/images/authors/ramesh.jpg" alt="રમેશ પંડ્યા" style="width: 120px; height: 120px; border-radius: 50%; margin-right: 2rem; object-fit: cover;">
   <div>
     <h1 style="margin: 0 0 0.5rem 0;">રમેશ પંડ્યા</h1>
-    <p style="font-size: 1.1rem; color: #606c71; margin: 0;">ગુલાબ પ્રેમી અને ગુજરાત રોઝ સોસાયટીના સભ્ય. </p>
+    <p style="font-size: 1.1rem; color: #606c71; margin: 0;">મોરબીના ગુલાબ ઉગાડનાર અને ગુજરાત રોઝ સોસાયટીના સભ્ય. અનેક દાયકાઓથી ગુલાબ ઉગાડે છે — ફોન નહોતા એ જમાનામાં ડ્રાફ્ટ મોકલીને KSG પાસેથી છોડ મંગાવતા. </p>
   </div>
 </div>
 
