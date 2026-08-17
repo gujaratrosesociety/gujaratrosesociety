@@ -51,8 +51,10 @@ Buys from Ashok's Pushpanjali and resells.
 
 **5. Anu Baidhya**
 Shikharpur, Bengal
-📞 7001638254
+📞 7001638254 / 9831911815 · 📧 [wishrose.kolkata@gmail.com](mailto:wishrose.kolkata@gmail.com)
+🌐 [wishrose.in](https://www.wishrose.in/) (trading as WishRose)
 Used to have grafting done by others, but now does it in-house. Keeps a very good variety selection, but the prices are considerably higher.
+✅ **The site states all plants are budded on multiflora rootstock.** Beyond HT and spray roses they also carry Ecuadorian, Chinese and Japanese imported varieties.
 
 **6. Laxmi Nursery**
 Shikharpur, Bengal
@@ -195,6 +197,8 @@ If this is your first order and you want to keep the risk low:
 - **Divya Kripal Nursery (12)** — if you specifically want multiflora rootstock.
 
 If variety selection matters most, **Anu Baidhya (5)** and **K.S.G. (24)** are the deepest lists — but the first is expensive and the second carries a real risk of ID mismatches.
+
+On rootstock specifically, **Anu Baidhya (5)** and **Divya Kripal (12)** are the only two here that state multiflora outright. Everyone else is either indica or has not said.
 
 ---
 
