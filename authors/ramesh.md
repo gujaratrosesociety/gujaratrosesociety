@@ -17,7 +17,10 @@ permalink: /authors/ramesh/
 
 ## રમેશ દ્વારા લેખો
 
-{% assign author_posts = site.posts | where: "lang", "gu" | where_exp: "post", "post.post_author == 'ramesh' or post.post_authors contains 'ramesh'" %}
+{% assign lang_posts = site.posts | where: "lang", "gu" %}
+{% assign sole_posts = lang_posts | where: "post_author", "ramesh" %}
+{% assign co_posts = lang_posts | where: "post_authors", "ramesh" %}
+{% assign author_posts = sole_posts | concat: co_posts | sort: "date" | reverse %}
 {% for post in author_posts %}
 - [{{ post.title }}]({{ post.url | relative_url }}) - {{ post.date | date: "%B %d, %Y" }}
 {% endfor %}

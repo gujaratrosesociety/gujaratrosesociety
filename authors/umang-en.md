@@ -17,7 +17,10 @@ permalink: /en/authors/umang/
 
 ## Articles by Umang
 
-{% assign author_posts = site.posts | where: "lang", "en" | where_exp: "post", "post.post_author == 'umang' or post.post_authors contains 'umang'" %}
+{% assign lang_posts = site.posts | where: "lang", "en" %}
+{% assign sole_posts = lang_posts | where: "post_author", "umang" %}
+{% assign co_posts = lang_posts | where: "post_authors", "umang" %}
+{% assign author_posts = sole_posts | concat: co_posts | sort: "date" | reverse %}
 {% for post in author_posts %}
 - [{{ post.title }}]({{ post.url | relative_url }}) - {{ post.date | date: "%B %d, %Y" }}
 {% endfor %}
