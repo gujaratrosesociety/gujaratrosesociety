@@ -14,14 +14,14 @@ The hardest part of ordering roses online in India is knowing which nursery to t
 
 **Ask what rootstock they use.** Most of the notes below mention indica or multiflora, because that is where the real difference lies. *Rosa indica* rootstock is cheaper and by far the most widely used across India, but multiflora rootstock produces a more vigorous plant that holds up better over the long run. Half the price difference you see between nurseries often comes down to exactly this.
 
-**Most of these nurseries are in Bengal.** There is an entire rose-grafting cluster around Jaykpur (Midnapur), Shikharpur and Kolkata. Many of them are connected to each other — some graft their own plants, others simply buy and resell. The list notes which is which.
+**Most of these nurseries are in Bengal.** There is an entire rose-grafting cluster around Jakpur (Midnapur), Shikharpur and Kolkata. Many of them are connected to each other — some graft their own plants, others simply buy and resell. The list notes which is which.
 
 ---
 
-## Bengal — Jaykpur / Midnapur
+## Bengal — Jakpur / Midnapur
 
 **1. Pushpanjali Ashok**
-Jaykpur, Midnapur, Bengal
+Jakpur, Midnapur, Bengal
 📞 7319316689 (Ashok) · 7872827697 (Atanu)
 🌐 [puspanjaliasoke.online](https://www.puspanjaliasoke.online/)
 
@@ -36,12 +36,12 @@ Address as above
 ⚠️ The plants cannot be relied on; they send very small plants.
 
 **4. Puspabitan Nursery**
-Next to Jaykpur railway station, Bengal
+Next to Jakpur railway station, Bengal
 📞 7063172631 (Shibshankar Bhattacharya)
 ✅ Sends very good plants and the price is low too — but the variety selection is limited.
 
 **21. Medi Gardener**
-Jaykpur, Midnapur, Bengal
+Jakpur, Midnapur, Bengal
 📞 9932039838 / 9883673565 (Pooja Ben)
 Buys from Ashok's Pushpanjali and resells.
 
@@ -49,7 +49,7 @@ Buys from Ashok's Pushpanjali and resells.
 
 ## Bengal — Shikharpur
 
-**5. Anu Bedya**
+**5. Anu Baidhya**
 Shikharpur, Bengal
 📞 7001638254
 Used to have grafting done by others, but now does it in-house. Keeps a very good variety selection, but the prices are considerably higher.
@@ -194,7 +194,7 @@ If this is your first order and you want to keep the risk low:
 - **Ranjit Nursery (7)** — healthy plants and reliable courier service.
 - **Divya Kripal Nursery (12)** — if you specifically want multiflora rootstock.
 
-If variety selection matters most, **Anu Bedya (5)** and **K.S.G. (24)** are the deepest lists — but the first is expensive and the second carries a real risk of ID mismatches.
+If variety selection matters most, **Anu Baidhya (5)** and **K.S.G. (24)** are the deepest lists — but the first is expensive and the second carries a real risk of ID mismatches.
 
 ---
 
