@@ -8,7 +8,7 @@ lang: en
 section: tools-tips
 ---
 
-The hardest part of ordering roses online in India is knowing which nursery to trust. Below is a list of 38 nurseries — contact numbers, locations, and notes based on personal experience.
+The hardest part of ordering roses online in India is knowing which nursery to trust. Below is a list of 37 nurseries — contact numbers, locations, and notes based on personal experience.
 
 **Two things to keep in mind before you read the list.**
 
@@ -213,9 +213,10 @@ Advertises David Austin, Dutch and hybrid tea roses along with clematis, magnoli
 
 ## Location Not Confirmed
 
-**17. Sagun Nursery**
-📞 9653290071 / 9596130071
-No experience at all; sells all kinds of plants.
+**17. Shagun Nursery**
+📞 9653290071 / 9596130071 (WhatsApp)
+🌐 [shagunursery.com](https://shagunursery.com/)
+No experience at all; sells all kinds of plants. The site does carry a full rose range though — climbing, David Austin, Dutch, HT, miniature and floribunda — alongside plumeria, bougainvillea, orchids and succulents. Ships pan-India.
 
 **29. Amrit Maity**
 📞 9330828572
@@ -223,8 +224,6 @@ A reseller — does not graft their own plants, buys and resells.
 
 **31. Pusparoti Roses**
 Found on Facebook.
-
-**32. K & M Roses**
 
 **33. Green Gold Rose Garden**
 
@@ -242,7 +241,6 @@ If this is your first order and you want to keep the risk low:
 - **Ranjit Nursery (7)** — healthy plants and reliable courier service.
 - **Divya Kripal Nursery (12)** — if you specifically want multiflora rootstock.
 
-If variety selection matters most, **Anu Baidhya (5)** and **K.S.G. (24)** are the deepest lists — but the first is expensive and the second carries a real risk of ID mismatches.
 ---
 
 *This list is based on personal experience and information shared by fellow rose growers. Prices, variety lists and contact numbers change over time — always confirm the rootstock and the age of the plant yourself before placing an order.*
