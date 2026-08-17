@@ -8,7 +8,7 @@ lang: en
 section: tools-tips
 ---
 
-The hardest part of ordering roses online in India is knowing which nursery to trust. Below is a list of 29 nurseries — contact numbers, locations, and notes based on personal experience.
+The hardest part of ordering roses online in India is knowing which nursery to trust. Below is a list of 37 nurseries — contact numbers, locations, and notes based on personal experience.
 
 **Two things to keep in mind before you read the list.**
 
@@ -22,23 +22,34 @@ The hardest part of ordering roses online in India is knowing which nursery to t
 
 **1. Pushpanjali Ashok**
 Jakpur, Midnapur, Bengal
-📞 7319316689 (Ashok) · 7872827697 (Atanu)
+Owner: Ashoke Maity
+📞 7319316689 (Ashok) · 8001084590 · 7872827697 (Atanu)
+📧 [puspanjaliasoke@gmail.com](mailto:puspanjaliasoke@gmail.com)
 🌐 [puspanjaliasoke.online](https://www.puspanjaliasoke.online/)
 
 **2. Pushpanjali Pranabir**
 Address as above
 📞 8001084519 / 7384421473 / 7384421572 (Pranabir) · 7365070003 (Ashish Das — Pranabir's son-in-law)
+📧 [puspanjalipranabir@gmail.com](mailto:puspanjalipranabir@gmail.com)
 🌐 [puspanjalipranabir.com](https://www.puspanjalipranabir.com/)
 ⚠️ **Most important:** there is no guarantee the plants will arrive in good condition.
 
 **3. Puspita Nursery**
-📞 9635853860 (Tapan Maity — Ashok's younger brother) · 6384439063 (Nayan Raut — manager, handles all the dealings)
+Saratpally, Bengal
+📞 9635853860 (Tapan Maity — Ashok's younger brother) · 6384439063 / 9933531384 (Nayan Raut — manager, handles all the dealings)
 ⚠️ The plants cannot be relied on; they send very small plants.
 
 **4. Puspabitan Nursery**
 Next to Jakpur railway station, Bengal
-📞 7063172631 (Shibshankar Bhattacharya)
+📞 7063172631 / 8145312474 (Shibshankar Bhattacharjee)
+📧 [puspabitan@gmail.com](mailto:puspabitan@gmail.com)
 ✅ Sends very good plants and the price is low too — but the variety selection is limited.
+
+**26. NextGen Rose**
+Kharagpur, Medinipur, Bengal
+📞 9475567885 (WhatsApp) · 📧 [nextgenrose@gmail.com](mailto:nextgenrose@gmail.com)
+🌐 [nextgenrose.in](https://nextgenrose.in/)
+Running since 2020, roses only — HT, floribunda, miniature, polyantha and shrub, plus cut flowers.
 
 **21. Medi Gardener**
 Jakpur, Midnapur, Bengal
@@ -57,7 +68,8 @@ Used to have grafting done by others, but now does it in-house. Keeps a very goo
 ✅ **The site states all plants are budded on multiflora rootstock.** Beyond HT and spray roses they also carry Ecuadorian, Chinese and Japanese imported varieties.
 
 **6. Laxmi Nursery**
-Shikharpur, Bengal
+Shikharpur, Kolkata, Bengal
+Owner: Tarun Kumar Mondal
 📞 8617491932
 Sells online, but I have no experience with them.
 
@@ -81,18 +93,23 @@ Shikharpur, Bengal
 📞 9830321126
 Gives good plants.
 
+**30. Mondal Nursery**
+Shikharpur, Kolkata, Bengal
+📞 9883132658 (Sujit Mondal / Kunal Mondal)
+
 ---
 
 ## Bengal — Kolkata / Howrah / Durgapur
 
 **11. Durgapur Rose Nursery**
-Bengal
-📞 8670421707 (manager) · 9434007906 (owner)
+Bharati Kalibari Road, 3 No. Street, Durgapur, Bengal
+📞 8670421707 (manager) · 9434007906 (Malay Haldar — owner)
 Gives good plants, and keeps a good selection of Indian breeds. No personal experience, but they are not dishonest either.
 
 **13. Plant Rose World**
-Bengal
+Kharagpur, Bengal
 📞 7602693403
+🌐 [plantsroseworld.com](https://www.plantsroseworld.com/)
 Buys from Pushpanjali and resells; no information about the plants.
 
 **14. Govinda Nursery (the Galiff Street one)**
@@ -123,7 +140,7 @@ Charges considerably more, and the rootstock is mostly indica.
 
 **10. Friends Rosery**
 Lucknow, Uttar Pradesh
-📞 9335274192 (Agarwal Bhai)
+📞 9335274192 (Agarwal Bhai) · 📧 [friends.rosery@gmail.com](mailto:friends.rosery@gmail.com)
 🌐 [friendsrosery.com](https://friendsrosery.com/)
 Gives very good plants, but the rootstock is indica and the prices are considerably higher.
 A three-generation nursery running since 1959. Founder Mr. J. P. Agarwal received a Gold Medal from the Indian Rose Federation. Orders can be placed directly through the website.
@@ -169,6 +186,22 @@ Vinolia Dreamzz, near Christ School, Ring Road, Vidyanagar – 573202, Hassan, K
 🌐 [prettyblossoms.in](https://prettyblossoms.in)
 Imports plants from Vietnam. Carries David Austin, hybrid tea, fragrant, climbing and Japanese roses, along with Taiwan/American hibiscus, amaryllis bulbs, clematis and peonies. The exotic varieties including the David Austins are grafted.
 
+**34. Gopal Nursery**
+Hyderabad, Telangana
+For seedlings.
+
+**36. GTS Rose Garden & Nursery**
+Dharmapuri, Tamil Nadu
+📞 9843248524 (WhatsApp — Nandhini Saravanan)
+🌐 [gtsnursery.com](https://gtsnursery.com/)
+Rose-focused, with home delivery across India.
+
+**37. Santhi Online Plants**
+365/12, Kullanchavadi Main Road, Vegakkollai, Panruti, Cuddalore – 607302, Tamil Nadu
+📞 6384422333 · 📧 [santhionlineplants@gmail.com](mailto:santhionlineplants@gmail.com)
+🌐 [santhionlineplants.com](https://santhionlineplants.com/)
+Sells all kinds of plants and garden supplies. Roses are not their focus.
+
 ---
 
 ## Location Not Confirmed
@@ -177,14 +210,20 @@ Imports plants from Vietnam. Carries David Austin, hybrid tea, fragrant, climbin
 📞 9653290071 / 9596130071
 No experience at all; sells all kinds of plants.
 
-**26. NextGen Rose**
-📞 9475567885 (WhatsApp) · 📧 [nextgenrose@gmail.com](mailto:nextgenrose@gmail.com)
-🌐 [nextgenrose.in](https://nextgenrose.in/)
-Running since 2020, roses only — HT, floribunda, miniature, polyantha and shrub, plus cut flowers.
-
 **29. Amrit Maity**
 📞 9330828572
 A reseller — does not graft their own plants, buys and resells.
+
+**31. Pusparoti Roses**
+Found on Facebook.
+
+**32. K & M Roses**
+
+**33. Green Gold Rose Garden**
+
+**35. Paudhshala**
+🌐 [paudhshala.com](https://paudhshala.com/)
+Delivers across India. Has a dedicated Roses Collection, but mainly deals in exotic and rare plants and seeds.
 
 ---
 
