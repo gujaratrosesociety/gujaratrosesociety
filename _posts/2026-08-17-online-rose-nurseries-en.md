@@ -8,7 +8,7 @@ lang: en
 section: tools-tips
 ---
 
-The hardest part of ordering roses online in India is knowing which nursery to trust. Below is a list of 37 nurseries — contact numbers, locations, and notes based on personal experience.
+The hardest part of ordering roses online in India is knowing which nursery to trust. Below is a list of 36 nurseries — contact numbers, locations, and notes based on personal experience.
 
 **Two things to keep in mind before you read the list.**
 
@@ -221,9 +221,6 @@ No experience at all; sells all kinds of plants. The site does carry a full rose
 **29. Amrit Maity**
 📞 9330828572
 A reseller — does not graft their own plants, buys and resells.
-
-**31. Pusparoti Roses**
-Found on Facebook.
 
 **33. Green Gold Rose Garden**
 
