@@ -149,7 +149,7 @@ India's largest and oldest nursery — every kind of rose is available there. Bu
 **19. Palak Sadnani**
 Ahmedabad, Gujarat
 📞 9377052767 (Palak)
-Sells imported varieties, and the plants are very expensive.
+A reseller — does not graft their own plants. Sells imported varieties, and the plants are very expensive.
 
 **25. Mainaam Garden**
 Lower Gumpa Ghurpesay, Namchi, Sikkim – 737126
@@ -182,7 +182,7 @@ Running since 2020, roses only — HT, floribunda, miniature, polyantha and shru
 
 **29. Amrit Maity**
 📞 9330828572
-A reseller — does not graft his own plants, buys and resells.
+A reseller — does not graft their own plants, buys and resells.
 
 ---
 
