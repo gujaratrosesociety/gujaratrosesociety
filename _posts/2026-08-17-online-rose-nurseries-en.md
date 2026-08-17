@@ -12,7 +12,7 @@ The hardest part of ordering roses online in India is knowing which nursery to t
 
 **Two things to keep in mind before you read the list.**
 
-**Ask what rootstock they use.** Most of the notes below mention indica or multiflora, because that is where the real difference lies. *Rosa indica* rootstock is cheaper and by far the most widely used across India, but multiflora rootstock produces a more vigorous plant that holds up better over the long run. Half the price difference you see between nurseries often comes down to exactly this.
+**Watch for the rootstock.** Several notes below single out *Rosa indica* rootstock, because that is the exception worth knowing about — where nothing is said, assume multiflora, which is the default. Multiflora is cheaper to produce and cheaper to sell, so a nursery working on indica is generally the pricier option.
 
 **Most of these nurseries are in Bengal.** There is an entire rose-grafting cluster around Jakpur (Midnapur), Shikharpur and Kolkata. Many of them are connected to each other — some graft their own plants, others simply buy and resell. The list notes which is which.
 
@@ -167,7 +167,7 @@ Kerala
 Vinolia Dreamzz, near Christ School, Ring Road, Vidyanagar – 573202, Hassan, Karnataka
 📞 8197456489 / 9113898552
 🌐 [prettyblossoms.in](https://prettyblossoms.in)
-Imports plants from Vietnam. Carries David Austin, hybrid tea, fragrant, climbing and Japanese roses, along with Taiwan/American hibiscus, amaryllis bulbs, clematis and peonies. The exotic varieties including the David Austins are grafted, but the site does not say what rootstock — worth asking.
+Imports plants from Vietnam. Carries David Austin, hybrid tea, fragrant, climbing and Japanese roses, along with Taiwan/American hibiscus, amaryllis bulbs, clematis and peonies. The exotic varieties including the David Austins are grafted.
 
 ---
 
@@ -180,7 +180,7 @@ No experience at all; sells all kinds of plants.
 **26. NextGen Rose**
 📞 9475567885 (WhatsApp) · 📧 [nextgenrose@gmail.com](mailto:nextgenrose@gmail.com)
 🌐 [nextgenrose.in](https://nextgenrose.in/)
-Running since 2020, roses only — HT, floribunda, miniature, polyantha and shrub, plus cut flowers. The website says nothing about rootstock, so ask before ordering.
+Running since 2020, roses only — HT, floribunda, miniature, polyantha and shrub, plus cut flowers.
 
 **29. Amrit Maity**
 📞 9330828572
@@ -197,9 +197,6 @@ If this is your first order and you want to keep the risk low:
 - **Divya Kripal Nursery (12)** — if you specifically want multiflora rootstock.
 
 If variety selection matters most, **Anu Baidhya (5)** and **K.S.G. (24)** are the deepest lists — but the first is expensive and the second carries a real risk of ID mismatches.
-
-On rootstock specifically, **Anu Baidhya (5)** and **Divya Kripal (12)** are the only two here that state multiflora outright. Everyone else is either indica or has not said.
-
 ---
 
 *This list is based on personal experience and information shared by fellow rose growers. Prices, variety lists and contact numbers change over time — always confirm the rootstock and the age of the plant yourself before placing an order.*
