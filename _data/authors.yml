@@ -16,6 +16,15 @@ umang:
     gu: "ગુલાબ પ્રેમી."
   photo: "/assets/images/authors/umang.jpg"
 
+ramesh:
+  name:
+    en: "Ramesh Pandya"
+    gu: "રમેશ પંડ્યા"
+  bio:
+    en: "Rose enthusiast."
+    gu: "ગુલાબ પ્રેમી."
+  photo: "/assets/images/authors/ramesh.jpg"
+
 krunal:
   name:
     en: "Krunal"

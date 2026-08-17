@@ -24,23 +24,37 @@ layout: default
     {{ content }}
   </div>
 
-  {% if page.post_author %}
-    {% assign author_data = site.data.authors[page.post_author] %}
+  {% comment %}
+    post_authors (a list) takes precedence so a post can credit several
+    people; post_author stays supported for everything written by one.
+  {% endcomment %}
+  {% if page.post_authors %}
+    {% assign author_ids = page.post_authors %}
+  {% elsif page.post_author %}
+    {% assign author_ids = page.post_author | split: "," %}
+  {% else %}
+    {% assign author_ids = "" | split: "," %}
+  {% endif %}
+
+  {% if author_ids.size > 0 %}
     <div class="author-bio">
-      <div class="author-bio-content">
-        <img src="{{ site.baseurl }}{{ author_data.photo }}" alt="{{ author_data.name[lang] }}" class="author-photo">
-        <div class="author-info">
-          <p class="author-label">{{ t.written_by }}</p>
-          <h3 class="author-name">
-            {% if lang == 'gu' %}
-              <a href="{{ site.baseurl }}/authors/{{ page.post_author }}/">{{ author_data.name[lang] }}</a>
-            {% else %}
-              <a href="{{ site.baseurl }}/en/authors/{{ page.post_author }}/">{{ author_data.name[lang] }}</a>
-            {% endif %}
-          </h3>
-          <p class="author-description">{{ author_data.bio[lang] }}</p>
+      <p class="author-label">{{ t.written_by }}</p>
+      {% for author_id in author_ids %}
+        {% assign author_data = site.data.authors[author_id] %}
+        <div class="author-bio-content">
+          <img src="{{ site.baseurl }}{{ author_data.photo }}" alt="{{ author_data.name[lang] }}" class="author-photo">
+          <div class="author-info">
+            <h3 class="author-name">
+              {% if lang == 'gu' %}
+                <a href="{{ site.baseurl }}/authors/{{ author_id }}/">{{ author_data.name[lang] }}</a>
+              {% else %}
+                <a href="{{ site.baseurl }}/en/authors/{{ author_id }}/">{{ author_data.name[lang] }}</a>
+              {% endif %}
+            </h3>
+            <p class="author-description">{{ author_data.bio[lang] }}</p>
+          </div>
         </div>
-      </div>
+      {% endfor %}
     </div>
   {% endif %}
 
@@ -202,6 +216,18 @@ layout: default
   display: flex;
   align-items: center;
   gap: 1.5rem;
+}
+
+/* Second and later co-authors get a rule above them so the block reads
+   as a list rather than one run-on entry. */
+.author-bio-content + .author-bio-content {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #e3e7ea;
+}
+
+.author-bio > .author-label {
+  margin-bottom: 1rem;
 }
 
 .author-photo {

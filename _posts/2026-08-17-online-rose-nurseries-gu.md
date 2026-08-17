@@ -2,7 +2,7 @@
 layout: post
 title: "ઓનલાઇન રોઝ નર્સરીની સંપૂર્ણ યાદી"
 date: 2026-08-17
-post_author: umang
+post_authors: [umang, ramesh]
 categories: ટીપ્સ નર્સરી ખરીદી રૂટસ્ટોક
 lang: gu
 section: tools-tips

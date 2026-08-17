@@ -2,7 +2,7 @@
 layout: post
 title: "A Complete List of Online Rose Nurseries"
 date: 2026-08-17
-post_author: umang
+post_authors: [umang, ramesh]
 categories: tips nurseries buying rootstock
 lang: en
 section: tools-tips
