@@ -8,7 +8,7 @@ lang: en
 section: tools-tips
 ---
 
-The hardest part of ordering roses online in India is knowing which nursery to trust. Below is a list of 36 nurseries — contact numbers, locations, and notes based on personal experience.
+The hardest part of ordering roses online in India is knowing which nursery to trust. Below is a list of 35 nurseries — contact numbers, locations, and notes based on personal experience.
 
 **Two things to keep in mind before you read the list.**
 
@@ -186,23 +186,19 @@ Vinolia Dreamzz, near Christ School, Ring Road, Vidyanagar – 573202, Hassan, K
 🌐 [prettyblossoms.in](https://prettyblossoms.in)
 Imports plants from Vietnam. Carries David Austin, hybrid tea, fragrant, climbing and Japanese roses, along with Taiwan/American hibiscus, amaryllis bulbs, clematis and peonies. The exotic varieties including the David Austins are grafted.
 
-**29. Gopal Nursery**
-Hyderabad, Telangana
-For seedlings.
-
-**30. GTS Rose Garden & Nursery**
+**29. GTS Rose Garden & Nursery**
 Dharmapuri, Tamil Nadu
 📞 9843248524 (WhatsApp — Nandhini Saravanan)
 🌐 [gtsnursery.com](https://gtsnursery.com/)
 Rose-focused, with home delivery across India.
 
-**31. Santhi Online Plants**
+**30. Santhi Online Plants**
 365/12, Kullanchavadi Main Road, Vegakkollai, Panruti, Cuddalore – 607302, Tamil Nadu
 📞 6384422333 · 📧 [santhionlineplants@gmail.com](mailto:santhionlineplants@gmail.com)
 🌐 [santhionlineplants.com](https://santhionlineplants.com/)
 Sells all kinds of plants and garden supplies. Roses are not their focus.
 
-**32. Sri Arav Nursery Garden — Priyanga Navneethkrishnan**
+**31. Sri Arav Nursery Garden — Priyanga Navneethkrishnan**
 SS Colony, Madurai, Tamil Nadu – 625016
 📞 8438001022 · 9514440766 · 📧 [grow@sriaravnurserygarden.com](mailto:grow@sriaravnurserygarden.com)
 🌐 [sriaravnurserygarden.com](https://sriaravnurserygarden.com/)
@@ -213,18 +209,18 @@ Advertises David Austin, Dutch and hybrid tea roses along with clematis, magnoli
 
 ## Location Not Confirmed
 
-**33. Shagun Nursery**
+**32. Shagun Nursery**
 📞 9653290071 / 9596130071 (WhatsApp)
 🌐 [shagunursery.com](https://shagunursery.com/)
 No experience at all; sells all kinds of plants. The site does carry a full rose range though — climbing, David Austin, Dutch, HT, miniature and floribunda — alongside plumeria, bougainvillea, orchids and succulents. Ships pan-India.
 
-**34. Amrit Maity**
+**33. Amrit Maity**
 📞 9330828572
 A reseller — does not graft their own plants, buys and resells.
 
-**35. Green Gold Rose Garden**
+**34. Green Gold Rose Garden**
 
-**36. Paudhshala**
+**35. Paudhshala**
 🌐 [paudhshala.com](https://paudhshala.com/)
 Delivers across India. Has a dedicated Roses Collection, but mainly deals in exotic and rare plants and seeds.
 
