@@ -45,13 +45,13 @@ Next to Jakpur railway station, Bengal
 📧 [puspabitan@gmail.com](mailto:puspabitan@gmail.com)
 ✅ Sends very good plants and the price is low too — but the variety selection is limited.
 
-**26. NextGen Rose**
+**5. NextGen Rose**
 Kharagpur, Medinipur, Bengal
 📞 9475567885 (WhatsApp) · 📧 [nextgenrose@gmail.com](mailto:nextgenrose@gmail.com)
 🌐 [nextgenrose.in](https://nextgenrose.in/)
 Running since 2020, roses only — HT, floribunda, miniature, polyantha and shrub, plus cut flowers.
 
-**21. Medi Gardener**
+**6. Medi Gardener**
 Jakpur, Midnapur, Bengal
 📞 9932039838 / 9883673565 (Pooja Ben)
 Buys from Ashok's Pushpanjali and resells.
@@ -60,40 +60,40 @@ Buys from Ashok's Pushpanjali and resells.
 
 ## Bengal — Shikharpur
 
-**5. Anu Baidhya**
+**7. Anu Baidhya**
 Shikharpur, Bengal
 📞 7001638254 / 9831911815 · 📧 [wishrose.kolkata@gmail.com](mailto:wishrose.kolkata@gmail.com)
 🌐 [wishrose.in](https://www.wishrose.in/) (trading as WishRose)
 Used to have grafting done by others, but now does it in-house. Keeps a very good variety selection, but the prices are considerably higher.
 ✅ **The site states all plants are budded on multiflora rootstock.** Beyond HT and spray roses they also carry Ecuadorian, Chinese and Japanese imported varieties.
 
-**6. Laxmi Nursery**
+**8. Laxmi Nursery**
 Shikharpur, Kolkata, Bengal
 Owner: Tarun Kumar Mondal
 📞 8617491932
 Sells online, but I have no experience with them.
 
-**7. Ranjit Nursery**
+**9. Ranjit Nursery**
 Address as above
 📞 9836160317 (Ranjit Mandal)
 ✅ Sends excellent, healthy plants, and the courier service is good too.
 
-**8. Sushantu Nursery**
+**10. Sushantu Nursery**
 Address as above
 📞 6291667326 (Sushantu Bhai)
 No personal experience, but they do give good plants.
 
-**15. Gardening Guy**
+**11. Gardening Guy**
 Shikharpur, Bengal
 📞 8250221446 (Rohit Sharma)
 Rajasthani, studying there, and buys from local nurseries to resell. Has no plant knowledge at all.
 
-**20. Nimai Mukherjee**
+**12. Nimai Mukherjee**
 Shikharpur, Bengal
 📞 9830321126
 Gives good plants.
 
-**30. Mondal Nursery**
+**13. Mondal Nursery**
 Shikharpur, Kolkata, Bengal
 📞 9883132658 (Sujit Mondal / Kunal Mondal)
 
@@ -101,31 +101,31 @@ Shikharpur, Kolkata, Bengal
 
 ## Bengal — Kolkata / Howrah / Durgapur
 
-**11. Durgapur Rose Nursery**
+**14. Durgapur Rose Nursery**
 Bharati Kalibari Road, 3 No. Street, Durgapur, Bengal
 📞 8670421707 (manager) · 9434007906 (Malay Haldar — owner)
 Gives good plants, and keeps a good selection of Indian breeds. No personal experience, but they are not dishonest either.
 
-**13. Plant Rose World**
+**15. Plant Rose World**
 Kharagpur, Bengal
 📞 7602693403
 🌐 [plantsroseworld.com](https://www.plantsroseworld.com/)
 Buys from Pushpanjali and resells; no information about the plants.
 
-**14. Govinda Nursery (the Galiff Street one)**
+**16. Govinda Nursery (the Galiff Street one)**
 📞 7041482202 / 9933522202 (Vivek Bhai)
 Plants are good but expensive.
 
-**18. Plant Nursery Kolkata**
+**17. Plant Nursery Kolkata**
 📞 9874446688
 Sells all kinds of plants; no experience at all.
 
-**22. Maa Horticulture**
+**18. Maa Horticulture**
 Howrah, Bengal
 📞 9838290777 (Samdar)
 Buys from Sushantu Nursery and resells.
 
-**23. Horticulture King Kolkata**
+**19. Horticulture King Kolkata**
 📞 9830321126
 Based in Shikharpur; sells all kinds of plants.
 
@@ -133,19 +133,19 @@ Based in Shikharpur; sells all kinds of plants.
 
 ## Uttar Pradesh
 
-**9. Pushpanjali Rosery**
+**20. Pushpanjali Rosery**
 Bareilly, Uttar Pradesh
 📞 8954907811 (Rohit Tandon)
 Charges considerably more, and the rootstock is mostly indica.
 
-**10. Friends Rosery**
+**21. Friends Rosery**
 Lucknow, Uttar Pradesh
 📞 9335274192 (Agarwal Bhai) · 📧 [friends.rosery@gmail.com](mailto:friends.rosery@gmail.com)
 🌐 [friendsrosery.com](https://friendsrosery.com/)
 Gives very good plants, but the rootstock is indica and the prices are considerably higher.
 A three-generation nursery running since 1959. Founder Mr. J. P. Agarwal received a Gold Medal from the Indian Rose Federation. Orders can be placed directly through the website.
 
-**12. Divya Kripal Nursery**
+**22. Divya Kripal Nursery**
 Bareilly, Uttar Pradesh
 📞 9760875541 (Gajendra Pal)
 ✅ A very good person to deal with, and the plants are good too. Used to be on indica rootstock, now supplies on multiflora. Prices run slightly higher.
@@ -154,7 +154,7 @@ Bareilly, Uttar Pradesh
 
 ## Rest of India
 
-**16. Vaibhav Bio Tech Nursery**
+**23. Vaibhav Bio Tech Nursery**
 Pune, Maharashtra
 📞 9309011605 (Kiran Ben)
 Works at the nursery rather than owning it, but gives good plants. Indica rootstock.
@@ -165,12 +165,12 @@ Bengaluru, Karnataka
 India's largest and oldest nursery — every kind of rose is available there. But the rootstock is indica. One other thing: a lot of people complain about mismatched IDs. Prices are reasonable.
 📧 **They do not take orders on WhatsApp, only over Gmail** — [ksgson@gmail.com](mailto:ksgson@gmail.com) (Sriram Kasturirangan).
 
-**19. Palak Sadnani**
+**25. Palak Sadnani**
 Ahmedabad, Gujarat
 📞 9377052767 (Palak)
 A reseller — does not graft their own plants. Sells imported varieties, and the plants are very expensive.
 
-**25. Mainaam Garden**
+**26. Mainaam Garden**
 Lower Gumpa Ghurpesay, Namchi, Sikkim – 737126
 📞 7679626686 · 📧 [mainaamgardensk@gmail.com](mailto:mainaamgardensk@gmail.com)
 🌐 [mainaamgarden.com](https://mainaamgarden.com/)
@@ -186,23 +186,23 @@ Vinolia Dreamzz, near Christ School, Ring Road, Vidyanagar – 573202, Hassan, K
 🌐 [prettyblossoms.in](https://prettyblossoms.in)
 Imports plants from Vietnam. Carries David Austin, hybrid tea, fragrant, climbing and Japanese roses, along with Taiwan/American hibiscus, amaryllis bulbs, clematis and peonies. The exotic varieties including the David Austins are grafted.
 
-**34. Gopal Nursery**
+**29. Gopal Nursery**
 Hyderabad, Telangana
 For seedlings.
 
-**36. GTS Rose Garden & Nursery**
+**30. GTS Rose Garden & Nursery**
 Dharmapuri, Tamil Nadu
 📞 9843248524 (WhatsApp — Nandhini Saravanan)
 🌐 [gtsnursery.com](https://gtsnursery.com/)
 Rose-focused, with home delivery across India.
 
-**37. Santhi Online Plants**
+**31. Santhi Online Plants**
 365/12, Kullanchavadi Main Road, Vegakkollai, Panruti, Cuddalore – 607302, Tamil Nadu
 📞 6384422333 · 📧 [santhionlineplants@gmail.com](mailto:santhionlineplants@gmail.com)
 🌐 [santhionlineplants.com](https://santhionlineplants.com/)
 Sells all kinds of plants and garden supplies. Roses are not their focus.
 
-**38. Sri Arav Nursery Garden — Priyanga Navneethkrishnan**
+**32. Sri Arav Nursery Garden — Priyanga Navneethkrishnan**
 SS Colony, Madurai, Tamil Nadu – 625016
 📞 8438001022 · 9514440766 · 📧 [grow@sriaravnurserygarden.com](mailto:grow@sriaravnurserygarden.com)
 🌐 [sriaravnurserygarden.com](https://sriaravnurserygarden.com/)
@@ -213,18 +213,18 @@ Advertises David Austin, Dutch and hybrid tea roses along with clematis, magnoli
 
 ## Location Not Confirmed
 
-**17. Shagun Nursery**
+**33. Shagun Nursery**
 📞 9653290071 / 9596130071 (WhatsApp)
 🌐 [shagunursery.com](https://shagunursery.com/)
 No experience at all; sells all kinds of plants. The site does carry a full rose range though — climbing, David Austin, Dutch, HT, miniature and floribunda — alongside plumeria, bougainvillea, orchids and succulents. Ships pan-India.
 
-**29. Amrit Maity**
+**34. Amrit Maity**
 📞 9330828572
 A reseller — does not graft their own plants, buys and resells.
 
-**33. Green Gold Rose Garden**
+**35. Green Gold Rose Garden**
 
-**35. Paudhshala**
+**36. Paudhshala**
 🌐 [paudhshala.com](https://paudhshala.com/)
 Delivers across India. Has a dedicated Roses Collection, but mainly deals in exotic and rare plants and seeds.
 
@@ -235,8 +235,8 @@ Delivers across India. Has a dedicated Roses Collection, but mainly deals in exo
 If this is your first order and you want to keep the risk low:
 
 - **Puspabitan Nursery (4)** — good plants, low price, but a narrow variety list.
-- **Ranjit Nursery (7)** — healthy plants and reliable courier service.
-- **Divya Kripal Nursery (12)** — if you specifically want multiflora rootstock.
+- **Ranjit Nursery (9)** — healthy plants and reliable courier service.
+- **Divya Kripal Nursery (22)** — if you specifically want multiflora rootstock.
 
 ---
 
