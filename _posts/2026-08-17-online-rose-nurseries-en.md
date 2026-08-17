@@ -8,7 +8,7 @@ lang: en
 section: tools-tips
 ---
 
-The hardest part of ordering roses online in India is knowing which nursery to trust. Below is a list of 37 nurseries — contact numbers, locations, and notes based on personal experience.
+The hardest part of ordering roses online in India is knowing which nursery to trust. Below is a list of 38 nurseries — contact numbers, locations, and notes based on personal experience.
 
 **Two things to keep in mind before you read the list.**
 
@@ -201,6 +201,13 @@ Rose-focused, with home delivery across India.
 📞 6384422333 · 📧 [santhionlineplants@gmail.com](mailto:santhionlineplants@gmail.com)
 🌐 [santhionlineplants.com](https://santhionlineplants.com/)
 Sells all kinds of plants and garden supplies. Roses are not their focus.
+
+**38. Sri Arav Nursery Garden — Priyanga Navneethkrishnan**
+SS Colony, Madurai, Tamil Nadu – 625016
+📞 8438001022 · 9514440766 · 📧 [grow@sriaravnurserygarden.com](mailto:grow@sriaravnurserygarden.com)
+🌐 [sriaravnurserygarden.com](https://sriaravnurserygarden.com/)
+Advertises David Austin, Dutch and hybrid tea roses along with clematis, magnolia and maples.
+🚫 **Do not order from here.** Several buyers, including members of this group, report paying amounts running into lakhs of rupees and never receiving their plants. That money is still outstanding and legal cases are ongoing.
 
 ---
 
