@@ -7,6 +7,10 @@
 
   <div class="pkx-controls">
     <p class="pkx-grouphead pkx-gh-feed">{% if wlang == 'gu' %}છોડને શું મળે છે{% else %}What the plant gets{% endif %}</p>
+    <label class="pkx-field pkx-ecfield">
+      <span class="pkx-lab">{% if wlang == 'gu' %}લક્ષ્ય EC{% else %}Target EC{% endif %} <b id="s6-ecv">1.10</b> mS/cm</span>
+      <input type="range" id="s6-ec" min="55" max="165" step="5" value="110">
+    </label>
     <label class="pkx-field">
       <span class="pkx-lab">{% if wlang == 'gu' %}Pekacid 0-60-20 માત્રા{% else %}Pekacid 0-60-20 dose{% endif %} <b id="s6-xv">0.000</b> g/L</span>
       <input type="range" id="s6-x" min="0" max="640" step="5" value="0">
@@ -95,6 +99,7 @@
 .pkx-controls-b{margin-top:.6rem;background:none;border:1px dashed var(--pk-line);}
 .pkx-field{display:block;}
 .pkx-src{grid-column:1/-1;}
+.pkx-ecfield{grid-column:1/-1;}
 .pkx-lab{display:block;font-size:.8rem;color:var(--pk-mut);margin-bottom:.35rem;}
 .pkx-lab b{color:var(--pk-blue);font-size:.95rem;}
 .pkx input[type=range]{width:100%;accent-color:var(--pk-blue2);margin:0;}
@@ -170,7 +175,8 @@
     xnoteCap:"મહત્તમ %V% g/L — તેનાથી વધુ ફોસ્ફરસ લક્ષ્યાંક વટાવી જાય.",
     wnote:"13:40:13 નાઈટ્રોજન, ફોસ્ફરસ અને પોટેશિયમ સાથે લાવે છે.",
     wnoteCap:"મહત્તમ %V% g/L — તેમાં એમોનિયમ કુલ Nના 66% છે, જ્યારે આ મિશ્રણને 50% જોઈએ છે.",
-    wS:"સલ્ફર %V% ppm છે, સંદર્ભના 46 ppm સામે. Pekacid નું પોટેશિયમ MKP કરતાં ઓછું હોવાથી તેની ભરપાઈ પોટેશિયમ સલ્ફેટથી થાય છે.",
+    wS:"સલ્ફર %V% ppm છે, %T% ppm સંદર્ભ સામે. Pekacid નું પોટેશિયમ MKP કરતાં ઓછું હોવાથી તેની ભરપાઈ પોટેશિયમ સલ્ફેટથી થાય છે.",
+    wEC:"અંદાજિત EC %V% છે, %T% લક્ષ્યાંક સામે. પાણીની માત્રા વધારીને ઘટાડો, ખાતર ઘટાડીને નહીં.",
     wAcid:"Pekacid %V% meq/L મુક્ત એસિડ છોડે છે. આટલો એસિડ pH ખૂબ નીચે લઈ જશે — પાણીની આલ્કલિનિટી તપાસ્યા વગર આટલી માત્રા ન વાપરો.",
     wAS:"એમોનિયમ સલ્ફેટ કેલ્શિયમવાળા ખાતર સાથે સૂકું ભેગું ન કરો.",
     wNoP:"આ મિશ્રણમાં કેલ્શિયમ, મેગ્નેશિયમ કે સૂક્ષ્મ પોષક તત્વો નથી — તે ફૂલ માટેનું PK ફીડ છે, સંપૂર્ણ ખોરાક નહીં."
@@ -186,7 +192,8 @@
     xnoteCap:"Capped at %V% g/L — beyond that phosphorus overshoots its target.",
     wnote:"13:40:13 brings nitrogen, phosphorus and potassium together.",
     wnoteCap:"Capped at %V% g/L — its ammonium is 66% of its N, where this blend needs 50%.",
-    wS:"Sulphur is %V% ppm against the reference 46 ppm. Pekacid carries less potassium than the MKP it replaces, so potassium sulphate makes up the difference.",
+    wS:"Sulphur is %V% ppm against a %T% ppm reference. Pekacid carries less potassium than the MKP it replaces, so potassium sulphate makes up the difference.",
+    wEC:"Estimated EC is %V% against a %T% target. Reduce it by feeding a larger water volume, not by cutting fertiliser.",
     wAcid:"Pekacid is releasing %V% meq/L of free acid. That is a heavy acid load and will pull pH down hard — do not run this dose without knowing your water's alkalinity.",
     wAS:"Do not dry-blend ammonium sulphate with any calcium-bearing fertiliser.",
     wNoP:"This blend carries no calcium, magnesium or micronutrients — it is a bloom PK feed, not a complete diet."
@@ -203,12 +210,22 @@
   };
   function mm(p,k){ var pc=PR[p][k]||0, el=(k==="NH4"||k==="NO3")?"N":k; return pc*10/MW[el]; }
 
-  // Reference blend: MKP 36.90 + ammonium nitrate 9.10 + SOP 13.60 per 50 L
-  var REF={P:167.48,K:321.19,NH4N:30.94,NO3N:30.94,S:46.24};
-  var T={P:REF.P/MW.P, K:REF.K/MW.K, NH4:REF.NH4N/MW.N, NO3:REF.NO3N/MW.N};
-  var HAC=mm("pek","P")-mm("pek","K");     // free acid, meq per gram of Pekacid
-  var WCAP=T.NH4/mm("wsf","NH4");          // 13:40:13 limited by the 1:1 N ratio
-  var XCAP=T.P/mm("pek","P");              // Pekacid limited by phosphorus
+  // Reference blend: MKP 36.90 + ammonium nitrate 9.10 + SOP 13.60 per 50 L,
+  // at its own EC of ~1.10 mS/cm. The Target EC slider scales every target by
+  // ec/1.10, so the 1:6:6 ratio (and the 1:1 ammonium:nitrate split) survives
+  // at any strength.
+  var REF0={P:167.48,K:321.19,NH4N:30.94,NO3N:30.94,S:46.24};
+  var ECBASE=1.10;
+  var REF={}, T={}, HAC=mm("pek","P")-mm("pek","K"), WCAP, XCAP, curEC=ECBASE;
+  function applyEC(ec){
+    var k=ec/ECBASE;
+    REF.P=REF0.P*k; REF.K=REF0.K*k; REF.NH4N=REF0.NH4N*k; REF.NO3N=REF0.NO3N*k; REF.S=REF0.S*k;
+    T.P=REF.P/MW.P; T.K=REF.K/MW.K; T.NH4=REF.NH4N/MW.N; T.NO3=REF.NO3N/MW.N;
+    WCAP=T.NH4/mm("wsf","NH4");            // 13:40:13 limited by the 1:1 N ratio
+    XCAP=T.P/mm("pek","P");                // Pekacid limited by phosphorus
+    return k;
+  }
+  applyEC(curEC);
 
   var curX=0, curW=0, curT=0, curAlt="map";
 
@@ -249,7 +266,8 @@
   }
 
   var elX=document.getElementById("s6-x"), elW=document.getElementById("s6-w"),
-      elT=document.getElementById("s6-t"), elV=document.getElementById("s6-v");
+      elT=document.getElementById("s6-t"), elV=document.getElementById("s6-v"),
+      elEC=document.getElementById("s6-ec");
 
   // The three phosphorus carriers compete for one budget, so each cap moves.
   function caps(){
@@ -276,6 +294,7 @@
     if(!r){ return; }
     var v=verify(r.g), io=v.ion;
 
+    document.getElementById("s6-ecv").textContent=curEC.toFixed(2);
     document.getElementById("s6-xv").textContent=curX.toFixed(3);
     document.getElementById("s6-wv").textContent=curW.toFixed(3);
     document.getElementById("s6-vol1").textContent=(+elV.value||50);
@@ -297,14 +316,16 @@
     document.getElementById("s6-calc").href=link(r.g,vol);
 
     var s=io.S*MW.S, N=(io.NH4+io.NO3)*MW.N, P=io.P*MW.P, K=io.K*MW.K;
+    var k=curEC/ECBASE, ec=v.cat*1.6/15.12, ecOkMax=curEC*1.0625, ecWarnMax=curEC*1.15625;
     function dev(a,b){ var d=Math.abs(a-b)/b*100; return d<1?"ok":(d<3?"warn":"bad"); }
     document.getElementById("s6-del").innerHTML=
-      drow("N",REF.NH4N+REF.NO3N+" ppm",N.toFixed(1)+" ppm",dev(N,REF.NH4N+REF.NO3N))+
-      drow("NH₄-N",REF.NH4N+" ppm",(io.NH4*MW.N).toFixed(1)+" ppm",dev(io.NH4*MW.N,REF.NH4N))+
-      drow("NO₃-N",REF.NO3N+" ppm",(io.NO3*MW.N).toFixed(1)+" ppm",dev(io.NO3*MW.N,REF.NO3N))+
-      drow("P",REF.P+" ppm",P.toFixed(1)+" ppm",dev(P,REF.P))+
-      drow("K",REF.K+" ppm",K.toFixed(1)+" ppm",dev(K,REF.K))+
-      drow("S",REF.S+" ppm",s.toFixed(1)+" ppm",s<60?"ok":(s<80?"warn":"bad"));
+      drow("N",(REF.NH4N+REF.NO3N).toFixed(1)+" ppm",N.toFixed(1)+" ppm",dev(N,REF.NH4N+REF.NO3N))+
+      drow("NH₄-N",REF.NH4N.toFixed(1)+" ppm",(io.NH4*MW.N).toFixed(1)+" ppm",dev(io.NH4*MW.N,REF.NH4N))+
+      drow("NO₃-N",REF.NO3N.toFixed(1)+" ppm",(io.NO3*MW.N).toFixed(1)+" ppm",dev(io.NO3*MW.N,REF.NO3N))+
+      drow("P",REF.P.toFixed(1)+" ppm",P.toFixed(1)+" ppm",dev(P,REF.P))+
+      drow("K",REF.K.toFixed(1)+" ppm",K.toFixed(1)+" ppm",dev(K,REF.K))+
+      drow("S",REF.S.toFixed(1)+" ppm",s.toFixed(1)+" ppm",s<60*k?"ok":(s<80*k?"warn":"bad"))+
+      drow("EC",curEC.toFixed(2)+" mS/cm",ec.toFixed(2)+" mS/cm",ec<=ecOkMax?"ok":(ec<=ecWarnMax?"warn":"bad"));
 
     document.getElementById("s6-npk").textContent="1 : "+(P/N).toFixed(2)+" : "+(K/N).toFixed(2);
     document.getElementById("s6-oxide").textContent="1 : "+(P*2.2914/N).toFixed(1)+" : "+(K*1.2046/N).toFixed(1);
@@ -321,7 +342,8 @@
     tg.className="pkx-balok"+(rok?"":" pkx-balbad");
 
     var w=[];
-    if(s>60) w.push([s>80?"bad":"warn",L.wS.replace("%V%",s.toFixed(0))]);
+    if(s>60*k) w.push([s>80*k?"bad":"warn",L.wS.replace("%V%",s.toFixed(0)).replace("%T%",REF.S.toFixed(0))]);
+    if(ec>ecOkMax) w.push([ec>ecWarnMax?"bad":"warn",L.wEC.replace("%V%",ec.toFixed(2)).replace("%T%",curEC.toFixed(2))]);
     if(r.acid>1.0) w.push([r.acid>2.0?"bad":"warn",L.wAcid.replace("%V%",r.acid.toFixed(2))]);
     if(r.g.amsul>0.001) w.push(["warn",L.wAS]);
     w.push(["warn",L.wNoP]);
@@ -329,6 +351,14 @@
       return '<div class="pkx-msg '+m[0]+'">'+m[1]+"</div>"; }).join("");
   }
 
+  elEC.addEventListener("input",function(){
+    var c0=caps(), xMaxed=curX>=c0.x-1e-9, wMaxed=curW>=c0.w-1e-9;
+    curEC=+this.value/100; applyEC(curEC);
+    var c1=caps();
+    if(xMaxed) curX=c1.x;
+    if(wMaxed) curW=c1.w;
+    render();
+  });
   elX.addEventListener("input",function(){ curX=+this.value/1000; render(); });
   elW.addEventListener("input",function(){ curW=+this.value/1000; render(); });
   elT.addEventListener("input",function(){ curT=+this.value/100; render(); });

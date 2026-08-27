@@ -8,6 +8,10 @@
   <div class="pkx-controls">
     <p class="pkx-grouphead pkx-gh-feed">{% if wlang == 'gu' %}છોડને શું મળે છે{% else %}What the plant gets{% endif %}</p>
     <label class="pkx-field">
+      <span class="pkx-lab">{% if wlang == 'gu' %}લક્ષ્ય EC{% else %}Target EC{% endif %} <b id="pkx-ecv">1.60</b> mS/cm</span>
+      <input type="range" id="pkx-ec" min="80" max="240" step="5" value="160">
+    </label>
+    <label class="pkx-field">
       <span class="pkx-lab">{% if wlang == 'gu' %}Pekacid માત્રા{% else %}Pekacid dose{% endif %} <b id="pkx-xv">0.148</b> g/L</span>
       <input type="range" id="pkx-x" min="0" max="1479" step="1" value="1479">
     </label>
@@ -214,15 +218,15 @@
     bal:"સંતુલિત", balFail:"બેલેન્સ થતું નથી", gap:"તફાવત",
     tgtOk:"Ca, K, Mg, P બધા લક્ષ્યાંક પર", tgtBad:"%K% લક્ષ્યાંકથી દૂર",
     calcnote:"નવી ટૅબમાં ખૂલે છે. લિંક એ જ દ્રાવણ બતાવે તે માટે એક ફેરફાર થાય છે: પોટેશિયમ સલ્ફેટ 50% K₂O ગ્રેડ પ્રમાણે ગોઠવાય છે. લિંકમાં સૂક્ષ્મ પોષક તત્વો સામેલ નથી.", nfloat:"કુલ N લક્ષ્યાંકથી ઉપર",
-    wN:"40% એમોનિયમ 160 ppm કુલ N પર શક્ય નથી. કેલ્શિયમ નાઈટ્રેટ એકલું 7.48 mmol/L નાઈટ્રેટ લાવે છે — તેનાથી ઓછું જઈ શકાતું નથી. અહીં કુલ N વધીને %N% ppm થાય છે.",
+    wN:"40% એમોનિયમ %T% ppm કુલ N પર શક્ય નથી. કેલ્શિયમ નાઈટ્રેટ એકલું %F% mmol/L નાઈટ્રેટ લાવે છે — તેનાથી ઓછું જઈ શકાતું નથી. અહીં કુલ N વધીને %N% ppm થાય છે.",
     wNH:"NH₄ %V% mmol/L છે. પ્રકાશિત મર્યાદા 1.5 mmol/L (કુલ Nના 5-15%) છે. આ ટૂંકા ગાળાનું pH સુધારણ છે, નિયમિત ખોરાક નહીં.",
-    wS:"સલ્ફર %V% ppm છે, લક્ષ્યાંક 51 ppm સામે. દરેક વધારાના એમોનિયમને સલ્ફેટથી બેલેન્સ કરવું પડે છે — આ ટાળી શકાતું નથી.",
-    wEC:"અંદાજિત EC %V% છે, લક્ષ્યાંક 1.6 સામે. પાણીની માત્રા વધારીને ઘટાડો, ખાતર ઘટાડીને નહીં.",
+    wS:"સલ્ફર %V% ppm છે, લક્ષ્યાંક %T% ppm સામે. દરેક વધારાના એમોનિયમને સલ્ફેટથી બેલેન્સ કરવું પડે છે — આ ટાળી શકાતું નથી.",
+    wEC:"અંદાજિત EC %V% છે, લક્ષ્યાંક %T% સામે. પાણીની માત્રા વધારીને ઘટાડો, ખાતર ઘટાડીને નહીં.",
     wAS:"એમોનિયમ સલ્ફેટ અને કેલ્શિયમ નાઈટ્રેટ સૂકા ભેગા ન કરો. ટાંકીમાં અલગ અલગ ઉમેરો.",
     srcFree:"આનાથી નાઈટ્રોજન બદલાતો નથી — ઉપરની એમોનિયમ ટકાવારીએ એ પહેલેથી નક્કી કરી દીધું છે. આ માત્ર નક્કી કરે છે કે એમોનિયમ કયા ખાતરમાંથી આવે, અને તમે બંને એકસાથે વાપરી શકો છો. સલ્ફર, EC અને દરેક પોષક તત્વ એકદમ એવા જ રહે છે. ભારતમાં એમોનિયમ નાઈટ્રેટ નિયંત્રિત છે અને ખરીદવું મુશ્કેલ છે, તેથી ઘણા ઉગાડનારા સલ્ફેટ બાજુ રહે છે.",
     srcLocked:"આ સેટિંગ પર પસંદગી શક્ય નથી — નાઈટ્રેટની જગ્યા બચી નથી, એટલે બધું એમોનિયમ સલ્ફેટમાંથી જ આવવું પડે.",
     wLow:"6% થી નીચે એમોનિયમ માટે સામાન્ય Calcinit પ્રકારનું કેલ્શિયમ નાઈટ્રેટ વાપરી શકાતું નથી — તેમાં દર mmol કેલ્શિયમે 0.2 mmol એમોનિયમ હોય છે. રેસીપી એમોનિયમ વગરના કેલ્શિયમ નાઈટ્રેટ ટેટ્રાહાઈડ્રેટ પર જાય છે, અને સલ્ફેટ પૂરતું ઘટે તે માટે થોડું મેગ્નેશિયમ મેગ્નેશિયમ નાઈટ્રેટમાં ખસેડે છે. આ બે ખાતર કદાચ તમારી પાસે ન હોય.",
-    wLowS:"સલ્ફર %V% ppm છે, લક્ષ્યાંક 51 ppm સામે. ઓછા એમોનિયમે ચાર્જ બેલેન્સ તેનાથી વધુ જગ્યા આપતું નથી — આ પરિણામ છે, ભૂલ નહીં.",
+    wLowS:"સલ્ફર %V% ppm છે, લક્ષ્યાંક %T% ppm સામે. ઓછા એમોનિયમે ચાર્જ બેલેન્સ તેનાથી વધુ જગ્યા આપતું નથી — આ પરિણામ છે, ભૂલ નહીં.",
     wP:"આ મહત્તમ Pekacid માત્રા છે. વધુ ઉમેરવાથી ફોસ્ફરસ લક્ષ્યાંક વટાવી જશે અને તેને પાછું કાઢી શકાતું નથી."
   } : {
     ca:"Calcium nitrate 15.5-0-0 (Calcinit type)", caTet:"Calcium nitrate tetrahydrate (ammonium-free)", mgn:"Magnesium nitrate Mg(NO₃)₂·6H₂O", kno3:"Potassium nitrate 13-0-46", an:"Ammonium nitrate 34-0-0",
@@ -232,24 +236,33 @@
     bal:"Balanced", balFail:"NOT balanced", gap:"gap",
     tgtOk:"Ca, K, Mg, P all on target", tgtBad:"%K% is off target",
     calcnote:"Opens in a new tab. One swap is made so the link reproduces the same solution: potassium sulphate is adjusted to a 50% K₂O grade. Micronutrients are not included in the link.", nfloat:"total N above target",
-    wN:"40% ammonium is not possible at 160 ppm total N. Calcium nitrate alone forces 7.48 mmol/L of nitrate into the tank and you cannot go below it. Total N is pushed to %N% ppm here.",
+    wN:"40% ammonium is not possible at %T% ppm total N. Calcium nitrate alone forces %F% mmol/L of nitrate into the tank and you cannot go below it. Total N is pushed to %N% ppm here.",
     wNH:"NH₄ is %V% mmol/L. The published limit is 1.5 mmol/L (5–15% of total N). Treat this as a short-term pH correction, not a steady feed.",
-    wS:"Sulphur is %V% ppm against a 51 ppm target. Every extra ammonium ion has to be balanced by a sulphate ion — this is unavoidable, not a mistake.",
-    wEC:"Estimated EC is %V% against a 1.6 target. Reduce it by feeding a larger water volume, not by cutting fertiliser.",
+    wS:"Sulphur is %V% ppm against a %T% ppm target. Every extra ammonium ion has to be balanced by a sulphate ion — this is unavoidable, not a mistake.",
+    wEC:"Estimated EC is %V% against a %T% target. Reduce it by feeding a larger water volume, not by cutting fertiliser.",
     wAS:"Do not dry-blend ammonium sulphate with calcium nitrate. Add them to the tank separately.",
     srcFree:"This does not change the nitrogen — the ammonium percentage above already decided that. It only decides which product carries it, and you can use both at once. Sulphur, EC and every nutrient stay exactly the same. Ammonium nitrate is regulated and hard to buy in India, so many growers sit near the sulphate end.",
     srcLocked:"No choice at this setting — there is no nitrate budget left, so all the ammonium has to come from ammonium sulphate.",
     wLow:"Below 6% ammonium you can no longer use ordinary Calcinit-type calcium nitrate — it carries 0.2 mmol of ammonium per mmol of calcium. The recipe switches to ammonium-free calcium nitrate tetrahydrate, and moves part of the magnesium to magnesium nitrate so sulphate can fall far enough. Two products you may not already have.",
-    wLowS:"Sulphur is %V% ppm against a 51 ppm target. At low ammonium the charge balance leaves no room for more — it is a consequence, not an error.",
+    wLowS:"Sulphur is %V% ppm against a %T% ppm target. At low ammonium the charge balance leaves no room for more — it is a consequence, not an error.",
     wP:"This is the maximum Pekacid dose. Any more overshoots the phosphorus target, and phosphorus cannot be taken back out."
   };
 
-  // Stoichiometry
-  var T={NH4:0.70,K:4.50,Ca:3.40,Mg:1.60,NO3:10.75,S:1.60,P:1.25};
+  // Stoichiometry — T0 is the book recipe at its reference EC (1.6 mS/cm).
+  // The Target EC slider scales every ion target by ec/1.6, so the 4:1:4
+  // ratio holds at any strength; T holds the currently scaled targets.
+  var T0={NH4:0.70,K:4.50,Ca:3.40,Mg:1.60,NO3:10.75,S:1.60,P:1.25};
+  var T={}, NTOT, XMAX, curEC=1.6;
   var Pmm=8.4536, Kmm=4.2463, Hac=Pmm-Kmm;          // per gram of Pekacid 0-60-20
   var CNu=216.1, CNTu=236.15, MGNu=256.41, KNO3u=101.10, EPSu=246.47, K2SO4u=174.26, MKPu=136.086, ANu=80.043, ASu=132.14;
   // EPSu: Magnesium sulphate heptahydrate (Epsom salt) MgSO4.7H2O — Utkarsh Agro Chem's stocked Mg source.
-  var NO3cn=2.2*T.Ca, NH4cn=0.2*T.Ca, NTOT=T.NH4+T.NO3, XMAX=T.P/Pmm;
+  function applyEC(ec){
+    var k=ec/1.6;
+    T.NH4=T0.NH4*k; T.K=T0.K*k; T.Ca=T0.Ca*k; T.Mg=T0.Mg*k; T.NO3=T0.NO3*k; T.S=T0.S*k; T.P=T0.P*k;
+    NTOT=T.NH4+T.NO3; XMAX=T.P/Pmm;
+    return k;
+  }
+  applyEC(curEC);
 
   // t = 0 takes ammonium from ammonium nitrate first, t = 1 from ammonium sulphate first.
   // The delivered solution is identical either way — only the salts change.
@@ -286,9 +299,9 @@
             lowN:(caTet>1e-6||mgn>1e-6)};
   }
   function status(r){
-    var s=r.S*32.06, bad=0;
-    if(r.nfloat||r.NH4>2.5||s>120||r.EC>1.85) bad=2;
-    else if(r.NH4>1.5||s>70||r.EC>1.70) bad=1;
+    var s=r.S*32.06, k=curEC/1.6, bad=0;
+    if(r.nfloat||r.NH4>2.5||s>120*k||r.EC>curEC*1.15625) bad=2;
+    else if(r.NH4>1.5||s>70*k||r.EC>curEC*1.0625) bad=1;
     return bad;
   }
   var CLS=["pkx-ok","pkx-warn","pkx-bad"], SCLS=["ok","warn","bad"];
@@ -349,43 +362,61 @@
     return {ion:ion, cat:cat, an:an, gap:Math.abs(cat-an)};
   }
 
-  var XS=[0.100,0.110,0.120,0.130,0.140,XMAX];
   var FS=[0,0.03,0.06,0.10,0.15,0.20,0.25,0.30,0.35,0.40];
   var curX=XMAX, curF=0.10, curT=0;
 
   var grid=document.getElementById("pkx-grid");
   var headRow=document.querySelector("#pkx .pkx-matrix thead tr");
-  XS.forEach(function(x){
-    var th=document.createElement("th");
-    th.textContent=(x>=XMAX-1e-9?"0.148":x.toFixed(2));
-    headRow.appendChild(th);
-  });
-  FS.forEach(function(f){
-    var tr=document.createElement("tr");
-    var th=document.createElement("th"); th.textContent=Math.round(f*100)+"%"; tr.appendChild(th);
+  // XMAX (and so the last Pekacid column) moves with the Target EC slider,
+  // so the whole matrix is rebuilt whenever that slider changes.
+  function buildMatrix(){
+    var XS=[0.100,0.110,0.120,0.130,0.140,XMAX];
+    while(headRow.children.length>1) headRow.removeChild(headRow.lastChild);
+    grid.innerHTML="";
     XS.forEach(function(x){
-      var td=document.createElement("td");
-      var btn=document.createElement("button");
-      btn.type="button"; btn.className="pkx-cell";
-      btn.dataset.x=x; btn.dataset.f=f;
-      var r=recipe(x,f);
-      btn.classList.add(CLS[status(r)]);
-      btn.textContent=r.EC.toFixed(2);
-      btn.setAttribute("aria-label","Pekacid "+x.toFixed(3)+" g/L, NH4 "+Math.round(f*100)+"%, EC "+r.EC.toFixed(2));
-      btn.addEventListener("click",function(){ curX=+this.dataset.x; curF=+this.dataset.f; syncInputs(); render(); });
-      td.appendChild(btn); tr.appendChild(td);
+      var th=document.createElement("th");
+      th.textContent=(x>=XMAX-1e-9?XMAX.toFixed(3):x.toFixed(2));
+      headRow.appendChild(th);
     });
-    grid.appendChild(tr);
-  });
+    FS.forEach(function(f){
+      var tr=document.createElement("tr");
+      var th=document.createElement("th"); th.textContent=Math.round(f*100)+"%"; tr.appendChild(th);
+      XS.forEach(function(x){
+        var td=document.createElement("td");
+        var btn=document.createElement("button");
+        btn.type="button"; btn.className="pkx-cell";
+        btn.dataset.x=x; btn.dataset.f=f;
+        var r=recipe(x,f);
+        btn.classList.add(CLS[status(r)]);
+        btn.textContent=r.EC.toFixed(2);
+        btn.setAttribute("aria-label","Pekacid "+x.toFixed(3)+" g/L, NH4 "+Math.round(f*100)+"%, EC "+r.EC.toFixed(2));
+        btn.addEventListener("click",function(){ curX=+this.dataset.x; curF=+this.dataset.f; syncInputs(); render(); });
+        td.appendChild(btn); tr.appendChild(td);
+      });
+      grid.appendChild(tr);
+    });
+  }
+  buildMatrix();
 
   var elX=document.getElementById("pkx-x"), elF=document.getElementById("pkx-f"),
-      elV=document.getElementById("pkx-v"), elT=document.getElementById("pkx-t");
+      elV=document.getElementById("pkx-v"), elT=document.getElementById("pkx-t"),
+      elEC=document.getElementById("pkx-ec");
   function syncInputs(){ elX.value=Math.round(curX*10000); elF.value=Math.round(curF*100); }
   elX.max=Math.round(XMAX*10000);
   elX.addEventListener("input",function(){ curX=+this.value/10000; render(); });
   elF.addEventListener("input",function(){ curF=+this.value/100; render(); });
   elT.addEventListener("input",function(){ curT=+this.value/100; render(); });
   elV.addEventListener("input",render);
+  elEC.addEventListener("input",function(){
+    var wasMax=curX>=XMAX-0.0005;
+    curEC=+this.value/100;
+    applyEC(curEC);
+    elX.max=Math.round(XMAX*10000);
+    curX=wasMax?XMAX:Math.min(curX,XMAX);
+    buildMatrix();
+    syncInputs();
+    render();
+  });
 
   var TAG = GU ? {b:"સ્થિર", x:"Pekacid", f:"NH₄", xf:"બંને"}
                : {b:"fixed", x:"Pekacid", f:"NH₄", xf:"both"};
@@ -402,6 +433,7 @@
   function render(){
     var vol=Math.max(+elV.value||10,0.1);
     var r=recipe(curX,curF,curT);
+    document.getElementById("pkx-ecv").textContent=curEC.toFixed(2);
     document.getElementById("pkx-xv").textContent=curX.toFixed(3);
     document.getElementById("pkx-fv").textContent=Math.round(curF*100);
     document.getElementById("pkx-fv2").textContent=100-Math.round(curF*100);
@@ -428,21 +460,26 @@
     // read the solution back out of the gram amounts, independently
     var v=verify(r.mg), io=v.ion;
     var s=io.S*32.06, n=(io.NH4+io.NO3)*14.007;
-    var sc=s<=65?"ok":(s<=90?"warn":"bad");
-    var ec=r.EC<=1.70?"ok":(r.EC<=1.85?"warn":"bad");
+    // Deviation bands scale with the chosen Target EC; ammonium toxicity (nh)
+    // is an absolute root-safety limit and does not scale with strength.
+    var k=curEC/1.6, ecOkMax=curEC*1.0625, ecWarnMax=curEC*1.15625;
+    var nh4T=T.NH4*14.007, no3T=T.NO3*14.007, nT=NTOT*14.007, pT=T.P*30.974,
+        kT=T.K*39.098, caT=T.Ca*40.078, mgT=T.Mg*24.305, sT=T.S*32.06;
+    var sc=s<=65*k?"ok":(s<=90*k?"warn":"bad");
+    var ec=r.EC<=ecOkMax?"ok":(r.EC<=ecWarnMax?"warn":"bad");
     var nh=io.NH4<=1.5?"ok":(io.NH4<=2.5?"warn":"bad");
-    var nc=n<=165?"ok":"warn";
+    var nc=n<=165*k?"ok":"warn";
     function dev(got,want){ var d=Math.abs(got-want)/want; return d<0.02?"ok":(d<0.05?"warn":"bad"); }
     document.getElementById("pkx-del").innerHTML=
-      drow("NH₄-N","10 ppm",(io.NH4*14.007).toFixed(0)+" ppm",nh)+
-      drow("NO₃-N","151 ppm",(io.NO3*14.007).toFixed(0)+" ppm","ok")+
-      drow(GU?"કુલ N":"Total N","160 ppm",n.toFixed(0)+" ppm",nc)+
-      drow("P","39 ppm",(io.P*30.974).toFixed(0)+" ppm",dev(io.P,T.P))+
-      drow("K","176 ppm",(io.K*39.098).toFixed(0)+" ppm",dev(io.K,T.K))+
-      drow("Ca","136 ppm",(io.Ca*40.078).toFixed(0)+" ppm",dev(io.Ca,T.Ca))+
-      drow("Mg","39 ppm",(io.Mg*24.305).toFixed(0)+" ppm",dev(io.Mg,T.Mg))+
-      drow("S","51 ppm",s.toFixed(0)+" ppm",sc)+
-      drow("EC","1.6",r.EC.toFixed(2),ec);
+      drow("NH₄-N",nh4T.toFixed(0)+" ppm",(io.NH4*14.007).toFixed(0)+" ppm",nh)+
+      drow("NO₃-N",no3T.toFixed(0)+" ppm",(io.NO3*14.007).toFixed(0)+" ppm","ok")+
+      drow(GU?"કુલ N":"Total N",nT.toFixed(0)+" ppm",n.toFixed(0)+" ppm",nc)+
+      drow("P",pT.toFixed(0)+" ppm",(io.P*30.974).toFixed(0)+" ppm",dev(io.P,T.P))+
+      drow("K",kT.toFixed(0)+" ppm",(io.K*39.098).toFixed(0)+" ppm",dev(io.K,T.K))+
+      drow("Ca",caT.toFixed(0)+" ppm",(io.Ca*40.078).toFixed(0)+" ppm",dev(io.Ca,T.Ca))+
+      drow("Mg",mgT.toFixed(0)+" ppm",(io.Mg*24.305).toFixed(0)+" ppm",dev(io.Mg,T.Mg))+
+      drow("S",sT.toFixed(0)+" ppm",s.toFixed(0)+" ppm",sc)+
+      drow("EC",curEC.toFixed(2),r.EC.toFixed(2),ec);
 
     document.getElementById("pkx-cat").textContent=v.cat.toFixed(3)+" meq/L";
     document.getElementById("pkx-an").textContent=v.an.toFixed(3)+" meq/L";
@@ -464,11 +501,11 @@
 
     var w=[];
     if(r.lowN) w.push(["warn",L.wLow]);
-    if(s<45) w.push(["warn",L.wLowS.replace("%V%",s.toFixed(0))]);
-    if(r.nfloat) w.push(["bad",L.wN.replace("%N%",n.toFixed(0))]);
+    if(s<45*k) w.push(["warn",L.wLowS.replace("%V%",s.toFixed(0)).replace("%T%",sT.toFixed(0))]);
+    if(r.nfloat) w.push(["bad",L.wN.replace("%N%",n.toFixed(0)).replace("%T%",nT.toFixed(0)).replace("%F%",(2.2*T.Ca).toFixed(2))]);
     if(r.NH4>1.5) w.push([r.NH4>2.5?"bad":"warn",L.wNH.replace("%V%",r.NH4.toFixed(2))]);
-    if(s>70) w.push([s>120?"bad":"warn",L.wS.replace("%V%",s.toFixed(0))]);
-    if(r.EC>1.70) w.push([r.EC>1.85?"bad":"warn",L.wEC.replace("%V%",r.EC.toFixed(2))]);
+    if(s>70*k) w.push([s>120*k?"bad":"warn",L.wS.replace("%V%",s.toFixed(0)).replace("%T%",sT.toFixed(0))]);
+    if(r.EC>ecOkMax) w.push([r.EC>ecWarnMax?"bad":"warn",L.wEC.replace("%V%",r.EC.toFixed(2)).replace("%T%",curEC.toFixed(2))]);
     if(r.mg.as>0.5) w.push(["warn",L.wAS]);
     if(curX>=XMAX-0.0005) w.push(["warn",L.wP]);
     document.getElementById("pkx-warn").innerHTML=w.map(function(m){
