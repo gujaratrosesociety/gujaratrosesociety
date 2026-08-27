@@ -8,8 +8,8 @@
   <div class="pkx-controls">
     <p class="pkx-grouphead pkx-gh-feed">{% if wlang == 'gu' %}છોડને શું મળે છે{% else %}What the plant gets{% endif %}</p>
     <label class="pkx-field">
-      <span class="pkx-lab">{% if wlang == 'gu' %}લક્ષ્ય EC{% else %}Target EC{% endif %} <b id="pkx-ecv">1.60</b> mS/cm</span>
-      <input type="range" id="pkx-ec" min="80" max="240" step="5" value="160">
+      <span class="pkx-lab">{% if wlang == 'gu' %}લક્ષ્ય EC{% else %}Target EC{% endif %} <b id="pkx-ecv">1.88</b> mS/cm</span>
+      <input type="range" id="pkx-ec" min="95" max="280" step="1" value="188">
     </label>
     <label class="pkx-field">
       <span class="pkx-lab">{% if wlang == 'gu' %}Pekacid માત્રા{% else %}Pekacid dose{% endif %} <b id="pkx-xv">0.148</b> g/L</span>
@@ -248,16 +248,35 @@
     wP:"This is the maximum Pekacid dose. Any more overshoots the phosphorus target, and phosphorus cannot be taken back out."
   };
 
-  // Stoichiometry — T0 is the book recipe at its reference EC (1.6 mS/cm).
-  // The Target EC slider scales every ion target by ec/1.6, so the 4:1:4
-  // ratio holds at any strength; T holds the currently scaled targets.
+  // EC — sum of ionic molar conductivities (Kohlrausch's law) with an ionic-
+  // strength correction, the same model used by the fertilizer calculator at
+  // umangbhatt.in, so the two tools agree. lambda values are S.cm^2/mol at 25C.
+  var LAMBDA={NH4:73.5,K:73.5,Ca:119,Mg:106,NO3:71.5,SO4:160,H2PO4:33.5,H:349.8};
+  var ZCH={NH4:1,K:1,Ca:2,Mg:2,NO3:1,SO4:2,H2PO4:1,H:1};
+  function estimateEC(ions){
+    var ecRaw=0, ionicStrength=0, ion, c;
+    for(ion in ions){
+      c=ions[ion]; if(!c) continue;
+      ecRaw+=0.001*LAMBDA[ion]*c;
+      ionicStrength+=(c/1000)*ZCH[ion]*ZCH[ion];
+    }
+    ionicStrength/=2;
+    return ionicStrength>0 ? ecRaw/(1+0.5*Math.sqrt(ionicStrength)) : ecRaw;
+  }
+
+  // Stoichiometry — T0 is the book recipe (published ion targets). Its EC,
+  // estimated with the formula above, is ~1.88 mS/cm — that is the slider's
+  // reference point. The Target EC slider scales every ion target by
+  // ec/ECBASE, so the 4:1:4 ratio holds at any strength; T holds the
+  // currently scaled targets.
   var T0={NH4:0.70,K:4.50,Ca:3.40,Mg:1.60,NO3:10.75,S:1.60,P:1.25};
-  var T={}, NTOT, XMAX, curEC=1.6;
+  var ECBASE=estimateEC({NH4:T0.NH4,K:T0.K,Ca:T0.Ca,Mg:T0.Mg,NO3:T0.NO3,SO4:T0.S,H2PO4:T0.P});
+  var T={}, NTOT, XMAX, curEC=ECBASE;
   var Pmm=8.4536, Kmm=4.2463, Hac=Pmm-Kmm;          // per gram of Pekacid 0-60-20
   var CNu=216.1, CNTu=236.15, MGNu=256.41, KNO3u=101.10, EPSu=246.47, K2SO4u=174.26, MKPu=136.086, ANu=80.043, ASu=132.14;
   // EPSu: Magnesium sulphate heptahydrate (Epsom salt) MgSO4.7H2O — Utkarsh Agro Chem's stocked Mg source.
   function applyEC(ec){
-    var k=ec/1.6;
+    var k=ec/ECBASE;
     T.NH4=T0.NH4*k; T.K=T0.K*k; T.Ca=T0.Ca*k; T.Mg=T0.Mg*k; T.NO3=T0.NO3*k; T.S=T0.S*k; T.P=T0.P*k;
     NTOT=T.NH4+T.NO3; XMAX=T.P/Pmm;
     return k;
@@ -294,12 +313,13 @@
     return {mg:{ca:caCal*CNu, caTet:caTet*CNTu, kno3:b*KNO3u, an:a*ANu, as:c*ASu,
                 kie:kie*EPSu, mgn:mgn*MGNu, pek:x*1000, mkp:Pmkp*MKPu, k2so4:d*K2SO4u},
             NH4:NH4, NO3:NO3, S:SO4, Nt:NH4+NO3, nfloat:nfloat, acid:acid,
-            cat:cat, an:an, EC:(NH4+T.K+2*T.Ca+2*T.Mg)*1.6/15.12,
+            cat:cat, an:an,
+            EC:estimateEC({NH4:NH4,K:T.K,Ca:T.Ca,Mg:T.Mg,NO3:NO3,SO4:SO4,H2PO4:T.P,H:acid}),
             free:(cmax-cmin)>1e-6, sulShare:adj>1e-6?(2*c/adj*100):0,
             lowN:(caTet>1e-6||mgn>1e-6)};
   }
   function status(r){
-    var s=r.S*32.06, k=curEC/1.6, bad=0;
+    var s=r.S*32.06, k=curEC/ECBASE, bad=0;
     if(r.nfloat||r.NH4>2.5||s>120*k||r.EC>curEC*1.15625) bad=2;
     else if(r.NH4>1.5||s>70*k||r.EC>curEC*1.0625) bad=1;
     return bad;
@@ -462,7 +482,7 @@
     var s=io.S*32.06, n=(io.NH4+io.NO3)*14.007;
     // Deviation bands scale with the chosen Target EC; ammonium toxicity (nh)
     // is an absolute root-safety limit and does not scale with strength.
-    var k=curEC/1.6, ecOkMax=curEC*1.0625, ecWarnMax=curEC*1.15625;
+    var k=curEC/ECBASE, ecOkMax=curEC*1.0625, ecWarnMax=curEC*1.15625;
     var nh4T=T.NH4*14.007, no3T=T.NO3*14.007, nT=NTOT*14.007, pT=T.P*30.974,
         kT=T.K*39.098, caT=T.Ca*40.078, mgT=T.Mg*24.305, sT=T.S*32.06;
     var sc=s<=65*k?"ok":(s<=90*k?"warn":"bad");

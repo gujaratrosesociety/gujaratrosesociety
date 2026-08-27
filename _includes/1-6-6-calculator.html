@@ -8,8 +8,8 @@
   <div class="pkx-controls">
     <p class="pkx-grouphead pkx-gh-feed">{% if wlang == 'gu' %}છોડને શું મળે છે{% else %}What the plant gets{% endif %}</p>
     <label class="pkx-field pkx-ecfield">
-      <span class="pkx-lab">{% if wlang == 'gu' %}લક્ષ્ય EC{% else %}Target EC{% endif %} <b id="s6-ecv">1.10</b> mS/cm</span>
-      <input type="range" id="s6-ec" min="55" max="165" step="5" value="110">
+      <span class="pkx-lab">{% if wlang == 'gu' %}લક્ષ્ય EC{% else %}Target EC{% endif %} <b id="s6-ecv">1.27</b> mS/cm</span>
+      <input type="range" id="s6-ec" min="63" max="190" step="1" value="127">
     </label>
     <label class="pkx-field">
       <span class="pkx-lab">{% if wlang == 'gu' %}Pekacid 0-60-20 માત્રા{% else %}Pekacid 0-60-20 dose{% endif %} <b id="s6-xv">0.000</b> g/L</span>
@@ -210,12 +210,29 @@
   };
   function mm(p,k){ var pc=PR[p][k]||0, el=(k==="NH4"||k==="NO3")?"N":k; return pc*10/MW[el]; }
 
-  // Reference blend: MKP 36.90 + ammonium nitrate 9.10 + SOP 13.60 per 50 L,
-  // at its own EC of ~1.10 mS/cm. The Target EC slider scales every target by
-  // ec/1.10, so the 1:6:6 ratio (and the 1:1 ammonium:nitrate split) survives
-  // at any strength.
+  // EC — sum of ionic molar conductivities (Kohlrausch's law) with an ionic-
+  // strength correction, the same model used by the fertilizer calculator at
+  // umangbhatt.in, so the two tools agree. lambda values are S.cm^2/mol at 25C.
+  var LAMBDA={NH4:73.5,K:73.5,NO3:71.5,SO4:160,H2PO4:33.5,H:349.8};
+  var ZCH={NH4:1,K:1,NO3:1,SO4:2,H2PO4:1,H:1};
+  function estimateEC(ions){
+    var ecRaw=0, ionicStrength=0, ion, c;
+    for(ion in ions){
+      c=ions[ion]; if(!c) continue;
+      ecRaw+=0.001*LAMBDA[ion]*c;
+      ionicStrength+=(c/1000)*ZCH[ion]*ZCH[ion];
+    }
+    ionicStrength/=2;
+    return ionicStrength>0 ? ecRaw/(1+0.5*Math.sqrt(ionicStrength)) : ecRaw;
+  }
+
+  // Reference blend: MKP 36.90 + ammonium nitrate 9.10 + SOP 13.60 per 50 L.
+  // Its EC, estimated with the formula above, is ~1.27 mS/cm — that is the
+  // slider's reference point. The Target EC slider scales every target by
+  // ec/ECBASE, so the 1:6:6 ratio (and the 1:1 ammonium:nitrate split)
+  // survives at any strength.
   var REF0={P:167.48,K:321.19,NH4N:30.94,NO3N:30.94,S:46.24};
-  var ECBASE=1.10;
+  var ECBASE=estimateEC({NH4:REF0.NH4N/MW.N,K:REF0.K/MW.K,NO3:REF0.NO3N/MW.N,H2PO4:REF0.P/MW.P,SO4:REF0.S/MW.S});
   var REF={}, T={}, HAC=mm("pek","P")-mm("pek","K"), WCAP, XCAP, curEC=ECBASE;
   function applyEC(ec){
     var k=ec/ECBASE;
@@ -316,7 +333,8 @@
     document.getElementById("s6-calc").href=link(r.g,vol);
 
     var s=io.S*MW.S, N=(io.NH4+io.NO3)*MW.N, P=io.P*MW.P, K=io.K*MW.K;
-    var k=curEC/ECBASE, ec=v.cat*1.6/15.12, ecOkMax=curEC*1.0625, ecWarnMax=curEC*1.15625;
+    var k=curEC/ECBASE, ecOkMax=curEC*1.0625, ecWarnMax=curEC*1.15625;
+    var ec=estimateEC({NH4:io.NH4,K:io.K,NO3:io.NO3,H2PO4:io.P,SO4:io.S,H:io.H});
     function dev(a,b){ var d=Math.abs(a-b)/b*100; return d<1?"ok":(d<3?"warn":"bad"); }
     document.getElementById("s6-del").innerHTML=
       drow("N",(REF.NH4N+REF.NO3N).toFixed(1)+" ppm",N.toFixed(1)+" ppm",dev(N,REF.NH4N+REF.NO3N))+
