@@ -334,7 +334,10 @@
 
     var s=io.S*MW.S, N=(io.NH4+io.NO3)*MW.N, P=io.P*MW.P, K=io.K*MW.K;
     var k=curEC/ECBASE, ecOkMax=curEC*1.0625, ecWarnMax=curEC*1.15625;
-    var ec=estimateEC({NH4:io.NH4,K:io.K,NO3:io.NO3,H2PO4:io.P,SO4:io.S,H:io.H});
+    // Pekacid's free acid is left out here, matching the fertilizer
+    // calculator: its product database has no ppm field for it, so its own
+    // EC estimate never counts the H+ it releases either.
+    var ec=estimateEC({NH4:io.NH4,K:io.K,NO3:io.NO3,H2PO4:io.P,SO4:io.S});
     function dev(a,b){ var d=Math.abs(a-b)/b*100; return d<1?"ok":(d<3?"warn":"bad"); }
     document.getElementById("s6-del").innerHTML=
       drow("N",(REF.NH4N+REF.NO3N).toFixed(1)+" ppm",N.toFixed(1)+" ppm",dev(N,REF.NH4N+REF.NO3N))+

@@ -314,7 +314,10 @@
                 kie:kie*EPSu, mgn:mgn*MGNu, pek:x*1000, mkp:Pmkp*MKPu, k2so4:d*K2SO4u},
             NH4:NH4, NO3:NO3, S:SO4, Nt:NH4+NO3, nfloat:nfloat, acid:acid,
             cat:cat, an:an,
-            EC:estimateEC({NH4:NH4,K:T.K,Ca:T.Ca,Mg:T.Mg,NO3:NO3,SO4:SO4,H2PO4:T.P,H:acid}),
+            // Pekacid's free acid is left out here, matching the fertilizer
+            // calculator: its product database has no ppm field for it, so
+            // its own EC estimate never counts the H+ it releases either.
+            EC:estimateEC({NH4:NH4,K:T.K,Ca:T.Ca,Mg:T.Mg,NO3:NO3,SO4:SO4,H2PO4:T.P}),
             free:(cmax-cmin)>1e-6, sulShare:adj>1e-6?(2*c/adj*100):0,
             lowN:(caTet>1e-6||mgn>1e-6)};
   }
