@@ -49,6 +49,7 @@
     <div class="pkx-card">
       <h4>{% if wlang == 'gu' %}રેસીપી — <span id="s6-vol1">50</span> લિટર માટે ગ્રામ{% else %}Recipe — grams per <span id="s6-vol1">50</span> litres{% endif %}</h4>
       <table class="pkx-recipe"><tbody id="s6-rec"></tbody></table>
+      <p class="pkx-total">{% if wlang == 'gu' %}કુલ ખાતર{% else %}Total fertiliser{% endif %}: <b id="s6-totalv"></b></p>
       <p class="pkx-calclink">
         <a id="s6-calc" href="#" target="_blank" rel="noopener noreferrer">{% if wlang == 'gu' %}ખાતર કેલ્ક્યુલેટરમાં ખોલો ↗{% else %}Open this in the fertilizer calculator ↗{% endif %}</a>
         <span class="pkx-calcnote">{% if wlang == 'gu' %}નવી ટૅબમાં ખૂલે છે. અહીંના બધા ખાતર કેલ્ક્યુલેટરની પોતાની યાદીમાંથી જ છે, એટલે માત્રા જેમની તેમ જાય છે.{% else %}Opens in a new tab. Every product here comes from that calculator's own list, so the quantities pass through unchanged.{% endif %}</span>
@@ -144,7 +145,9 @@
 .pkx-balrow b{color:var(--pk-ink);white-space:nowrap;}
 .pkx-balok{margin-top:.35rem;font-size:.76rem;font-weight:700;color:var(--pk-ok);}
 .pkx-balok.pkx-balbad{color:var(--pk-bad);}
-.pkx-calclink{margin:.8rem 0 0;font-size:.82rem;}
+.pkx-total{margin:.8rem 0 0;font-size:.82rem;color:var(--pk-mut);}
+.pkx-total b{color:var(--pk-ink);}
+.pkx-calclink{margin:.6rem 0 0;font-size:.82rem;}
 .pkx-calclink a{color:var(--pk-blue2);font-weight:700;text-decoration:none;}
 .pkx-calclink a:hover{text-decoration:underline;}
 .pkx-calclink a:focus-visible{outline:2px solid var(--pk-blue2);outline-offset:2px;border-radius:3px;}
@@ -330,6 +333,8 @@
       row(L.wsf,r.g.wsf,"n",vol)+row(L.mkp,r.g.mkp,"p",vol)+row(L.pek,r.g.pek,"p",vol)+
       row(L.map,r.g.map,"n",vol)+row(L.an,r.g.an,"n",vol)+row(L.amsul,r.g.amsul,"n",vol)+
       row(L.kno3,r.g.kno3,"n",vol)+row(L.sop,r.g.sop,"k",vol);
+    var totalG=0, tk; for(tk in r.g) totalG+=r.g[tk]*vol;
+    document.getElementById("s6-totalv").textContent=totalG.toFixed(2)+" g";
     document.getElementById("s6-calc").href=link(r.g,vol);
 
     var s=io.S*MW.S, N=(io.NH4+io.NO3)*MW.N, P=io.P*MW.P, K=io.K*MW.K;

@@ -39,6 +39,7 @@
     <div class="pkx-card">
       <h4>{% if wlang == 'gu' %}રેસીપી — <span id="pkx-vol1">10</span> લિટર માટે ગ્રામ{% else %}Recipe — grams per <span id="pkx-vol1">10</span> litres{% endif %}</h4>
       <table class="pkx-recipe"><tbody id="pkx-rec"></tbody></table>
+      <p class="pkx-total">{% if wlang == 'gu' %}કુલ ખાતર{% else %}Total fertiliser{% endif %}: <b id="pkx-totalv"></b></p>
       <p class="pkx-calclink">
         <a id="pkx-calc" href="#" target="_blank" rel="noopener noreferrer">{% if wlang == 'gu' %}ખાતર કેલ્ક્યુલેટરમાં ખોલો ↗{% else %}Open this in the fertilizer calculator ↗{% endif %}</a>
         <span class="pkx-calcnote" id="pkx-calcnote"></span>
@@ -174,7 +175,9 @@
 .pkx-st.ok{color:var(--pk-ok);}
 .pkx-st.warn{color:var(--pk-warn);}
 .pkx-st.bad{color:var(--pk-bad);}
-.pkx-calclink{margin:.8rem 0 0;font-size:.82rem;}
+.pkx-total{margin:.8rem 0 0;font-size:.82rem;color:var(--pk-mut);}
+.pkx-total b{color:var(--pk-ink);}
+.pkx-calclink{margin:.6rem 0 0;font-size:.82rem;}
 .pkx-calclink a{color:var(--pk-blue2);font-weight:700;text-decoration:none;}
 .pkx-calclink a:hover{text-decoration:underline;}
 .pkx-calclink a:focus-visible{outline:2px solid var(--pk-blue2);outline-offset:2px;border-radius:3px;}
@@ -485,6 +488,8 @@
       row(L.pek,r.mg.pek,"x",vol)+row(L.mkp,r.mg.mkp,"x",vol)+
       row(L.kno3,r.mg.kno3,"f",vol)+row(L.an,r.mg.an,"f",vol)+row(L.as,r.mg.as,"f",vol)+
       row(L.k2so4,r.mg.k2so4,"xf",vol);
+    var totalG=0, tk; for(tk in r.mg) totalG+=r.mg[tk]*vol/1000;
+    document.getElementById("pkx-totalv").textContent=totalG.toFixed(2)+" g";
     document.getElementById("pkx-axisnote").textContent=L.axis;
     document.getElementById("pkx-calc").href=calcLink(r.mg,vol);
     document.getElementById("pkx-calcnote").textContent=L.calcnote;
