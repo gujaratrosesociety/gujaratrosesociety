@@ -8,12 +8,12 @@
   <div class="pkx-controls">
     <p class="pkx-grouphead pkx-gh-feed">{% if wlang == 'gu' %}છોડને શું મળે છે{% else %}What the plant gets{% endif %}</p>
     <label class="pkx-field">
-      <span class="pkx-lab">{% if wlang == 'gu' %}લક્ષ્ય EC{% else %}Target EC{% endif %} <b id="b214-ecv">2.61</b> mS/cm</span>
-      <input type="range" id="b214-ec" min="130" max="395" step="1" value="261">
+      <span class="pkx-lab">{% if wlang == 'gu' %}લક્ષ્ય EC{% else %}Target EC{% endif %} <b id="b214-ecv">1.00</b> mS/cm</span>
+      <input type="range" id="b214-ec" min="10" max="400" step="10" value="100">
     </label>
     <label class="pkx-field">
-      <span class="pkx-lab">{% if wlang == 'gu' %}Pekacid માત્રા{% else %}Pekacid dose{% endif %} <b id="b214-xv">0.229</b> g/L</span>
-      <input type="range" id="b214-x" min="0" max="2291" step="1" value="2291">
+      <span class="pkx-lab">{% if wlang == 'gu' %}Pekacid માત્રા{% else %}Pekacid dose{% endif %} <b id="b214-xv">0.088</b> g/L</span>
+      <input type="range" id="b214-x" min="0" max="878" step="1" value="878">
     </label>
     <label class="pkx-field">
       <span class="pkx-lab">{% if wlang == 'gu' %}નાઈટ્રોજનનું સ્વરૂપ — <b id="b214-fv">8</b>% એમોનિયમ, <b id="b214-fv2">92</b>% નાઈટ્રેટ{% else %}Nitrogen form — <b id="b214-fv">8</b>% ammonium, <b id="b214-fv2">92</b>% nitrate{% endif %}</span>
@@ -318,14 +318,18 @@
             lowN:(caTet>1e-6||mgn>1e-6)};
   }
 
-  // The slider's reference point is the *delivered* EC of the reference
-  // recipe itself (full Pekacid dose, 8% ammonium via ammonium nitrate) —
-  // not the bare ion targets, so "Target EC" matches what the default
-  // recipe actually delivers (same anchoring fix as the 4:1:4 calculator).
+  // The slider's reference point (ECBASE) is the *delivered* EC of the full-
+  // strength reference recipe (full Pekacid dose, 8% ammonium via ammonium
+  // nitrate) — not the bare ion targets (same anchoring fix as the 4:1:4
+  // calculator). Every other Target EC, including the 1.00 default below,
+  // scales the ion targets by ec/ECBASE from that anchor.
   T.NH4=T0.NH4; T.K=T0.K; T.Ca=T0.Ca; T.Mg=T0.Mg; T.NO3=T0.NO3; T.S=T0.S; T.P=T0.P;
   NTOT=T0.NH4+T0.NO3; XMAX=T0.P/Pmm;
   var ECBASE=recipe(XMAX,0.08,0).EC;
-  curEC=ECBASE;
+  // The slider defaults to a gentler 1.00 mS/cm rather than the full-strength
+  // recipe (ECBASE, ~2.61) that matches the published ppm targets exactly —
+  // ECBASE stays the scaling anchor so the 2:1:4 ratio holds at any strength.
+  curEC=1.00;
   applyEC(curEC);
 
   function status(r){
