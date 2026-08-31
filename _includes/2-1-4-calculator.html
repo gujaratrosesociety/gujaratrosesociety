@@ -163,10 +163,9 @@
 .pkx-recipe b{font-weight:700;}
 .pkx-tag{display:inline-block;font-size:.64rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
  padding:.1rem .35rem;border-radius:3px;margin-left:.35rem;vertical-align:.05em;}
-.pkx-tag.x{background:#e4edf6;color:var(--pk-blue);}
-.pkx-tag.f{background:#f7e6ea;color:var(--pk-rose);}
-.pkx-tag.xf{background:linear-gradient(100deg,#e4edf6 50%,#f7e6ea 50%);color:#6b3350;}
-.pkx-tag.b{background:#e8ebed;color:var(--pk-mut);}
+.pkx-tag.no3{background:#e4edf6;color:var(--pk-blue);}
+.pkx-tag.nh4{background:#f7e6ea;color:var(--pk-rose);}
+.pkx-tag.both{background:linear-gradient(100deg,#e4edf6 50%,#f7e6ea 50%);color:#6b3350;}
 .pkx-st{font-weight:700;}
 .pkx-st.ok{color:var(--pk-ok);}
 .pkx-st.warn{color:var(--pk-warn);}
@@ -213,7 +212,7 @@
     ca:"કેલ્શિયમ નાઈટ્રેટ 15.5-0-0 (Calcinit પ્રકાર)", caTet:"કેલ્શિયમ નાઈટ્રેટ ટેટ્રાહાઈડ્રેટ (એમોનિયમ વગરનું)", mgn:"મેગ્નેશિયમ નાઈટ્રેટ Mg(NO₃)₂·6H₂O", kno3:"પોટેશિયમ નાઈટ્રેટ 13-0-46", an:"એમોનિયમ નાઈટ્રેટ 34-0-0",
     as:"એમોનિયમ સલ્ફેટ 21-0-0", kie:"મેગ્નેશિયમ સલ્ફેટ (એપ્સમ સોલ્ટ) MgSO₄·7H₂O", pek:"ICL Pekacid 0-60-20",
     mkp:"મોનો પોટેશિયમ ફોસ્ફેટ 0-52-34", k2so4:"પોટેશિયમ સલ્ફેટ 0-0-50",
-    axis:"વાદળી ટૅગ = માત્ર Pekacid સ્તરથી બદલાય છે. ગુલાબી ટૅગ = માત્ર NH₄ ટકાવારીથી બદલાય છે. ગ્રે = કદી બદલાતું નથી. બે અક્ષો સ્વતંત્ર છે — તેથી આખું ગ્રીડ બે સાદી યાદીઓનો સરવાળો છે.",
+    axis:"વાદળી ટૅગ = ફક્ત નાઈટ્રેટ. ગુલાબી ટૅગ = ફક્ત એમોનિયમ. ગ્રેડિયન્ટ ટૅગ = એક જ ખાતરમાં નાઈટ્રેટ અને એમોનિયમ બંને. કોઈ ટૅગ નહીં = એ ખાતરમાં નાઈટ્રોજન નથી.",
     bal:"સંતુલિત", balFail:"બેલેન્સ થતું નથી", gap:"તફાવત",
     tgtOk:"Ca, K, Mg, P બધા લક્ષ્યાંક પર", tgtBad:"%K% લક્ષ્યાંકથી દૂર",
     calcnote:"નવી ટૅબમાં ખૂલે છે. લિંક એ જ દ્રાવણ બતાવે તે માટે એક ફેરફાર થાય છે: પોટેશિયમ સલ્ફેટ 50% K₂O ગ્રેડ પ્રમાણે ગોઠવાય છે. લિંકમાં સૂક્ષ્મ પોષક તત્વો સામેલ નથી.", nfloat:"કુલ N લક્ષ્યાંકથી ઉપર",
@@ -231,7 +230,7 @@
     ca:"Calcium nitrate 15.5-0-0 (Calcinit type)", caTet:"Calcium nitrate tetrahydrate (ammonium-free)", mgn:"Magnesium nitrate Mg(NO₃)₂·6H₂O", kno3:"Potassium nitrate 13-0-46", an:"Ammonium nitrate 34-0-0",
     as:"Ammonium sulphate 21-0-0", kie:"Magnesium sulphate (Epsom salt) MgSO₄·7H₂O", pek:"ICL Pekacid 0-60-20",
     mkp:"Mono potassium phosphate 0-52-34", k2so4:"Potassium sulphate 0-0-50",
-    axis:"Blue tag = moves with the Pekacid dose only. Pink tag = moves with the NH₄ percentage only. Grey = never moves. The two axes are independent, which is why the whole grid is just two simple lists added together.",
+    axis:"Blue tag = pure nitrate. Pink tag = pure ammonium. Gradient tag = both nitrate and ammonium in one product. No tag = no nitrogen at all.",
     bal:"Balanced", balFail:"NOT balanced", gap:"gap",
     tgtOk:"Ca, K, Mg, P all on target", tgtBad:"%K% is off target",
     calcnote:"Opens in a new tab. One swap is made so the link reproduces the same solution: potassium sulphate is adjusted to a 50% K₂O grade. Micronutrients are not included in the link.", nfloat:"total N above target",
@@ -442,12 +441,12 @@
     render();
   });
 
-  var TAG = GU ? {b:"સ્થિર", x:"Pekacid", f:"NH₄", xf:"બંને"}
-               : {b:"fixed", x:"Pekacid", f:"NH₄", xf:"both"};
+  var TAG = GU ? {no3:"નાઈટ્રેટ", nh4:"એમોનિયમ", both:"બંને"}
+               : {no3:"nitrate", nh4:"ammonium", both:"both"};
   function row(name,mg,tag,vol){
     var g=mg*vol/1000;
     return "<tr"+(g<0.005?' class="pkx-zero"':'')+"><td>"+name+
-      '<span class="pkx-tag '+tag+'">'+TAG[tag]+"</span></td><td>"+
+      (tag?'<span class="pkx-tag '+tag+'">'+TAG[tag]+"</span>":"")+"</td><td>"+
       (g<0.005?"—":"<b>"+g.toFixed(2)+"</b> g")+"</td></tr>";
   }
   function drow(name,tgt,val,cls){
@@ -468,13 +467,14 @@
     elT.disabled=!r.free;
     document.getElementById("b214-srcnote").textContent=r.free?L.srcFree:L.srcLocked;
 
-    var caTag=r.mg.caTet>0.5?"f":"b", mgTag=r.mg.mgn>0.5?"xf":"b";
+    // Tags show each product's actual nitrogen form, not which slider moves it —
+    // Calcinit-type calcium nitrate carries a little ammonium alongside its nitrate.
     document.getElementById("b214-rec").innerHTML=
-      row(L.ca,r.mg.ca,caTag,vol)+row(L.caTet,r.mg.caTet,caTag,vol)+
-      row(L.kie,r.mg.kie,mgTag,vol)+row(L.mgn,r.mg.mgn,mgTag,vol)+
-      row(L.pek,r.mg.pek,"x",vol)+row(L.mkp,r.mg.mkp,"x",vol)+
-      row(L.kno3,r.mg.kno3,"f",vol)+row(L.an,r.mg.an,"f",vol)+row(L.as,r.mg.as,"f",vol)+
-      row(L.k2so4,r.mg.k2so4,"xf",vol);
+      row(L.ca,r.mg.ca,"both",vol)+row(L.caTet,r.mg.caTet,"no3",vol)+
+      row(L.kie,r.mg.kie,"",vol)+row(L.mgn,r.mg.mgn,"no3",vol)+
+      row(L.pek,r.mg.pek,"",vol)+row(L.mkp,r.mg.mkp,"",vol)+
+      row(L.kno3,r.mg.kno3,"no3",vol)+row(L.an,r.mg.an,"both",vol)+row(L.as,r.mg.as,"nh4",vol)+
+      row(L.k2so4,r.mg.k2so4,"",vol);
     var totalG=0, tk; for(tk in r.mg) totalG+=r.mg[tk]*vol/1000;
     document.getElementById("b214-totalv").textContent=totalG.toFixed(2)+" g";
     document.getElementById("b214-axisnote").textContent=L.axis;
