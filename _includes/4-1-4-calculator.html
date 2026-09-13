@@ -317,7 +317,11 @@
     var NO3ca=2.2*caCal+2*caTet;
     if(NO3<NO3ca){ NO3=NO3ca; NH4=f/(1-f)*NO3; nfloat=true; nh4Ca=Math.min(NH4,0.2*T.Ca); }
 
-    var SO4=(NH4+T.K+2*T.Ca+2*T.Mg+acid-NO3-T.P)/2;
+    // Potassium silicate's own K counts toward the K target, so the
+    // conventional K salts (potassium nitrate here) only need to supply the
+    // rest — Keff is what the charge balance below solves the other salts for.
+    var silK=curSi?SIL_K_MM:0, Keff=T.K-silK;
+    var SO4=(NH4+Keff+2*T.Ca+2*T.Mg+acid-NO3-T.P)/2;
 
     // Magnesium sulphate fixes S at 1.6 via Mg. When the balance calls for less sulphate
     // than that, move the surplus magnesium to magnesium nitrate (the source
@@ -330,8 +334,7 @@
     var cmax=Math.max(Math.min(adj/2, SO4-kie), cmin);
     var c=cmin+(t===undefined?0:t)*(cmax-cmin);
     var a=Math.max(adj-2*c,0), b=Math.max(pool-a,0), d=Math.max(SO4-kie-c,0);
-    var silK=curSi?SIL_K_MM:0;
-    var cat=NH4+T.K+2*T.Ca+2*T.Mg+acid+silK, an=NO3+2*SO4+T.P+silK;
+    var cat=NH4+Keff+2*T.Ca+2*T.Mg+acid+silK, an=NO3+2*SO4+T.P+silK;
     return {mg:{ca:caCal*CNu, caTet:caTet*CNTu, kno3:b*KNO3u, an:a*ANu, as:c*ASu,
                 kie:kie*EPSu, mgn:mgn*MGNu, pek:x*1000, mkp:Pmkp*MKPu, k2so4:d*K2SO4u,
                 sil:curSi?SIL_GL*1000:0},
@@ -340,7 +343,7 @@
             // Pekacid's free acid is left out here, matching the fertilizer
             // calculator: its product database has no ppm field for it, so
             // its own EC estimate never counts the H+ it releases either.
-            EC:estimateEC({NH4:NH4,K:T.K+silK,Ca:T.Ca,Mg:T.Mg,NO3:NO3,SO4:SO4,H2PO4:T.P}),
+            EC:estimateEC({NH4:NH4,K:T.K,Ca:T.Ca,Mg:T.Mg,NO3:NO3,SO4:SO4,H2PO4:T.P}),
             free:(cmax-cmin)>1e-6, sulShare:adj>1e-6?(2*c/adj*100):0,
             lowN:(caTet>1e-6||mgn>1e-6)};
   }
@@ -529,12 +532,8 @@
     // Deviation bands scale with the chosen Target EC; ammonium toxicity (nh)
     // is an absolute root-safety limit and does not scale with strength.
     var k=curEC/ECBASE, ecOkMax=curEC*1.0625, ecWarnMax=curEC*1.15625;
-    // The silicate add-on deliberately delivers more K than the bare 4:1:4
-    // target — compare K against that intended total, not the bare target,
-    // so the deviation bands below judge recipe accuracy, not the add-on itself.
-    var Tk2=T.K+(curSi?SIL_K_MM:0);
     var nh4T=T.NH4*14.007, no3T=T.NO3*14.007, nT=NTOT*14.007, pT=T.P*30.974,
-        kT=Tk2*39.098, caT=T.Ca*40.078, mgT=T.Mg*24.305, sT=T.S*32.06;
+        kT=T.K*39.098, caT=T.Ca*40.078, mgT=T.Mg*24.305, sT=T.S*32.06;
     var sc=s<=65*k?"ok":(s<=90*k?"warn":"bad");
     var ec=r.EC<=ecOkMax?"ok":(r.EC<=ecWarnMax?"warn":"bad");
     var nh=io.NH4<=1.5?"ok":(io.NH4<=2.5?"warn":"bad");
@@ -545,7 +544,7 @@
       drow("NO₃-N",no3T.toFixed(0)+" ppm",(io.NO3*14.007).toFixed(0)+" ppm","ok")+
       drow(GU?"કુલ N":"Total N",nT.toFixed(0)+" ppm",n.toFixed(0)+" ppm",nc)+
       drow("P",pT.toFixed(0)+" ppm",(io.P*30.974).toFixed(0)+" ppm",dev(io.P,T.P))+
-      drow("K",kT.toFixed(0)+" ppm",(io.K*39.098).toFixed(0)+" ppm",dev(io.K,Tk2))+
+      drow("K",kT.toFixed(0)+" ppm",(io.K*39.098).toFixed(0)+" ppm",dev(io.K,T.K))+
       drow("Ca",caT.toFixed(0)+" ppm",(io.Ca*40.078).toFixed(0)+" ppm",dev(io.Ca,T.Ca))+
       drow("Mg",mgT.toFixed(0)+" ppm",(io.Mg*24.305).toFixed(0)+" ppm",dev(io.Mg,T.Mg))+
       drow("S",sT.toFixed(0)+" ppm",s.toFixed(0)+" ppm",sc)+
@@ -562,8 +561,7 @@
     // This is the one with teeth — do the grams actually hit the fixed targets?
     var worst=0, off="";
     ["Ca","K","Mg","P"].forEach(function(k){
-      var tgt=k==="K"?Tk2:T[k];
-      var d=Math.abs(io[k]-tgt)/tgt*100;
+      var d=Math.abs(io[k]-T[k])/T[k]*100;
       if(d>worst){ worst=d; off=k; }
     });
     var tok=worst<0.5, tg=document.getElementById("pkx-tgt");
