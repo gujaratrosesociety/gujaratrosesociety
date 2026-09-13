@@ -294,7 +294,12 @@
   // reads 34% N (not the pure salt's 35%), matching the fertilizer
   // calculator's database — so their molar masses below are also the
   // bag-label-equivalent values, not the pure-compound ones.
-  var CNu=40.078/0.19, MGNu=256.41, KNO3u=101.10, EPSu=246.47, K2SO4u=188.49141204673117, MKPu=136.086, ANu=82.39411764705882, ASu=132.14;
+  // Potassium nitrate and ammonium sulphate carry the same small discount:
+  // the calculator's database reads 13.7% N / 46.3% K2O for KNO3 (pure salt:
+  // 13.85% / 46.58%) and 21% N / 24% S for ammonium sulphate (pure salt:
+  // 21.20% / 24.26%) — smaller gaps than Calcinit/SOP/AN, but still real and
+  // still needed for the two tools to land on the same gram figure.
+  var CNu=40.078/0.19, MGNu=256.41, KNO3u=101.98220901451971, EPSu=246.47, K2SO4u=188.49141204673117, MKPu=136.086, ANu=82.39411764705882, ASu=133.49166666666667;
 
   // Optional potassium silicate add-on — dosed to a fixed 20 ppm Si regardless
   // of the Target EC slider, using the same "12% Si, 18% K2O" typical liquid
@@ -470,12 +475,12 @@
   var SALTS={
     ca   :[40.078/0.19, {Ca:1, NO3:2.1685518143184046, NH4:0.16565326359376703}], // Calcinit bag label (15.5% N, 19% Ca), per Ca
     mgn  :[256.41, {Mg:1, NO3:2}],              // Mg(NO3)2.6H2O
-    kno3 :[101.10, {K:1, NO3:1}],
+    kno3 :[101.98220901451971, {K:1, NO3:1}],   // bag label (13.7% N, 46.3% K2O), not pure KNO3
     kie  :[246.47, {Mg:1, S:1}],   // Magnesium sulphate heptahydrate (Epsom salt)
     mkp  :[136.086,{K:1, P:1}],
     k2so4:[188.49141204673117, {K:2, S:1}], // bag label (50% K2O, 17% S), not pure K2SO4
     an   :[82.39411764705882, {NH4:1, NO3:1}], // bag label (34% N), not pure NH4NO3
-    as   :[132.14, {NH4:2, S:1}]
+    as   :[133.49166666666667, {NH4:2, S:1}] // bag label (21% N, 24% S), not pure (NH4)2SO4
   };
   function verify(mg){
     var ion={Ca:0,K:0,Mg:0,NH4:0,NO3:0,S:0,P:0,H:0}, k, n, i;
