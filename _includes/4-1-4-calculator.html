@@ -420,16 +420,21 @@
   // nitrate in the mix, so it would drop calcium nitrate entirely rather
   // than violate that constraint), the current EC (snapped to
   // that site's nearest 0.2 mS/cm preset — its EC field is a fixed dropdown,
-  // not a free slider), the current Pekacid dose as a cap, and every
-  // fertilizer this widget can ever draw from, so its own solver reproduces
-  // the same program rather than a fixed weight list.
+  // not a free slider), the current Pekacid dose as a cap, and ONLY the
+  // fertilizers this specific recipe actually dosed a nonzero amount of.
+  // Offering the calculator's MILP the full 8-fertilizer pool regardless of
+  // which ones this recipe used gave it room to substitute a different valid
+  // combination for the same ratios (e.g. magnesium nitrate + ammonium
+  // sulphate + more potassium sulphate instead of this recipe's Epsom salt +
+  // ammonium nitrate + potassium nitrate) — same nutrients delivered, but a
+  // different-looking, harder-to-reconcile product list. Restricting the
+  // bitmask to what's actually nonzero here removes that extra freedom.
   var CALC_URL="https://umangbhatt.in/fertilizer-calculator/";
   var BASE62_="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
   // Single-char codes are each fertilizer's position in that site's
   // FERTILIZER_URL_ORDER — the same codes it uses for its own "f=" grams
   // links, reused here to build the "a=" available-fertilizers bitmask.
   var CALC_CODE={ca:"0",kno3:"2",mkp:"4",as:"8",an:"b",kie:"c",k2so4:"f",mgn:"e",pek:"Y",sil:"R"};
-  var CALC_ALWAYS=["ca","kno3","mkp","as","an","kie","k2so4","mgn"].map(function(k){ return CALC_CODE[k]; });
   function encodeFertBitmask(codes){
     var bits=0n;
     codes.forEach(function(ch){ bits|=(1n<<BigInt(BASE62_.indexOf(ch))); });
@@ -451,8 +456,11 @@
     for(var i=0;i<EC_STEPS.length;i++){ var d=Math.abs(EC_STEPS[i]-ec); if(d<bd){bd=d;best=i;} }
     return best;
   }
-  function calcLink(vol,x,si,nh4Pct,ec){
-    var codes=CALC_ALWAYS.slice();
+  function calcLink(vol,x,si,nh4Pct,ec,mg){
+    var MG_EPS=0.01; // mg/L threshold (float noise only) below which a product counts as unused
+    var codes=["ca","kno3","mkp","as","an","kie","k2so4","mgn"]
+      .filter(function(k){ return mg[k]>MG_EPS; })
+      .map(function(k){ return CALC_CODE[k]; });
     if(x>0.0005) codes.push(CALC_CODE.pek);
     if(si) codes.push(CALC_CODE.sil);
     var a=encodeFertBitmask(codes);
@@ -599,7 +607,7 @@
     var totalG=0, tk; for(tk in r.mg) totalG+=r.mg[tk]*vol/1000;
     document.getElementById("pkx-totalv").textContent=totalG.toFixed(2)+" g";
     document.getElementById("pkx-axisnote").textContent=L.axis;
-    document.getElementById("pkx-calc").href=calcLink(vol,curX,curSi,r.NH4/(r.NH4+r.NO3)*100,curEC);
+    document.getElementById("pkx-calc").href=calcLink(vol,curX,curSi,r.NH4/(r.NH4+r.NO3)*100,curEC,r.mg);
     document.getElementById("pkx-calcnote").textContent=L.calcnote;
 
     // read the solution back out of the gram amounts, independently
