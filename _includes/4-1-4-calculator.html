@@ -94,7 +94,7 @@
     </div>
   </details>
 
-  <p class="pkx-foot">{% if wlang == 'gu' %}6% એમોનિયમ અને તેથી ઉપર, કેલ્શિયમ નાઈટ્રેટ (7.35 ગ્રામ/10 લિ) અને મેગ્નેશિયમ સલ્ફેટ (3.94 ગ્રામ/10 લિ) દરેક ખાનામાં એકસરખા રહે છે — તે Ca અને Mg લક્ષ્યાંકથી નક્કી થાય છે. 6% થી નીચે તે બદલાવા લાગે છે, કારણ કે સામાન્ય કેલ્શિયમ નાઈટ્રેટમાં પોતાનું એમોનિયમ હોય છે. સૂક્ષ્મ પોષક તત્વો કદી બદલાતા નથી.{% else %}At 6% ammonium and above, calcium nitrate (7.35 g/10 L) and magnesium sulphate (3.94 g/10 L) are identical in every cell — fixed by the Ca and Mg targets. Below 6% they start to move, because ordinary calcium nitrate carries ammonium of its own. Micronutrients never change.{% endif %}</p>
+  <p class="pkx-foot">{% if wlang == 'gu' %}કેલ્શિયમ નાઈટ્રેટ (7.35 ગ્રામ/10 લિ) દરેક ખાનામાં એકસરખું રહે છે — તે ફક્ત Ca લક્ષ્યાંકથી નક્કી થાય છે અને હંમેશાં સામાન્ય Calcinit પ્રકારનું જ છે. મેગ્નેશિયમ સલ્ફેટ (3.94 ગ્રામ/10 લિ) 6% એમોનિયમ અને તેથી ઉપર એકસરખું રહે છે; નીચે તે બદલાવા લાગે છે અને એમોનિયમ પોતે કેલ્શિયમ નાઈટ્રેટના પોતાના એમોનિયમ કરતાં નીચે જઈ શકતું નથી. સૂક્ષ્મ પોષક તત્વો કદી બદલાતા નથી.{% else %}Calcium nitrate (7.35 g/10 L) is identical in every cell — fixed by the Ca target alone, and always the ordinary Calcinit-type product. Magnesium sulphate (3.94 g/10 L) is identical at 6% ammonium and above; below that it starts to move, and ammonium itself can't fall below what calcium nitrate's own ammonium content supplies. Micronutrients never change.{% endif %}</p>
 </div>
 
 <style>
@@ -223,7 +223,7 @@
 (function(){
   var GU = {% if wlang == 'gu' %}true{% else %}false{% endif %};
   var L = GU ? {
-    ca:"કેલ્શિયમ નાઈટ્રેટ 15.5-0-0 (Calcinit પ્રકાર)", caTet:"કેલ્શિયમ નાઈટ્રેટ ટેટ્રાહાઈડ્રેટ (એમોનિયમ વગરનું)", mgn:"મેગ્નેશિયમ નાઈટ્રેટ Mg(NO₃)₂·6H₂O", kno3:"પોટેશિયમ નાઈટ્રેટ 13-0-46", an:"એમોનિયમ નાઈટ્રેટ 34-0-0",
+    ca:"કેલ્શિયમ નાઈટ્રેટ 15.5-0-0 (Calcinit પ્રકાર)", mgn:"મેગ્નેશિયમ નાઈટ્રેટ Mg(NO₃)₂·6H₂O", kno3:"પોટેશિયમ નાઈટ્રેટ 13-0-46", an:"એમોનિયમ નાઈટ્રેટ 34-0-0",
     as:"એમોનિયમ સલ્ફેટ 21-0-0", kie:"મેગ્નેશિયમ સલ્ફેટ (એપ્સમ સોલ્ટ) MgSO₄·7H₂O", pek:"ICL Pekacid 0-60-20",
     mkp:"મોનો પોટેશિયમ ફોસ્ફેટ 0-52-34", k2so4:"પોટેશિયમ સલ્ફેટ 0-0-50",
     sil:"પોટેશિયમ સિલિકેટ (12% Si, 18% K₂O)",
@@ -238,11 +238,11 @@
     wAS:"એમોનિયમ સલ્ફેટ અને કેલ્શિયમ નાઈટ્રેટ સૂકા ભેગા ન કરો. ટાંકીમાં અલગ અલગ ઉમેરો.",
     srcFree:"આનાથી નાઈટ્રોજન બદલાતો નથી — ઉપરની એમોનિયમ ટકાવારીએ એ પહેલેથી નક્કી કરી દીધું છે. આ માત્ર નક્કી કરે છે કે એમોનિયમ કયા ખાતરમાંથી આવે, અને તમે બંને એકસાથે વાપરી શકો છો. સલ્ફર, EC અને દરેક પોષક તત્વ એકદમ એવા જ રહે છે. ભારતમાં એમોનિયમ નાઈટ્રેટ નિયંત્રિત છે અને ખરીદવું મુશ્કેલ છે, તેથી ઘણા ઉગાડનારા સલ્ફેટ બાજુ રહે છે.",
     srcLocked:"આ સેટિંગ પર પસંદગી શક્ય નથી — નાઈટ્રેટની જગ્યા બચી નથી, એટલે બધું એમોનિયમ સલ્ફેટમાંથી જ આવવું પડે.",
-    wLow:"6% થી નીચે એમોનિયમ માટે સામાન્ય Calcinit પ્રકારનું કેલ્શિયમ નાઈટ્રેટ વાપરી શકાતું નથી — તેમાં દર mmol કેલ્શિયમે 0.2 mmol એમોનિયમ હોય છે. રેસીપી એમોનિયમ વગરના કેલ્શિયમ નાઈટ્રેટ ટેટ્રાહાઈડ્રેટ પર જાય છે, અને સલ્ફેટ પૂરતું ઘટે તે માટે થોડું મેગ્નેશિયમ મેગ્નેશિયમ નાઈટ્રેટમાં ખસેડે છે. આ બે ખાતર કદાચ તમારી પાસે ન હોય.",
+    wLow:"કેલ્શિયમ નાઈટ્રેટમાં દર mmol કેલ્શિયમે 0.2 mmol એમોનિયમ પોતાનું જ હોય છે, એટલે ~6% થી નીચે સ્લાઇડર ગોઠવવા છતાં એમોનિયમ %V% ppm થી નીચે જઈ શકતું નથી. સલ્ફેટ પૂરતું ઘટે તે માટે થોડું મેગ્નેશિયમ મેગ્નેશિયમ નાઈટ્રેટમાં પણ ખસી શકે છે.",
     wLowS:"સલ્ફર %V% ppm છે, લક્ષ્યાંક %T% ppm સામે. ઓછા એમોનિયમે ચાર્જ બેલેન્સ તેનાથી વધુ જગ્યા આપતું નથી — આ પરિણામ છે, ભૂલ નહીં.",
     wP:"આ મહત્તમ Pekacid માત્રા છે. વધુ ઉમેરવાથી ફોસ્ફરસ લક્ષ્યાંક વટાવી જશે અને તેને પાછું કાઢી શકાતું નથી."
   } : {
-    ca:"Calcium nitrate 15.5-0-0 (Calcinit type)", caTet:"Calcium nitrate tetrahydrate (ammonium-free)", mgn:"Magnesium nitrate Mg(NO₃)₂·6H₂O", kno3:"Potassium nitrate 13-0-46", an:"Ammonium nitrate 34-0-0",
+    ca:"Calcium nitrate 15.5-0-0 (Calcinit type)", mgn:"Magnesium nitrate Mg(NO₃)₂·6H₂O", kno3:"Potassium nitrate 13-0-46", an:"Ammonium nitrate 34-0-0",
     as:"Ammonium sulphate 21-0-0", kie:"Magnesium sulphate (Epsom salt) MgSO₄·7H₂O", pek:"ICL Pekacid 0-60-20",
     mkp:"Mono potassium phosphate 0-52-34", k2so4:"Potassium sulphate 0-0-50",
     sil:"Potassium silicate (12% Si, 18% K₂O)",
@@ -257,7 +257,7 @@
     wAS:"Do not dry-blend ammonium sulphate with calcium nitrate. Add them to the tank separately.",
     srcFree:"This does not change the nitrogen — the ammonium percentage above already decided that. It only decides which product carries it, and you can use both at once. Sulphur, EC and every nutrient stay exactly the same. Ammonium nitrate is regulated and hard to buy in India, so many growers sit near the sulphate end.",
     srcLocked:"No choice at this setting — there is no nitrate budget left, so all the ammonium has to come from ammonium sulphate.",
-    wLow:"Below 6% ammonium you can no longer use ordinary Calcinit-type calcium nitrate — it carries 0.2 mmol of ammonium per mmol of calcium. The recipe switches to ammonium-free calcium nitrate tetrahydrate, and moves part of the magnesium to magnesium nitrate so sulphate can fall far enough. Two products you may not already have.",
+    wLow:"Calcium nitrate carries 0.2 mmol of its own ammonium per mmol of calcium, so below ~6% on the slider ammonium can no longer fall below %V% ppm no matter how low you set it. Part of the magnesium may also move to magnesium nitrate so sulphate can fall as far as the balance allows.",
     wLowS:"Sulphur is %V% ppm against a %T% ppm target. At low ammonium the charge balance leaves no room for more — it is a consequence, not an error.",
     wP:"This is the maximum Pekacid dose. Any more overshoots the phosphorus target, and phosphorus cannot be taken back out."
   };
@@ -284,7 +284,7 @@
   var T0={NH4:0.70,K:4.50,Ca:3.40,Mg:1.60,NO3:10.75,S:1.60,P:1.25};
   var T={}, NTOT, XMAX, curEC, curSi=false;
   var Pmm=8.4536, Kmm=4.2463, Hac=Pmm-Kmm;          // per gram of Pekacid 0-60-20
-  var CNu=216.1, CNTu=236.15, MGNu=256.41, KNO3u=101.10, EPSu=246.47, K2SO4u=174.26, MKPu=136.086, ANu=80.043, ASu=132.14;
+  var CNu=216.1, MGNu=256.41, KNO3u=101.10, EPSu=246.47, K2SO4u=174.26, MKPu=136.086, ANu=80.043, ASu=132.14;
 
   // Optional potassium silicate add-on — dosed to a fixed 20 ppm Si regardless
   // of the Target EC slider, using the same "12% Si, 18% K2O" typical liquid
@@ -308,14 +308,15 @@
   // The delivered solution is identical either way — only the salts change.
   function recipe(x,f,t){
     var acid=Hac*x, Kpek=Kmm*x, Pmkp=Math.max(T.P-Pmm*x,0), Kmkp=Pmkp;
-    var NH4=f*NTOT, NO3=NTOT-NH4, nfloat=false;
+    var NH4=f*NTOT, NO3=NTOT-NH4, nfloat=false, nh4Floor=false;
 
-    // Calcinit-type calcium nitrate carries 0.2 mmol NH4 per mmol Ca, so it puts
-    // a floor under the ammonium. Below that floor, swap part of the calcium over
-    // to the ammonium-free tetrahydrate.
-    var nh4Ca=Math.min(NH4,0.2*T.Ca), caCal=nh4Ca/0.2, caTet=T.Ca-caCal;
-    var NO3ca=2.2*caCal+2*caTet;
-    if(NO3<NO3ca){ NO3=NO3ca; NH4=f/(1-f)*NO3; nfloat=true; nh4Ca=Math.min(NH4,0.2*T.Ca); }
+    // Only ordinary Calcinit-type calcium nitrate is used — always the full
+    // Ca target's worth of it. That fixes both a floor under the ammonium
+    // (0.2 mmol NH4 per mmol Ca) and a floor under the nitrate (2.2 mmol per
+    // mmol Ca) that the sliders cannot go below.
+    var nh4Ca=0.2*T.Ca, NO3ca=2.2*T.Ca;
+    if(NO3<NO3ca){ NO3=NO3ca; NH4=f/(1-f)*NO3; nfloat=true; }
+    else if(NH4<nh4Ca){ NH4=nh4Ca; NO3=NTOT-NH4; nh4Floor=true; }
 
     // Potassium silicate's own K counts toward the K target, so the
     // conventional K salts (potassium nitrate here) only need to supply the
@@ -335,7 +336,7 @@
     var c=cmin+(t===undefined?0:t)*(cmax-cmin);
     var a=Math.max(adj-2*c,0), b=Math.max(pool-a,0), d=Math.max(SO4-kie-c,0);
     var cat=NH4+Keff+2*T.Ca+2*T.Mg+acid+silK, an=NO3+2*SO4+T.P+silK;
-    return {mg:{ca:caCal*CNu, caTet:caTet*CNTu, kno3:b*KNO3u, an:a*ANu, as:c*ASu,
+    return {mg:{ca:T.Ca*CNu, kno3:b*KNO3u, an:a*ANu, as:c*ASu,
                 kie:kie*EPSu, mgn:mgn*MGNu, pek:x*1000, mkp:Pmkp*MKPu, k2so4:d*K2SO4u,
                 sil:curSi?SIL_GL*1000:0},
             NH4:NH4, NO3:NO3, S:SO4, Nt:NH4+NO3, nfloat:nfloat, acid:acid,
@@ -345,7 +346,7 @@
             // its own EC estimate never counts the H+ it releases either.
             EC:estimateEC({NH4:NH4,K:T.K,Ca:T.Ca,Mg:T.Mg,NO3:NO3,SO4:SO4,H2PO4:T.P}),
             free:(cmax-cmin)>1e-6, sulShare:adj>1e-6?(2*c/adj*100):0,
-            lowN:(caTet>1e-6||mgn>1e-6)};
+            lowN:(nh4Floor||mgn>1e-6)};
   }
 
   // The slider's reference point is the *delivered* EC of the reference
@@ -382,7 +383,6 @@
     an   :["b",1],        // Ammonium Nitrate solid 34%
     kie  :["c",1],         // Magnesium Sulfate Heptahydrate — same salt, no conversion needed
     k2so4:["f",44.87/41.505], // their SOP is 50% K2O; ours is pure K2SO4
-    caTet:["w",1],        // Calcium Nitrate - Tetrahydrate
     mgn  :["e",1],        // Magnesium Nitrate - Hexahydrate
     pek  :["Y",1],        // ICL PeKacid 0-60-20
     sil  :["R",1]         // Potassium Silicate (12% Si, 18% K2O) — same grade, no conversion needed
@@ -403,7 +403,6 @@
   // the algebra above. If the two ever disagree, the panel says so.
   var SALTS={
     ca   :[216.1,  {Ca:1, NO3:2.2, NH4:0.2}],   // 5Ca(NO3)2.NH4NO3.10H2O, per Ca
-    caTet:[236.15, {Ca:1, NO3:2}],              // Ca(NO3)2.4H2O — no ammonium
     mgn  :[256.41, {Mg:1, NO3:2}],              // Mg(NO3)2.6H2O
     kno3 :[101.10, {K:1, NO3:1}],
     kie  :[246.47, {Mg:1, S:1}],   // Magnesium sulphate heptahydrate (Epsom salt)
@@ -511,7 +510,7 @@
     // Tags show each product's actual nitrogen form, not which slider moves it —
     // Calcinit-type calcium nitrate carries a little ammonium alongside its nitrate.
     document.getElementById("pkx-rec").innerHTML=
-      row(L.ca,r.mg.ca,"both",vol)+row(L.caTet,r.mg.caTet,"no3",vol)+
+      row(L.ca,r.mg.ca,"both",vol)+
       row(L.kie,r.mg.kie,"",vol)+row(L.mgn,r.mg.mgn,"no3",vol)+
       row(L.pek,r.mg.pek,"",vol)+row(L.mkp,r.mg.mkp,"",vol)+
       row(L.kno3,r.mg.kno3,"no3",vol)+row(L.an,r.mg.an,"both",vol)+row(L.as,r.mg.as,"nh4",vol)+
@@ -571,7 +570,7 @@
     tg.className="pkx-balok"+(tok?"":" pkx-balbad");
 
     var w=[];
-    if(r.lowN) w.push(["warn",L.wLow]);
+    if(r.lowN) w.push(["warn",L.wLow.replace("%V%",(io.NH4*14.007).toFixed(0))]);
     if(s<45*k) w.push(["warn",L.wLowS.replace("%V%",s.toFixed(0)).replace("%T%",sT.toFixed(0))]);
     if(r.nfloat) w.push(["bad",L.wN.replace("%N%",n.toFixed(0)).replace("%T%",nT.toFixed(0)).replace("%F%",(2.2*T.Ca).toFixed(2))]);
     if(r.NH4>1.5) w.push([r.NH4>2.5?"bad":"warn",L.wNH.replace("%V%",r.NH4.toFixed(2))]);
