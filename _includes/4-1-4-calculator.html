@@ -19,6 +19,12 @@
       <span class="pkx-lab">{% if wlang == 'gu' %}નાઈટ્રોજનનું સ્વરૂપ — <b id="pkx-fv">10</b>% એમોનિયમ, <b id="pkx-fv2">90</b>% નાઈટ્રેટ{% else %}Nitrogen form — <b id="pkx-fv">10</b>% ammonium, <b id="pkx-fv2">90</b>% nitrate{% endif %}</span>
       <input type="range" id="pkx-f" min="0" max="40" step="1" value="10">
     </label>
+    <label class="pkx-field pkx-check">
+      <span class="pkx-checkrow">
+        <input type="checkbox" id="pkx-si">
+        <span class="pkx-lab pkx-lab-inline">{% if wlang == 'gu' %}પોટેશિયમ સિલિકેટ ઉમેરો (20 ppm Si){% else %}Add potassium silicate (20 ppm Si){% endif %}</span>
+      </span>
+    </label>
   </div>
 
   <div class="pkx-controls pkx-controls-b">
@@ -129,6 +135,10 @@
 .pkx-lab{display:block;font-size:.8rem;color:var(--pk-mut);margin-bottom:.35rem;}
 .pkx-lab b{color:var(--pk-blue);font-size:.95rem;}
 .pkx input[type=range]{width:100%;accent-color:var(--pk-blue2);margin:0;}
+.pkx-check{grid-column:1/-1;}
+.pkx-checkrow{display:flex;align-items:center;gap:.5rem;}
+.pkx input[type=checkbox]{width:1.05rem;height:1.05rem;accent-color:var(--pk-blue2);margin:0;flex:0 0 auto;}
+.pkx-lab-inline{display:inline;margin:0;}
 .pkx-grouphead{grid-column:1/-1;margin:0;font-size:.7rem;font-weight:700;text-transform:uppercase;
  letter-spacing:.07em;display:flex;align-items:center;gap:.45rem;}
 .pkx-grouphead::before{content:"";width:8px;height:8px;border-radius:2px;flex:0 0 auto;}
@@ -216,6 +226,7 @@
     ca:"કેલ્શિયમ નાઈટ્રેટ 15.5-0-0 (Calcinit પ્રકાર)", caTet:"કેલ્શિયમ નાઈટ્રેટ ટેટ્રાહાઈડ્રેટ (એમોનિયમ વગરનું)", mgn:"મેગ્નેશિયમ નાઈટ્રેટ Mg(NO₃)₂·6H₂O", kno3:"પોટેશિયમ નાઈટ્રેટ 13-0-46", an:"એમોનિયમ નાઈટ્રેટ 34-0-0",
     as:"એમોનિયમ સલ્ફેટ 21-0-0", kie:"મેગ્નેશિયમ સલ્ફેટ (એપ્સમ સોલ્ટ) MgSO₄·7H₂O", pek:"ICL Pekacid 0-60-20",
     mkp:"મોનો પોટેશિયમ ફોસ્ફેટ 0-52-34", k2so4:"પોટેશિયમ સલ્ફેટ 0-0-50",
+    sil:"પોટેશિયમ સિલિકેટ (12% Si, 18% K₂O)",
     axis:"વાદળી ટૅગ = ફક્ત નાઈટ્રેટ. ગુલાબી ટૅગ = ફક્ત એમોનિયમ. ગ્રેડિયન્ટ ટૅગ = એક જ ખાતરમાં નાઈટ્રેટ અને એમોનિયમ બંને. કોઈ ટૅગ નહીં = એ ખાતરમાં નાઈટ્રોજન નથી.",
     bal:"સંતુલિત", balFail:"બેલેન્સ થતું નથી", gap:"તફાવત",
     tgtOk:"Ca, K, Mg, P બધા લક્ષ્યાંક પર", tgtBad:"%K% લક્ષ્યાંકથી દૂર",
@@ -234,6 +245,7 @@
     ca:"Calcium nitrate 15.5-0-0 (Calcinit type)", caTet:"Calcium nitrate tetrahydrate (ammonium-free)", mgn:"Magnesium nitrate Mg(NO₃)₂·6H₂O", kno3:"Potassium nitrate 13-0-46", an:"Ammonium nitrate 34-0-0",
     as:"Ammonium sulphate 21-0-0", kie:"Magnesium sulphate (Epsom salt) MgSO₄·7H₂O", pek:"ICL Pekacid 0-60-20",
     mkp:"Mono potassium phosphate 0-52-34", k2so4:"Potassium sulphate 0-0-50",
+    sil:"Potassium silicate (12% Si, 18% K₂O)",
     axis:"Blue tag = pure nitrate. Pink tag = pure ammonium. Gradient tag = both nitrate and ammonium in one product. No tag = no nitrogen at all.",
     bal:"Balanced", balFail:"NOT balanced", gap:"gap",
     tgtOk:"Ca, K, Mg, P all on target", tgtBad:"%K% is off target",
@@ -270,9 +282,20 @@
   // Target EC slider scales every ion target by ec/ECBASE, so the 4:1:4
   // ratio holds at any strength; T holds the currently scaled targets.
   var T0={NH4:0.70,K:4.50,Ca:3.40,Mg:1.60,NO3:10.75,S:1.60,P:1.25};
-  var T={}, NTOT, XMAX, curEC;
+  var T={}, NTOT, XMAX, curEC, curSi=false;
   var Pmm=8.4536, Kmm=4.2463, Hac=Pmm-Kmm;          // per gram of Pekacid 0-60-20
   var CNu=216.1, CNTu=236.15, MGNu=256.41, KNO3u=101.10, EPSu=246.47, K2SO4u=174.26, MKPu=136.086, ANu=80.043, ASu=132.14;
+
+  // Optional potassium silicate add-on — dosed to a fixed 20 ppm Si regardless
+  // of the Target EC slider, using the same "12% Si, 18% K2O" typical liquid
+  // grade and K2O->K factor as the fertilizer calculator at umangbhatt.in, so
+  // the two tools agree. The salt is charge-neutral, so its counter-ion adds
+  // exactly as much anion meq as the K it carries adds cation meq.
+  var SIL_SI_PCT=12, SIL_K2O_PCT=18, K2O_TO_K=0.83013, Kat=39.098;
+  var SI_TARGET_PPM=20;
+  var SIL_GL=SI_TARGET_PPM/(10*SIL_SI_PCT);             // g/L of product dosed
+  var SIL_K_PPM=SIL_GL*10*SIL_K2O_PCT*K2O_TO_K;         // ppm K it also delivers
+  var SIL_K_MM=SIL_K_PPM/Kat;                           // mmol/L (= meq/L, K is +1)
   // EPSu: Magnesium sulphate heptahydrate (Epsom salt) MgSO4.7H2O — Utkarsh Agro Chem's stocked Mg source.
   function applyEC(ec){
     var k=ec/ECBASE;
@@ -307,15 +330,17 @@
     var cmax=Math.max(Math.min(adj/2, SO4-kie), cmin);
     var c=cmin+(t===undefined?0:t)*(cmax-cmin);
     var a=Math.max(adj-2*c,0), b=Math.max(pool-a,0), d=Math.max(SO4-kie-c,0);
-    var cat=NH4+T.K+2*T.Ca+2*T.Mg+acid, an=NO3+2*SO4+T.P;
+    var silK=curSi?SIL_K_MM:0;
+    var cat=NH4+T.K+2*T.Ca+2*T.Mg+acid+silK, an=NO3+2*SO4+T.P+silK;
     return {mg:{ca:caCal*CNu, caTet:caTet*CNTu, kno3:b*KNO3u, an:a*ANu, as:c*ASu,
-                kie:kie*EPSu, mgn:mgn*MGNu, pek:x*1000, mkp:Pmkp*MKPu, k2so4:d*K2SO4u},
+                kie:kie*EPSu, mgn:mgn*MGNu, pek:x*1000, mkp:Pmkp*MKPu, k2so4:d*K2SO4u,
+                sil:curSi?SIL_GL*1000:0},
             NH4:NH4, NO3:NO3, S:SO4, Nt:NH4+NO3, nfloat:nfloat, acid:acid,
             cat:cat, an:an,
             // Pekacid's free acid is left out here, matching the fertilizer
             // calculator: its product database has no ppm field for it, so
             // its own EC estimate never counts the H+ it releases either.
-            EC:estimateEC({NH4:NH4,K:T.K,Ca:T.Ca,Mg:T.Mg,NO3:NO3,SO4:SO4,H2PO4:T.P}),
+            EC:estimateEC({NH4:NH4,K:T.K+silK,Ca:T.Ca,Mg:T.Mg,NO3:NO3,SO4:SO4,H2PO4:T.P}),
             free:(cmax-cmin)>1e-6, sulShare:adj>1e-6?(2*c/adj*100):0,
             lowN:(caTet>1e-6||mgn>1e-6)};
   }
@@ -434,13 +459,14 @@
 
   var elX=document.getElementById("pkx-x"), elF=document.getElementById("pkx-f"),
       elV=document.getElementById("pkx-v"), elT=document.getElementById("pkx-t"),
-      elEC=document.getElementById("pkx-ec");
+      elEC=document.getElementById("pkx-ec"), elSi=document.getElementById("pkx-si");
   function syncInputs(){ elX.value=Math.round(curX*10000); elF.value=Math.round(curF*100); }
   elX.max=Math.round(XMAX*10000);
   elX.addEventListener("input",function(){ curX=+this.value/10000; render(); });
   elF.addEventListener("input",function(){ curF=+this.value/100; render(); });
   elT.addEventListener("input",function(){ curT=+this.value/100; render(); });
   elV.addEventListener("input",render);
+  elSi.addEventListener("change",function(){ curSi=this.checked; buildMatrix(); render(); });
   elEC.addEventListener("input",function(){
     var wasMax=curX>=XMAX-0.0005;
     curEC=+this.value/100;
@@ -485,7 +511,7 @@
       row(L.kie,r.mg.kie,"",vol)+row(L.mgn,r.mg.mgn,"no3",vol)+
       row(L.pek,r.mg.pek,"",vol)+row(L.mkp,r.mg.mkp,"",vol)+
       row(L.kno3,r.mg.kno3,"no3",vol)+row(L.an,r.mg.an,"both",vol)+row(L.as,r.mg.as,"nh4",vol)+
-      row(L.k2so4,r.mg.k2so4,"",vol);
+      row(L.k2so4,r.mg.k2so4,"",vol)+row(L.sil,r.mg.sil,"",vol);
     var totalG=0, tk; for(tk in r.mg) totalG+=r.mg[tk]*vol/1000;
     document.getElementById("pkx-totalv").textContent=totalG.toFixed(2)+" g";
     document.getElementById("pkx-axisnote").textContent=L.axis;
@@ -494,12 +520,21 @@
 
     // read the solution back out of the gram amounts, independently
     var v=verify(r.mg), io=v.ion;
+    // Potassium silicate isn't in the SALTS table verify() re-derives from —
+    // fold in the K it delivers (and the equal counter-ion meq it must carry,
+    // since the salt itself is charge-neutral) so the balance check below
+    // still sees the true delivered solution.
+    if(curSi){ io.K+=SIL_K_MM; v.cat+=SIL_K_MM; v.an+=SIL_K_MM; }
     var s=io.S*32.06, n=(io.NH4+io.NO3)*14.007;
     // Deviation bands scale with the chosen Target EC; ammonium toxicity (nh)
     // is an absolute root-safety limit and does not scale with strength.
     var k=curEC/ECBASE, ecOkMax=curEC*1.0625, ecWarnMax=curEC*1.15625;
+    // The silicate add-on deliberately delivers more K than the bare 4:1:4
+    // target — compare K against that intended total, not the bare target,
+    // so the deviation bands below judge recipe accuracy, not the add-on itself.
+    var Tk2=T.K+(curSi?SIL_K_MM:0);
     var nh4T=T.NH4*14.007, no3T=T.NO3*14.007, nT=NTOT*14.007, pT=T.P*30.974,
-        kT=T.K*39.098, caT=T.Ca*40.078, mgT=T.Mg*24.305, sT=T.S*32.06;
+        kT=Tk2*39.098, caT=T.Ca*40.078, mgT=T.Mg*24.305, sT=T.S*32.06;
     var sc=s<=65*k?"ok":(s<=90*k?"warn":"bad");
     var ec=r.EC<=ecOkMax?"ok":(r.EC<=ecWarnMax?"warn":"bad");
     var nh=io.NH4<=1.5?"ok":(io.NH4<=2.5?"warn":"bad");
@@ -510,10 +545,11 @@
       drow("NO₃-N",no3T.toFixed(0)+" ppm",(io.NO3*14.007).toFixed(0)+" ppm","ok")+
       drow(GU?"કુલ N":"Total N",nT.toFixed(0)+" ppm",n.toFixed(0)+" ppm",nc)+
       drow("P",pT.toFixed(0)+" ppm",(io.P*30.974).toFixed(0)+" ppm",dev(io.P,T.P))+
-      drow("K",kT.toFixed(0)+" ppm",(io.K*39.098).toFixed(0)+" ppm",dev(io.K,T.K))+
+      drow("K",kT.toFixed(0)+" ppm",(io.K*39.098).toFixed(0)+" ppm",dev(io.K,Tk2))+
       drow("Ca",caT.toFixed(0)+" ppm",(io.Ca*40.078).toFixed(0)+" ppm",dev(io.Ca,T.Ca))+
       drow("Mg",mgT.toFixed(0)+" ppm",(io.Mg*24.305).toFixed(0)+" ppm",dev(io.Mg,T.Mg))+
       drow("S",sT.toFixed(0)+" ppm",s.toFixed(0)+" ppm",sc)+
+      drow("Si",curSi?SI_TARGET_PPM+" ppm":"—",curSi?SI_TARGET_PPM+" ppm":"0 ppm",curSi?"ok":"")+
       drow("EC",curEC.toFixed(2),r.EC.toFixed(2),ec);
 
     document.getElementById("pkx-cat").textContent=v.cat.toFixed(3)+" meq/L";
@@ -526,7 +562,8 @@
     // This is the one with teeth — do the grams actually hit the fixed targets?
     var worst=0, off="";
     ["Ca","K","Mg","P"].forEach(function(k){
-      var d=Math.abs(io[k]-T[k])/T[k]*100;
+      var tgt=k==="K"?Tk2:T[k];
+      var d=Math.abs(io[k]-tgt)/tgt*100;
       if(d>worst){ worst=d; off=k; }
     });
     var tok=worst<0.5, tg=document.getElementById("pkx-tgt");
