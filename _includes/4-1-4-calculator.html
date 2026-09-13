@@ -396,7 +396,13 @@
   // book's elemental N:P:K:Ca:Mg:S ratio (this never changes with the EC,
   // Pekacid or ammonium sliders — only the total concentration and product
   // split do, since EC-locked scaling multiplies every target by the same
-  // factor), the current ammonium % of total N, the current EC (snapped to
+  // factor), the ACTUAL delivered ammonium % of total N (not the raw slider
+  // fraction: Calcinit-type calcium nitrate always carries ~7% of its own N
+  // as NH4, so the delivered percentage has a floor above 0 even when the
+  // slider reads 0% — sending the raw slider value here would tell the
+  // calculator to hit an NH4=0% target that's infeasible with calcium
+  // nitrate in the mix, so it would drop calcium nitrate entirely rather
+  // than violate that constraint), the current EC (snapped to
   // that site's nearest 0.2 mS/cm preset — its EC field is a fixed dropdown,
   // not a free slider), the current Pekacid dose as a cap, and every
   // fertilizer this widget can ever draw from, so its own solver reproduces
@@ -429,7 +435,7 @@
     for(var i=0;i<EC_STEPS.length;i++){ var d=Math.abs(EC_STEPS[i]-ec); if(d<bd){bd=d;best=i;} }
     return best;
   }
-  function calcLink(vol,x,si,f,ec){
+  function calcLink(vol,x,si,nh4Pct,ec){
     var codes=CALC_ALWAYS.slice();
     if(x>0.0005) codes.push(CALC_CODE.pek);
     if(si) codes.push(CALC_CODE.sil);
@@ -439,7 +445,7 @@
     p.set("m","r"); p.set("s","wr"); p.set("v",vol); p.set("c","e");
     p.set("ec",nearestEcIdx(ec).toString(16));
     p.set("t",t);
-    p.set("nh4",Math.round(f*100));
+    p.set("nh4",Math.round(nh4Pct));
     p.set("a",a);
     if(x>0.0005) p.set("pk",x.toFixed(3));
     return CALC_URL+"?"+p.toString();
@@ -577,7 +583,7 @@
     var totalG=0, tk; for(tk in r.mg) totalG+=r.mg[tk]*vol/1000;
     document.getElementById("pkx-totalv").textContent=totalG.toFixed(2)+" g";
     document.getElementById("pkx-axisnote").textContent=L.axis;
-    document.getElementById("pkx-calc").href=calcLink(vol,curX,curSi,curF,curEC);
+    document.getElementById("pkx-calc").href=calcLink(vol,curX,curSi,r.NH4/(r.NH4+r.NO3)*100,curEC);
     document.getElementById("pkx-calcnote").textContent=L.calcnote;
 
     // read the solution back out of the gram amounts, independently
