@@ -288,7 +288,13 @@
   // the commercial bag-label analysis (matches the fertilizer calculator at
   // umangbhatt.in's database), not the pure 5Ca(NO3)2.NH4NO3.10H2O stoichiometric
   // formula (18.55% Ca), since real Calcinit isn't lab-pure.
-  var CNu=40.078/0.19, MGNu=256.41, KNO3u=101.10, EPSu=246.47, K2SO4u=174.26, MKPu=136.086, ANu=80.043, ASu=132.14;
+  // Potassium sulphate (SOP) and ammonium nitrate are also sold well short of
+  // their pure-compound purity — commercial SOP bags read 50% K2O / 17% S
+  // (not the pure K2SO4 salt's 54.1% / 18.4%) and commercial ammonium nitrate
+  // reads 34% N (not the pure salt's 35%), matching the fertilizer
+  // calculator's database — so their molar masses below are also the
+  // bag-label-equivalent values, not the pure-compound ones.
+  var CNu=40.078/0.19, MGNu=256.41, KNO3u=101.10, EPSu=246.47, K2SO4u=188.49141204673117, MKPu=136.086, ANu=82.39411764705882, ASu=132.14;
 
   // Optional potassium silicate add-on — dosed to a fixed 20 ppm Si regardless
   // of the Target EC slider, using the same "12% Si, 18% K2O" typical liquid
@@ -467,8 +473,8 @@
     kno3 :[101.10, {K:1, NO3:1}],
     kie  :[246.47, {Mg:1, S:1}],   // Magnesium sulphate heptahydrate (Epsom salt)
     mkp  :[136.086,{K:1, P:1}],
-    k2so4:[174.26, {K:2, S:1}],
-    an   :[80.043, {NH4:1, NO3:1}],
+    k2so4:[188.49141204673117, {K:2, S:1}], // bag label (50% K2O, 17% S), not pure K2SO4
+    an   :[82.39411764705882, {NH4:1, NO3:1}], // bag label (34% N), not pure NH4NO3
     as   :[132.14, {NH4:2, S:1}]
   };
   function verify(mg){
