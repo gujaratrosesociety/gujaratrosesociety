@@ -94,7 +94,7 @@
     </div>
   </details>
 
-  <p class="pkx-foot">{% if wlang == 'gu' %}કેલ્શિયમ નાઈટ્રેટ (7.35 ગ્રામ/10 લિ) દરેક ખાનામાં એકસરખું રહે છે — તે ફક્ત Ca લક્ષ્યાંકથી નક્કી થાય છે અને હંમેશાં સામાન્ય Calcinit પ્રકારનું જ છે. મેગ્નેશિયમ સલ્ફેટ (3.94 ગ્રામ/10 લિ) 6% એમોનિયમ અને તેથી ઉપર એકસરખું રહે છે; નીચે તે બદલાવા લાગે છે અને એમોનિયમ પોતે કેલ્શિયમ નાઈટ્રેટના પોતાના એમોનિયમ કરતાં નીચે જઈ શકતું નથી. સૂક્ષ્મ પોષક તત્વો કદી બદલાતા નથી.{% else %}Calcium nitrate (7.35 g/10 L) is identical in every cell — fixed by the Ca target alone, and always the ordinary Calcinit-type product. Magnesium sulphate (3.94 g/10 L) is identical at 6% ammonium and above; below that it starts to move, and ammonium itself can't fall below what calcium nitrate's own ammonium content supplies. Micronutrients never change.{% endif %}</p>
+  <p class="pkx-foot">{% if wlang == 'gu' %}તમામ પોષક લક્ષ્યાંકો (કેલ્શિયમ સહિત) પસંદ કરેલ EC પર બરાબર પહોંચવા માટે એકસાથે માપવામાં આવે છે, તેથી Pekacid અથવા એમોનિયમ ટકાવારી બદલવાથી કેલ્શિયમ નાઈટ્રેટનું પ્રમાણ પણ થોડું બદલાઈ શકે છે — તે હંમેશાં સામાન્ય Calcinit પ્રકારનું જ રહે છે. સૂક્ષ્મ પોષક તત્વો કદી બદલાતા નથી.{% else %}All nutrient targets (calcium included) are scaled together to hit the chosen EC exactly, so changing the Pekacid dose or ammonium % can shift the calcium nitrate amount slightly too — it's always the ordinary Calcinit-type product. Micronutrients never change.{% endif %}</p>
 </div>
 
 <style>
@@ -361,6 +361,28 @@
   curEC=ECBASE;
   applyEC(curEC);
 
+  // Solve for the uniform scale k on T0 (book ratio) that makes THIS x/f/t
+  // combination's own delivered EC match targetEC exactly — mirrors the
+  // fertilizer calculator at umangbhatt.in, which rescales every elemental
+  // target (Ca included) to hit the requested EC rather than holding Ca/K/
+  // Mg/N/P fixed at the book's reference-recipe values and letting EC drift.
+  // atMax keeps Pekacid supplying 100% of the (now-rescaled) P target when
+  // the dose slider is pinned to its maximum, tracking XMAX as it moves.
+  function solveTargets(targetEC,x,atMax,f,t){
+    var k=targetEC/ECBASE, r, XMAXi=XMAX, xx=x;
+    for(var i=0;i<8;i++){
+      T.NH4=T0.NH4*k; T.K=T0.K*k; T.Ca=T0.Ca*k; T.Mg=T0.Mg*k; T.NO3=T0.NO3*k; T.S=T0.S*k; T.P=T0.P*k;
+      NTOT=T.NH4+T.NO3; XMAXi=T.P/Pmm;
+      xx=atMax?XMAXi:Math.min(x,XMAXi);
+      r=recipe(xx,f,t);
+      if(!(r.EC>0)) break;
+      if(Math.abs(r.EC-targetEC)/targetEC<0.003) break;
+      k=k*(targetEC/r.EC);
+    }
+    XMAX=XMAXi;
+    return {r:r,x:xx};
+  }
+
   function status(r){
     var s=r.S*32.06, k=curEC/ECBASE, bad=0;
     if(r.nfloat||r.NH4>2.5||s>120*k||r.EC>curEC*1.15625) bad=2;
@@ -425,19 +447,29 @@
   }
 
   var FS=[0,0.03,0.06,0.10,0.15,0.20,0.25,0.30,0.35,0.40];
-  var curX=XMAX, curF=0.10, curT=0;
+  var curX=XMAX, curF=0.10, curT=0, xAtMax=true;
 
   var grid=document.getElementById("pkx-grid");
   var headRow=document.querySelector("#pkx .pkx-matrix thead tr");
   // XMAX (and so the last Pekacid column) moves with the Target EC slider,
   // so the whole matrix is rebuilt whenever that slider changes.
+  // The grid intentionally keeps the OLD (non-EC-locked) view: Ca/K/Mg/N/P
+  // held at the book's reference-recipe values (T0 scaled only by the plain
+  // curEC/ECBASE ratio), so EC is free to drift across combinations — that
+  // drift is the whole point of this exploratory view. It uses its own local
+  // T/XMAX and never touches the EC-locked globals that render() maintains;
+  // render() always re-solves and overwrites them right after this returns.
   function buildMatrix(){
-    var XS=[0.100,0.110,0.120,0.130,0.140,XMAX];
+    var k=curEC/ECBASE;
+    T.NH4=T0.NH4*k; T.K=T0.K*k; T.Ca=T0.Ca*k; T.Mg=T0.Mg*k; T.NO3=T0.NO3*k; T.S=T0.S*k; T.P=T0.P*k;
+    NTOT=T.NH4+T.NO3;
+    var XMAXgrid=T.P/Pmm;
+    var XS=[0.100,0.110,0.120,0.130,0.140,XMAXgrid];
     while(headRow.children.length>1) headRow.removeChild(headRow.lastChild);
     grid.innerHTML="";
     XS.forEach(function(x){
       var th=document.createElement("th");
-      th.textContent=(x>=XMAX-1e-9?XMAX.toFixed(3):x.toFixed(2));
+      th.textContent=(x>=XMAXgrid-1e-9?XMAXgrid.toFixed(3):x.toFixed(2));
       headRow.appendChild(th);
     });
     FS.forEach(function(f){
@@ -452,7 +484,9 @@
         btn.classList.add(CLS[status(r)]);
         btn.textContent=r.EC.toFixed(2);
         btn.setAttribute("aria-label","Pekacid "+x.toFixed(3)+" g/L, NH4 "+Math.round(f*100)+"%, EC "+r.EC.toFixed(2));
-        btn.addEventListener("click",function(){ curX=+this.dataset.x; curF=+this.dataset.f; syncInputs(); render(); });
+        btn.addEventListener("click",function(){
+          curX=+this.dataset.x; xAtMax=Math.abs(curX-XMAXgrid)<0.0006; curF=+this.dataset.f; render();
+        });
         td.appendChild(btn); tr.appendChild(td);
       });
       grid.appendChild(tr);
@@ -465,19 +499,14 @@
       elEC=document.getElementById("pkx-ec"), elSi=document.getElementById("pkx-si");
   function syncInputs(){ elX.value=Math.round(curX*10000); elF.value=Math.round(curF*100); }
   elX.max=Math.round(XMAX*10000);
-  elX.addEventListener("input",function(){ curX=+this.value/10000; render(); });
+  elX.addEventListener("input",function(){ curX=+this.value/10000; xAtMax=curX>=XMAX-0.0005; render(); });
   elF.addEventListener("input",function(){ curF=+this.value/100; render(); });
   elT.addEventListener("input",function(){ curT=+this.value/100; render(); });
   elV.addEventListener("input",render);
   elSi.addEventListener("change",function(){ curSi=this.checked; buildMatrix(); render(); });
   elEC.addEventListener("input",function(){
-    var wasMax=curX>=XMAX-0.0005;
     curEC=+this.value/100;
-    applyEC(curEC);
-    elX.max=Math.round(XMAX*10000);
-    curX=wasMax?XMAX:Math.min(curX,XMAX);
     buildMatrix();
-    syncInputs();
     render();
   });
 
@@ -495,7 +524,10 @@
 
   function render(){
     var vol=Math.max(+elV.value||10,0.1);
-    var r=recipe(curX,curF,curT);
+    var solved=solveTargets(curEC,curX,xAtMax,curF,curT);
+    var r=solved.r;
+    curX=solved.x;
+    elX.max=Math.round(XMAX*10000);
     document.getElementById("pkx-ecv").textContent=curEC.toFixed(2);
     document.getElementById("pkx-xv").textContent=curX.toFixed(3);
     document.getElementById("pkx-fv").textContent=Math.round(curF*100);
@@ -587,6 +619,7 @@
       var on=Math.abs(cx-curX)<0.0006 && Math.abs(cf-curF)<0.005;
       cells[i].classList.toggle("pkx-sel",on);
     }
+    syncInputs();
   }
   syncInputs(); render();
 })();
