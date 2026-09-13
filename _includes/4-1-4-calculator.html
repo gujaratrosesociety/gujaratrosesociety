@@ -284,7 +284,11 @@
   var T0={NH4:0.70,K:4.50,Ca:3.40,Mg:1.60,NO3:10.75,S:1.60,P:1.25};
   var T={}, NTOT, XMAX, curEC, curSi=false;
   var Pmm=8.4536, Kmm=4.2463, Hac=Pmm-Kmm;          // per gram of Pekacid 0-60-20
-  var CNu=216.1, MGNu=256.41, KNO3u=101.10, EPSu=246.47, K2SO4u=174.26, MKPu=136.086, ANu=80.043, ASu=132.14;
+  // Calcinit-type calcium nitrate: 15.5% N (14.4% NO3-N, 1.1% NH4-N), 19% Ca —
+  // the commercial bag-label analysis (matches the fertilizer calculator at
+  // umangbhatt.in's database), not the pure 5Ca(NO3)2.NH4NO3.10H2O stoichiometric
+  // formula (18.55% Ca), since real Calcinit isn't lab-pure.
+  var CNu=40.078/0.19, MGNu=256.41, KNO3u=101.10, EPSu=246.47, K2SO4u=174.26, MKPu=136.086, ANu=80.043, ASu=132.14;
 
   // Optional potassium silicate add-on — dosed to a fixed 20 ppm Si regardless
   // of the Target EC slider, using the same "12% Si, 18% K2O" typical liquid
@@ -312,9 +316,10 @@
 
     // Only ordinary Calcinit-type calcium nitrate is used — always the full
     // Ca target's worth of it. That fixes both a floor under the ammonium
-    // (0.2 mmol NH4 per mmol Ca) and a floor under the nitrate (2.2 mmol per
-    // mmol Ca) that the sliders cannot go below.
-    var nh4Ca=0.2*T.Ca, NO3ca=2.2*T.Ca;
+    // (0.1657 mmol NH4 per mmol Ca, from Calcinit's 1.1% NH4-N / 19% Ca bag
+    // label) and a floor under the nitrate (2.1686 mmol per mmol Ca, from its
+    // 14.4% NO3-N) that the sliders cannot go below.
+    var nh4Ca=0.16565326359376703*T.Ca, NO3ca=2.1685518143184046*T.Ca;
     if(NO3<NO3ca){ NO3=NO3ca; NH4=f/(1-f)*NO3; nfloat=true; }
     else if(NH4<nh4Ca){ NH4=nh4Ca; NO3=NTOT-NH4; nh4Floor=true; }
 
@@ -457,7 +462,7 @@
   // re-derives the solution from each product's composition, reusing none of
   // the algebra above. If the two ever disagree, the panel says so.
   var SALTS={
-    ca   :[216.1,  {Ca:1, NO3:2.2, NH4:0.2}],   // 5Ca(NO3)2.NH4NO3.10H2O, per Ca
+    ca   :[40.078/0.19, {Ca:1, NO3:2.1685518143184046, NH4:0.16565326359376703}], // Calcinit bag label (15.5% N, 19% Ca), per Ca
     mgn  :[256.41, {Mg:1, NO3:2}],              // Mg(NO3)2.6H2O
     kno3 :[101.10, {K:1, NO3:1}],
     kie  :[246.47, {Mg:1, S:1}],   // Magnesium sulphate heptahydrate (Epsom salt)
