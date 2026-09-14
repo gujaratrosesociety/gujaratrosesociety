@@ -409,10 +409,23 @@
 
   // ---- Link out to the fertilizer calculator (ratio + EC + Pekacid mode) -
   // Builds a reverse-calc (m=r) link instead of a fixed grams list: the
-  // book's elemental N:P:K:Ca:Mg:S ratio (this never changes with the EC,
+  // book's elemental N:P:K:Ca:Mg ratio (this never changes with the EC,
   // Pekacid or ammonium sliders — only the total concentration and product
   // split do, since EC-locked scaling multiplies every target by the same
-  // factor), the ACTUAL delivered ammonium % of total N (not the raw slider
+  // factor) PLUS the recipe's actual delivered sulphate, not the book's
+  // nominal S ratio. Unlike N/P/K/Ca/Mg, S isn't an independent target here —
+  // it's whatever charge balance forces once the ammonium/nitrate split and
+  // NH4% are fixed (every extra ammonium ion needs a sulphate counter-ion),
+  // so it can run well above the book's nominal 1.6 mmol/L (this widget's own
+  // "Sulphur is X ppm against a Y ppm target" warning is reporting exactly
+  // that gap). Sending the nominal ratio value here asked the calculator to
+  // hit two mutually incompatible numbers (exact N together with the book's
+  // S), which is infeasible — it would satisfy neither exactly and pick a
+  // different, hard-to-reconcile fertilizer split to spread the difference.
+  // Sending the true charge-balanced S value makes the six targets mutually
+  // satisfiable, so the calculator's own solver lands on essentially the same
+  // recipe as this widget's closed-form math.
+  // The ACTUAL delivered ammonium % of total N (not the raw slider
   // fraction: Calcinit-type calcium nitrate always carries ~7% of its own N
   // as NH4, so the delivered percentage has a floor above 0 even when the
   // slider reads 0% — sending the raw slider value here would tell the
@@ -444,19 +457,13 @@
     return result;
   }
   var MWn={N:14.007,P:30.974,K:39.098,Ca:40.078,Mg:24.305,S:32.06};
-  // The book's fixed 4:1:4 ratio (mmol/L) converted to elemental mass ratio —
-  // a ratio only, so any consistent scale works; it's independent of curEC.
-  var RATIO_ELEM=[
-    (T0.NH4+T0.NO3)*MWn.N, T0.P*MWn.P, T0.K*MWn.K,
-    T0.Ca*MWn.Ca, T0.Mg*MWn.Mg, T0.S*MWn.S
-  ];
   var EC_STEPS=[0.2,0.4,0.6,0.8,1.0,1.2,1.4,1.6,1.8,2.0,2.2,2.4,2.6,2.8,3.0];
   function nearestEcIdx(ec){
     var best=0,bd=Infinity;
     for(var i=0;i<EC_STEPS.length;i++){ var d=Math.abs(EC_STEPS[i]-ec); if(d<bd){bd=d;best=i;} }
     return best;
   }
-  function calcLink(vol,x,si,nh4Pct,ec,mg){
+  function calcLink(vol,x,si,nh4Pct,ec,mg,elemMgL){
     var MG_EPS=0.01; // mg/L threshold (float noise only) below which a product counts as unused
     var codes=["ca","kno3","mkp","as","an","kie","k2so4","mgn"]
       .filter(function(k){ return mg[k]>MG_EPS; })
@@ -464,7 +471,7 @@
     if(x>0.0005) codes.push(CALC_CODE.pek);
     if(si) codes.push(CALC_CODE.sil);
     var a=encodeFertBitmask(codes);
-    var t=RATIO_ELEM.join(",")+","+(si?SI_TARGET_PPM:0);
+    var t=elemMgL.join(",")+","+(si?SI_TARGET_PPM:0);
     var p=new URLSearchParams();
     p.set("m","r"); p.set("s","wr"); p.set("v",vol); p.set("c","e");
     p.set("ec",nearestEcIdx(ec).toString(16));
@@ -607,7 +614,8 @@
     var totalG=0, tk; for(tk in r.mg) totalG+=r.mg[tk]*vol/1000;
     document.getElementById("pkx-totalv").textContent=totalG.toFixed(2)+" g";
     document.getElementById("pkx-axisnote").textContent=L.axis;
-    document.getElementById("pkx-calc").href=calcLink(vol,curX,curSi,r.NH4/(r.NH4+r.NO3)*100,curEC,r.mg);
+    var elemMgL=[(T.NH4+T.NO3)*MWn.N, T.P*MWn.P, T.K*MWn.K, T.Ca*MWn.Ca, T.Mg*MWn.Mg, r.S*MWn.S];
+    document.getElementById("pkx-calc").href=calcLink(vol,curX,curSi,r.NH4/(r.NH4+r.NO3)*100,curEC,r.mg,elemMgL);
     document.getElementById("pkx-calcnote").textContent=L.calcnote;
 
     // read the solution back out of the gram amounts, independently
