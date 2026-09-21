@@ -227,7 +227,7 @@
     ca:"કેલ્શિયમ નાઈટ્રેટ 15.5-0-0 (Calcinit પ્રકાર)", mgn:"મેગ્નેશિયમ નાઈટ્રેટ Mg(NO₃)₂·6H₂O", kno3:"પોટેશિયમ નાઈટ્રેટ 13-0-46", an:"એમોનિયમ નાઈટ્રેટ 34-0-0",
     as:"એમોનિયમ સલ્ફેટ 21-0-0", kie:"મેગ્નેશિયમ સલ્ફેટ (એપ્સમ સોલ્ટ) MgSO₄·7H₂O", pek:"ICL Pekacid 0-60-20",
     mkp:"મોનો પોટેશિયમ ફોસ્ફેટ 0-52-34", k2so4:"પોટેશિયમ સલ્ફેટ 0-0-50",
-    sil:"પોટેશિયમ સિલિકેટ — Utkarsh Silfert (12% Si(OH)₄, 18% K₂O)",
+    sil:"પોટેશિયમ સિલિકેટ — Utkarsh Silfert (12% Si, 18% K₂O)",
     axis:"વાદળી ટૅગ = ફક્ત નાઈટ્રેટ. ગુલાબી ટૅગ = ફક્ત એમોનિયમ. ગ્રેડિયન્ટ ટૅગ = એક જ ખાતરમાં નાઈટ્રેટ અને એમોનિયમ બંને. કોઈ ટૅગ નહીં = એ ખાતરમાં નાઈટ્રોજન નથી.",
     bal:"સંતુલિત", balFail:"બેલેન્સ થતું નથી", gap:"તફાવત",
     tgtOk:"Ca, K, Mg, P બધા લક્ષ્યાંક પર", tgtBad:"%K% લક્ષ્યાંકથી દૂર",
@@ -246,7 +246,7 @@
     ca:"Calcium nitrate 15.5-0-0 (Calcinit type)", mgn:"Magnesium nitrate Mg(NO₃)₂·6H₂O", kno3:"Potassium nitrate 13-0-46", an:"Ammonium nitrate 34-0-0",
     as:"Ammonium sulphate 21-0-0", kie:"Magnesium sulphate (Epsom salt) MgSO₄·7H₂O", pek:"ICL Pekacid 0-60-20",
     mkp:"Mono potassium phosphate 0-52-34", k2so4:"Potassium sulphate 0-0-50",
-    sil:"Potassium silicate — Utkarsh Silfert (12% Si(OH)₄, 18% K₂O)",
+    sil:"Potassium silicate — Utkarsh Silfert (12% Si, 18% K₂O)",
     axis:"Blue tag = pure nitrate. Pink tag = pure ammonium. Gradient tag = both nitrate and ammonium in one product. No tag = no nitrogen at all.",
     bal:"Balanced", balFail:"NOT balanced", gap:"gap",
     tgtOk:"Ca, K, Mg, P all on target", tgtBad:"%K% is off target",
@@ -302,16 +302,13 @@
   // still needed for the two tools to land on the same gram figure.
   var CNu=40.078/0.19, MGNu=256.41, KNO3u=101.98220901451971, EPSu=246.47, K2SO4u=188.49141204673117, MKPu=136.086, ANu=82.39411764705882, ASu=133.49166666666667;
 
-  // Optional potassium silicate add-on — Utkarsh Silfert's label guarantees
-  // 12% total silicic acid, Si(OH)4, rather than 12% elemental Si. Convert it
-  // to elemental Si before dosing to the fixed 20 ppm Si target. Its published
-  // bulk density is 1.012 g/mL, which lets the recipe show a syringe-friendly
-  // volume alongside the more exact mass. The salt is charge-neutral, so its
-  // counter-ion adds exactly as much anion meq as the K it carries adds cation
-  // meq.
-  var SI_ATOMIC_MASS=28.0855, SIOH4_MOLAR_MASS=96.1135;
-  var SIL_SIOH4_PCT=12, SIL_SI_PCT=SIL_SIOH4_PCT*SI_ATOMIC_MASS/SIOH4_MOLAR_MASS,
-      SIL_K2O_PCT=18, SIL_DENSITY=1.012, K2O_TO_K=0.83013, Kat=39.098;
+  // Optional potassium silicate add-on — dosed to a fixed 20 ppm Si regardless
+  // of the Target EC slider, on the calculator's established 12% Si / 18% K2O
+  // product basis. Utkarsh Silfert's published bulk density (1.012 g/mL) is
+  // used only to show the equivalent syringe-friendly volume; the recipe itself
+  // remains mass-based. The salt is charge-neutral, so its counter-ion adds
+  // exactly as much anion meq as the K it carries adds cation meq.
+  var SIL_SI_PCT=12, SIL_K2O_PCT=18, SIL_DENSITY=1.012, K2O_TO_K=0.83013, Kat=39.098;
   var SI_TARGET_PPM=20;
   var SIL_GL=SI_TARGET_PPM/(10*SIL_SI_PCT);             // g/L of product dosed
   var SIL_K_PPM=SIL_GL*10*SIL_K2O_PCT*K2O_TO_K;         // ppm K it also delivers
